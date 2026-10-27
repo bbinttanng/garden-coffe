@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #fcf9f3;
+    color: #1c1c18;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+/* Custom Botanical Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0eee8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c0c9c3;
+  border-radius: 9999px;
+  border: 2px solid #f0eee8;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #45664e;
+}
+
+::selection {
+  background-color: #1b4d3e;
+  color: #baeed9;
+}
+
+/* Glassmorphism Classes */
+.glass-header {
+  background: rgba(252, 249, 243, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.botanical-card-shadow {
+  box-shadow: 0 8px 24px -4px rgba(27, 77, 62, 0.07), 0 2px 6px -1px rgba(26, 26, 26, 0.04);
+}
+
+.botanical-card-shadow:hover {
+  box-shadow: 0 16px 32px -6px rgba(27, 77, 62, 0.12), 0 4px 10px -2px rgba(26, 26, 26, 0.06);
+}
+
+.botanical-modal-shadow {
+  box-shadow: 0 20px 48px -8px rgba(27, 77, 62, 0.16), 0 8px 20px -3px rgba(26, 26, 26, 0.08);
+}
+
+/* Line clamp helpers */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
