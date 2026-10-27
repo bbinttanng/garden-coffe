@@ -34,13 +34,14 @@ export const HomePage = ({ setActivePage }) => {
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
-              <a
-                href="#our-story"
+              <button
+                type="button"
+                onClick={() => setActivePage('food')}
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg shadow-sm hover:shadow-md transition-all cursor-pointer"
               >
-                <span>Eksplorasi Cerita Kami</span>
+                <span>Eksplorasi Menu Food</span>
                 <span className="material-symbols-outlined text-base">arrow_forward</span>
-              </a>
+              </button>
               <button
                 type="button"
                 onClick={() => setActivePage('lokasi')}
