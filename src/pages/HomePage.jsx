@@ -16,16 +16,11 @@ export const HomePage = ({ setActivePage }) => {
   return (
     <div className="flex flex-col w-full">
       {/* Editorial Hero Section */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 w-full pt-8 pb-16 lg:py-16">
+      <section className="max-w-7xl mx-auto px-6 lg:px-12 w-full pt-2 pb-12 lg:pt-4 lg:pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          <div className="lg:col-span-7 space-y-8">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-fixed font-label-md text-xs font-semibold tracking-wide">
-              <span className="material-symbols-outlined text-sm">spa</span>
-              <span>Tenang, ga harus ke alam.</span>
-            </div>
-
+          <div className="lg:col-span-7 space-y-6">
             <div className="space-y-4">
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-[3.6rem] leading-[1.14] text-primary font-bold tracking-tight">
+              <h1 className="font-serif text-4xl sm:text-5xl lg:text-[3.85rem] leading-[1.12] text-primary font-bold tracking-tight">
                 Ngopi di Tengah Kota, <br className="hidden sm:inline" />
                 <span className="italic font-normal text-secondary">dengan Nuansa Alam.</span>
               </h1>
