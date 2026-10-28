@@ -1,18 +1,6 @@
-import React, { useState } from 'react';
-import { useModals } from '../context/ModalContext';
+import React from 'react';
 
 export const HomePage = ({ setActivePage }) => {
-  const { showToast } = useModals();
-  const [email, setEmail] = useState('');
-
-  const handleNewsletterSubmit = (e) => {
-    e.preventDefault();
-    if (email) {
-      showToast('Selamat Bergabung!', `Undangan buletin botani telah dikirim ke ${email}.`, 'mark_email_read');
-      setEmail('');
-    }
-  };
-
   return (
     <div className="flex flex-col w-full">
       {/* Editorial Hero Section */}
@@ -183,7 +171,7 @@ export const HomePage = ({ setActivePage }) => {
               </span>
               <h3 className="font-title-lg text-title-lg text-primary font-serif mt-1">Specialty Coffee</h3>
               <p className="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
-                Kurasi biji kopi mikro terroir nusantara dan racikan botani dingin inovatif.
+                Kopi segar dan kaya rasa untuk menemani hari Anda.
               </p>
               <div className="pt-4 flex items-center gap-1.5 font-label-md text-label-md text-primary font-bold group-hover:gap-2.5 transition-all">
                 <span>Jelajahi Coffee</span>
@@ -209,7 +197,7 @@ export const HomePage = ({ setActivePage }) => {
               </span>
               <h3 className="font-title-lg text-title-lg text-primary font-serif mt-1">Botanical Food</h3>
               <p className="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
-                Sajian santap siang hangat, brioche melts leleh, dan pasta buatan tangan.
+                Sajian santap siang hangat, brioche melts leleh, dan cita rasa terbaik.
               </p>
               <div className="pt-4 flex items-center gap-1.5 font-label-md text-label-md text-primary font-bold group-hover:gap-2.5 transition-all">
                 <span>Jelajahi Food</span>
@@ -253,27 +241,27 @@ export const HomePage = ({ setActivePage }) => {
             <div className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md">
                 <span className="material-symbols-outlined text-sm">eco</span>
-                <span>Komitmen Regeneratif Berkelanjutan</span>
+                <span>Komitmen kami</span>
               </div>
               <h2 className="font-headline-lg text-headline-lg font-serif leading-tight">
-                Mengembalikan Kebaikan <br />
-                <span className="italic text-primary-fixed">Kepada Tanah Nusantara.</span>
+                Memberikan pengalaman terbaik <br />
+                <span className="italic text-primary-fixed">Kepada Setiap Pelanggan</span>
               </h2>
               <p className="font-body-lg text-body-lg text-on-primary/80 leading-relaxed">
-                Setiap ampas kopi (espresso pucks) dari seluruh sanctuary kami dikumpulkan dan diolah 100% menjadi kompos organik hayati bagi kebun botani perkotaan. Kami menjalin kemitraan langsung dengan keluarga petani kopi di dataran tinggi, memastikan kompensasi berkeadilan di atas standar fair-trade global.
+                Kami berkomitmen memberikan pengalaman terbaik bagi setiap pelanggan melalui sajian kopi berkualitas, suasana yang nyaman dan asri, serta pelayanan yang ramah. Kami ingin setiap kunjungan menjadi momen yang menyenangkan, tempat Anda bisa bersantai, bekerja, atau menghabiskan waktu bersama orang orang terdekat.
               </p>
               <div className="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-6 border-t border-on-primary/10">
                 <div>
                   <p className="font-headline-sm text-headline-sm font-serif font-bold text-primary-fixed">100%</p>
-                  <p className="font-body-sm text-body-sm text-on-primary/70 mt-1">Direct-Trade Kemitraan Petani</p>
+                  <p className="font-body-sm text-body-sm text-on-primary/70 mt-1">Pengalaman kepada pelanggan</p>
                 </div>
                 <div>
-                  <p className="font-headline-sm text-headline-sm font-serif font-bold text-primary-fixed">Zero Waste</p>
-                  <p className="font-body-sm text-body-sm text-on-primary/70 mt-1">Siklus Kompos Ampas Kopi</p>
+                  <p className="font-headline-sm text-headline-sm font-serif font-bold text-primary-fixed">Ketenangan</p>
+                  <p className="font-body-sm text-body-sm text-on-primary/70 mt-1">menghadirkan ketenangan ditengah kota</p>
                 </div>
                 <div>
-                  <p className="font-headline-sm text-headline-sm font-serif font-bold text-primary-fixed">Biodynamic</p>
-                  <p className="font-body-sm text-body-sm text-on-primary/70 mt-1">Tanah Terbebas Bahan Kimia</p>
+                  <p className="font-headline-sm text-headline-sm font-serif font-bold text-primary-fixed">Hidangan</p>
+                  <p className="font-body-sm text-body-sm text-on-primary/70 mt-1">Mkakanan yang kami buat berkualitas tinggi</p>
                 </div>
               </div>
             </div>
@@ -292,66 +280,13 @@ export const HomePage = ({ setActivePage }) => {
                   />
                 </div>
                 <div>
-                  <h4 className="font-title-md text-title-md text-on-primary font-serif">Aris Sastrawan</h4>
+                  <h4 className="font-title-md text-title-md text-on-primary font-serif">Melinda</h4>
                   <p className="font-label-sm text-label-sm text-on-primary-container uppercase tracking-wider">
-                    Head of Botanical Roastery
+                    Head of Garden coffee &amp; Eatery
                   </p>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Interactive Botanical Club Newsletter */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 w-full pb-16">
-        <div className="bg-surface-container rounded-3xl p-8 lg:p-12 border border-surface-container-high/80 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="space-y-3 max-w-xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-fixed text-xs font-bold uppercase tracking-wider">
-              <span className="material-symbols-outlined text-sm">mail</span>
-              <span>The Conservatory Dispatch</span>
-            </div>
-            <h3 className="font-headline-sm text-headline-sm font-serif text-primary">
-              Bergabung dengan Botanical Sanctuary Society
-            </h3>
-            <p className="font-body-md text-on-surface-variant">
-              Dapatkan wawasan seduhan sangrai microlot bulanan, undangan khusus mencicipi panen perdana, dan jadwal kurasi pastry akhir pekan langsung ke email Anda.
-            </p>
-          </div>
-          <form onSubmit={handleNewsletterSubmit} className="w-full md:w-auto flex-1 max-w-md flex flex-col sm:flex-row gap-3">
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Masukkan alamat email Anda..."
-              className="flex-1 px-4 py-3.5 rounded-xl bg-surface border border-surface-container-high text-on-surface placeholder-on-surface-variant/60 focus:outline-none focus:ring-2 focus:ring-primary/20 font-body-sm"
-            />
-            <button
-              type="submit"
-              className="px-6 py-3.5 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-md font-bold transition-all shadow-sm shrink-0 flex items-center justify-center gap-2 cursor-pointer"
-            >
-              <span>Berlangganan</span>
-              <span className="material-symbols-outlined text-sm">send</span>
-            </button>
-          </form>
-        </div>
-      </section>
-
-      {/* Press & Recognition Showcase */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 w-full pb-20">
-        <div className="bg-surface-container-low rounded-3xl p-8 lg:p-12 text-center space-y-8">
-          <span className="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-semibold">
-            Pengakuan &amp; Sorotan Media
-          </span>
-          <h3 className="font-headline-md text-headline-md text-primary font-serif max-w-2xl mx-auto">
-            "Salah satu destinasi kopi botani paling berkarakter di Asia Tenggara."
-          </h3>
-          <div className="flex flex-wrap items-center justify-center gap-10 pt-4 text-on-surface-variant font-serif text-lg">
-            <span className="hover:text-primary transition-colors font-semibold">ARCHITECTURAL DIGEST</span>
-            <span className="hover:text-primary transition-colors font-semibold">MONOCLE HOSPITALITY</span>
-            <span className="hover:text-primary transition-colors font-semibold">TATLER INDONESIA</span>
-            <span className="hover:text-primary transition-colors font-semibold">SPECIALTY COFFEE ASSOC.</span>
           </div>
         </div>
       </section>
