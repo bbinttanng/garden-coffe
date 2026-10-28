@@ -134,7 +134,7 @@ export const HomePage = ({ setActivePage }) => {
                   onClick={() => setActivePage('coffee')}
                   className="inline-flex items-center gap-2 font-label-md text-label-md text-primary font-semibold hover:text-secondary transition-colors cursor-pointer"
                 >
-                  <span>Koleksi Terroir Kopi</span>
+                  <span>Koleksi Coffee</span>
                   <span className="material-symbols-outlined text-sm">arrow_forward</span>
                 </button>
               </div>
@@ -188,7 +188,7 @@ export const HomePage = ({ setActivePage }) => {
                   onClick={() => setActivePage('lokasi')}
                   className="inline-flex items-center gap-2 font-label-md text-label-md text-primary font-semibold hover:text-secondary transition-colors cursor-pointer"
                 >
-                  <span>Arsitektur Konservatori</span>
+                  <span>Toko kami</span>
                   <span className="material-symbols-outlined text-sm">arrow_forward</span>
                 </button>
               </div>
@@ -202,13 +202,13 @@ export const HomePage = ({ setActivePage }) => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
             <span className="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-semibold">
-              Eksplorasi Kurasi
+              Eksplorasi
             </span>
             <h2 className="font-headline-lg text-headline-lg text-primary font-serif tracking-tight mt-1">
               Gerbang Pengalaman Kami
             </h2>
             <p className="font-body-md text-body-md text-on-surface-variant max-w-xl mt-2">
-              Temukan ragam inovasi menu botani, seduhan tangan barista, dan lokasi sanctuary terdekat dari keseharian Anda.
+              Temukan ragam inovasi menu kami, seduhan tangan barista, dan lokasi toko dari dekat anda.
             </p>
           </div>
         </div>
