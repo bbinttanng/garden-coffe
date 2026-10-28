@@ -19,14 +19,15 @@ export const HomePage = ({ setActivePage }) => {
       <section className="max-w-7xl mx-auto px-6 lg:px-12 w-full pt-8 pb-16 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <div className="lg:col-span-7 space-y-8">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-fixed font-label-md text-label-md">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-fixed font-label-md text-xs font-semibold tracking-wide">
               <span className="material-symbols-outlined text-sm">spa</span>
-              <span>Ruang Santap &amp; Kopi Rumah Kaca</span>
+              <span>Tenang, ga harus ke alam.</span>
             </div>
 
             <div className="space-y-4">
-              <h1 className="font-display text-display text-primary leading-tight font-serif">
-                Menikmati Kopi di Tengah Ketenangan Alam.
+              <h1 className="font-serif text-4xl sm:text-5xl lg:text-[3.6rem] leading-[1.14] text-primary font-bold tracking-tight">
+                Ngopi di Tengah Kota, <br className="hidden sm:inline" />
+                <span className="italic font-normal text-secondary">dengan Nuansa Alam.</span>
               </h1>
 
               <div className="max-w-xl pt-1">
@@ -34,7 +35,7 @@ export const HomePage = ({ setActivePage }) => {
                   Filosofi Kami
                 </span>
                 <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                  Garden Coffee &amp; Eatery hadir sebagai suaka hijau di tengah padatnya kota—menyajikan kopi pilihan petani lokal dan hidangan hangat dapur segar, dalam ketenangan rumah kaca botani yang dirancang untuk menemani waktu rehat Anda.
+                  Garden Coffee &amp; Eatery hadir sebagai tempat hijau di tengah kota menyajikan kopi terbaik dari petani lokal dan hidangan dari dapur segar, dalam rumah kaca dengan nuansa alam untuk menemani waktu istirahat anda.
                 </p>
               </div>
             </div>
@@ -52,7 +53,7 @@ export const HomePage = ({ setActivePage }) => {
 
             <div className="pt-8 grid grid-cols-3 gap-6 max-w-lg border-t border-surface-container-high/60">
               <div>
-                <p className="font-headline-sm text-headline-sm font-serif text-primary font-bold">14</p>
+                <p className="font-headline-sm text-headline-sm font-serif text-primary font-bold">5</p>
                 <p className="font-body-sm text-[12px] text-on-surface-variant uppercase tracking-wider mt-0.5 font-semibold">
                   Cabang Rumah Kaca
                 </p>
@@ -64,9 +65,9 @@ export const HomePage = ({ setActivePage }) => {
                 </p>
               </div>
               <div>
-                <p className="font-headline-sm text-headline-sm font-serif text-primary font-bold">Harian</p>
+                <p className="font-headline-sm text-headline-sm font-serif text-primary font-bold">Setiap hari</p>
                 <p className="font-body-sm text-[12px] text-on-surface-variant uppercase tracking-wider mt-0.5 font-semibold">
-                  Dipanggang Segar
+                  Racikan Dapur Segar
                 </p>
               </div>
             </div>
