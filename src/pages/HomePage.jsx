@@ -57,13 +57,12 @@ export const HomePage = ({ setActivePage }) => {
           </div>
 
           <div className="lg:col-span-5 relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/5] bg-surface-container-high">
+            <div className="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/3.5] bg-surface-container-high border border-surface-container-high/60">
               <img
                 alt="Interior of Garden Coffee &amp; Eatery conservatory glasshouse sanctuary"
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu6yZWEvKUvJ8YRb5CdnMOHRvJ7zaSZlaSkmBplMpA1y6dV4tlbUjvF8jrcAXs-N-GUalL1M74BshEebMS93rwoRMBEyY77F7yh4bvj5rHW5pnoSYE-Lop4zekZONHb_mwms7b1tkfIv2T3K5y7KvnXCfHjwoJSk7X-RdG1grd67ZAA6nOTXEBkDstx1ogrOwm93-mjjsbdg9f-b7vRKf9BMMW1JVntOPFlVQeJCWm-vbQDSdEIG-t"
+                className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+                src="/hero-garden-coffee.jpg"
               />
-
             </div>
           </div>
         </div>
