@@ -98,51 +98,49 @@ export const HomePage = ({ setActivePage }) => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Card Visi */}
-            <div className="bg-surface rounded-2xl p-8 lg:p-10 shadow-sm border border-surface-container-high/60 flex flex-col justify-between space-y-6">
+            <div className="bg-surface rounded-2xl p-8 lg:p-10 shadow-sm border border-surface-container-high/60 flex flex-col justify-between">
               <div className="space-y-4">
-                <div className="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center">
-                  <span className="material-symbols-outlined text-2xl">visibility</span>
-                </div>
-                <div className="space-y-1">
+                <div className="space-y-2">
                   <span className="font-label-sm text-label-sm text-secondary font-bold tracking-widest uppercase">
                     Visi Kami
                   </span>
-                  <h3 className="font-title-lg text-title-lg text-primary font-serif font-bold">
-                    Oase Kopi &amp; Ruang Teduh Pilihan di Tengah Kota
+                  <h3 className="font-headline-sm text-headline-sm text-primary font-serif font-bold">
+                    Menjadi Tempat Singgah Favorit di Tengah Kota dengan Kopi Nusantara, Hidangan Segar, dan Keasrian Alam
                   </h3>
                 </div>
                 <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                  Menjadi ruang singgah hijau dan destinasi kopi spesialti terdepan di tengah dinamika perkotaan yang menghubungkan pengunjung dengan ketenangan alam, menghadirkan cita rasa kopi nusantara berkualitas tinggi, serta menginspirasi gaya hidup yang seimbang dan berkelanjutan.
+                  Menjadikan Garden Coffee &amp; Eatery sebagai ruang singgah hijau utama di tengah dinamika perkotaan—tempat setiap orang dapat beristirahat, bekerja, dan berkumpul dengan nyaman sambil menikmati seduhan kopi terbaik dari petani lokal serta sajian dapur segar dalam suasana rumah kaca yang asri dan menenangkan jiwa.
                 </p>
               </div>
             </div>
 
             {/* Card Misi */}
-            <div className="bg-surface rounded-2xl p-8 lg:p-10 shadow-sm border border-surface-container-high/60 flex flex-col justify-between space-y-6">
+            <div className="bg-surface rounded-2xl p-8 lg:p-10 shadow-sm border border-surface-container-high/60 flex flex-col justify-between">
               <div className="space-y-4">
-                <div className="w-12 h-12 rounded-xl bg-secondary text-on-secondary flex items-center justify-center">
-                  <span className="material-symbols-outlined text-2xl">flag</span>
-                </div>
-                <div className="space-y-1">
+                <div className="space-y-2">
                   <span className="font-label-sm text-label-sm text-secondary font-bold tracking-widest uppercase">
                     Misi Kami
                   </span>
-                  <h3 className="font-title-lg text-title-lg text-primary font-serif font-bold">
-                    Dedikasi Kualitas, Kenyamanan, &amp; Keberlanjutan
+                  <h3 className="font-headline-sm text-headline-sm text-primary font-serif font-bold">
+                    Dedikasi Kopi Lokal Berkualitas, Sajian Dapur Segar, &amp; Ruang Kaca yang Teduh
                   </h3>
                 </div>
-                <ul className="space-y-3 font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                <ul className="space-y-3.5 font-body-md text-body-md text-on-surface-variant leading-relaxed">
                   <li className="flex items-start gap-3">
-                    <span className="material-symbols-outlined text-secondary text-base mt-1 shrink-0">check_circle</span>
-                    <span>Menyajikan biji kopi spesialti terbaik yang dipetik langsung dari petani lokal nusantara dengan standar sangrai presisi.</span>
+                    <span className="w-2 h-2 rounded-full bg-secondary mt-2 shrink-0" />
+                    <span><strong>Menyeduh Kopi Petani Lokal:</strong> Menyajikan biji kopi pilihan terbaik dari berbagai pelosok nusantara dengan profil sangrai presisi untuk menonjolkan keaslian cita rasanya.</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="material-symbols-outlined text-secondary text-base mt-1 shrink-0">check_circle</span>
-                    <span>Menghadirkan hidangan dapur dan pastry artisan yang dibuat segar setiap hari menggunakan bahan alami berkualitas.</span>
+                    <span className="w-2 h-2 rounded-full bg-secondary mt-2 shrink-0" />
+                    <span><strong>Menyajikan Dapur &amp; Pastry Segar:</strong> Mengolah aneka menu makanan dan pastry lezat setiap hari dari bahan bermutu tinggi untuk menyempurnakan waktu santap Anda.</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="material-symbols-outlined text-secondary text-base mt-1 shrink-0">check_circle</span>
-                    <span>Menciptakan atmosfer rumah kaca botani yang asri, sejuk, dan ramah dengan pelayanan yang tulus dan hangat.</span>
+                    <span className="w-2 h-2 rounded-full bg-secondary mt-2 shrink-0" />
+                    <span><strong>Menghadirkan Nuansa Alam yang Asri:</strong> Menyediakan konsep rumah kaca hijau yang teduh dan menenangkan sebagai pelepas penat dari padatnya aktivitas kota.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-2 h-2 rounded-full bg-secondary mt-2 shrink-0" />
+                    <span><strong>Memberikan Pelayanan yang Hangat:</strong> Menyambut setiap tamu dengan ketulusan dan senyuman ramah, menghadirkan suasana akrab layaknya di rumah sendiri.</span>
                   </li>
                 </ul>
               </div>

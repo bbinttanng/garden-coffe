@@ -9,18 +9,13 @@ export const Footer = ({ setActivePage }) => {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-16 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-xs">
-                <span className="material-symbols-outlined text-lg">spa</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-serif font-bold text-lg text-primary tracking-tight leading-none">
-                  Garden Coffee
-                </span>
-                <span className="text-[9px] font-sans font-bold uppercase tracking-[0.25em] text-secondary mt-0.5">
-                  &amp; Eatery
-                </span>
-              </div>
+            <div className="flex flex-col">
+              <span className="font-serif font-bold text-2xl text-primary tracking-tight leading-none">
+                Garden Coffee
+              </span>
+              <span className="text-[10px] font-sans font-bold uppercase tracking-[0.25em] text-secondary mt-1">
+                &amp; Eatery
+              </span>
             </div>
             <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-sm">
               Suaka botani hidup yang menyatukan sangraian kopi micro-lot Indonesia, hidangan segar dapur kayu, dan ketenangan arsitektur rumah kaca tropis.

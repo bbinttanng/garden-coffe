@@ -27,18 +27,13 @@ export const MobileNavDrawer = ({ activePage, setActivePage }) => {
       {/* Drawer */}
       <nav className="relative w-[82%] max-w-sm bg-surface shadow-2xl flex flex-col z-10 border-r border-surface-container-high animate-in slide-in-from-left duration-300">
         <div className="p-6 bg-surface-container-low border-b border-surface-container-high/80 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-xs">
-              <span className="material-symbols-outlined text-lg">spa</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-serif font-bold text-lg text-primary tracking-tight leading-none">
-                Garden Coffee
-              </span>
-              <span className="text-[9px] font-sans font-bold uppercase tracking-[0.25em] text-secondary mt-0.5">
-                &amp; Eatery
-              </span>
-            </div>
+          <div className="flex flex-col">
+            <span className="font-serif font-bold text-xl text-primary tracking-tight leading-none">
+              Garden Coffee
+            </span>
+            <span className="text-[10px] font-sans font-bold uppercase tracking-[0.25em] text-secondary mt-1">
+              &amp; Eatery
+            </span>
           </div>
           <button
             onClick={closeMobileNav}

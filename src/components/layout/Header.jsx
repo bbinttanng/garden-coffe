@@ -36,19 +36,14 @@ export const Header = ({ activePage, setActivePage }) => {
         <div className="flex items-center gap-10">
           <button
             onClick={() => setActivePage('home')}
-            className="flex items-center gap-3.5 group text-left cursor-pointer"
+            className="flex flex-col group text-left cursor-pointer"
           >
-            <div className="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-xs group-hover:bg-primary-container transition-all">
-              <span className="material-symbols-outlined text-xl">spa</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-serif font-bold text-[20px] text-primary tracking-tight leading-none group-hover:text-primary-container transition-colors">
-                Garden Coffee
-              </span>
-              <span className="text-[10px] font-sans font-bold uppercase tracking-[0.25em] text-secondary mt-0.5">
-                &amp; Eatery
-              </span>
-            </div>
+            <span className="font-serif font-bold text-[22px] sm:text-[24px] text-primary tracking-tight leading-none group-hover:text-secondary transition-colors">
+              Garden Coffee
+            </span>
+            <span className="text-[10px] font-sans font-bold uppercase tracking-[0.25em] text-secondary mt-1">
+              &amp; Eatery
+            </span>
           </button>
 
           <nav className="hidden md:flex items-center gap-8">
