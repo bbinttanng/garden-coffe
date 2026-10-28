@@ -11,7 +11,7 @@ export const Header = ({ activePage, setActivePage }) => {
     { id: 'coffee', label: 'Coffee' },
     { id: 'food', label: 'Food' },
     { id: 'pastry', label: 'Pastry' },
-    { id: 'lokasi', label: 'Lokasi Store' }
+    { id: 'lokasi', label: 'Lokasi kami' }
   ];
 
   return (

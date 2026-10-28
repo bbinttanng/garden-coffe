@@ -22,21 +22,20 @@ RUN npm run build
 # ==========================================
 FROM nginx:alpine AS runner
 
-# Bersihkan file default nginx
+# Install curl untuk kompatibilitas monitoring/healthcheck
+RUN apk add --no-cache curl
+
+# Bersihkan file default bawaan Nginx
 RUN rm -rf /usr/share/nginx/html/*
 
 # Salin hasil kompilasi dari stage builder
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Salin konfigurasi kustom Nginx untuk SPA & Coolify
+# Salin konfigurasi kustom Nginx (mendukung SPA routing & dual-stack IPv4/IPv6)
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Port yang dibuka (Coolify akan mengarahkan Traefik reverse proxy ke port 80 ini)
+# Port yang dibuka untuk reverse proxy Coolify
 EXPOSE 80
-
-# Healthcheck untuk status monitoring Coolify
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD wget --quiet --tries=1 --spider http://localhost/ || exit 1
 
 # Jalankan Nginx di foreground
 CMD ["nginx", "-g", "daemon off;"]

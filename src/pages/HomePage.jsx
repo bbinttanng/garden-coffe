@@ -75,14 +75,6 @@ export const HomePage = ({ setActivePage }) => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent flex flex-col justify-end p-8 text-on-primary">
                 <span className="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed mb-1">
-                  Sanctuary Architecture
-                </span>
-                <h3 className="font-headline-sm text-headline-sm font-serif leading-snug">
-                  Senopati Heritage Glasshouse
-                </h3>
-                <p className="font-body-sm text-body-sm text-on-primary/80 mt-1">
-                  Cahaya alami, dedaunan tropis, dan aroma panggangan biji kopi sangrai.
-                </p>
               </div>
             </div>
           </div>
