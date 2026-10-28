@@ -36,19 +36,11 @@ export const HomePage = ({ setActivePage }) => {
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <button
                 type="button"
-                onClick={() => setActivePage('food')}
+                onClick={() => setActivePage('lokasi')}
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg shadow-sm hover:shadow-md transition-all cursor-pointer"
               >
-                <span>Eksplorasi Menu Food</span>
+                <span>Kunjungi Lokasi Kami</span>
                 <span className="material-symbols-outlined text-base">arrow_forward</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => setActivePage('lokasi')}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-lg text-label-lg transition-all cursor-pointer"
-              >
-                <span>Lihat Direktori Sanctuary</span>
-                <span className="material-symbols-outlined text-base">north_east</span>
               </button>
             </div>
 
