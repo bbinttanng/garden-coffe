@@ -26,12 +26,7 @@ export const Header = ({ activePage, setActivePage }) => {
             <span className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-primary-fixed"></span> Jakarta • Bandung • Bali
             </span>
-            <button
-              onClick={() => setActivePage('coffee')}
-              className="underline underline-offset-4 hover:text-primary-fixed transition-colors lowercase cursor-pointer"
-            >
-              est. 2021 • explore seasonal notes
-            </button>
+            
           </div>
         </div>
       </div>
@@ -41,14 +36,19 @@ export const Header = ({ activePage, setActivePage }) => {
         <div className="flex items-center gap-10">
           <button
             onClick={() => setActivePage('home')}
-            className="flex items-center gap-3 group text-left cursor-pointer"
+            className="flex items-center gap-3.5 group text-left cursor-pointer"
           >
-            <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-all">
-              <span className="material-symbols-outlined text-2xl">potted_plant</span>
+            <div className="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-xs group-hover:bg-primary-container transition-all">
+              <span className="material-symbols-outlined text-xl">spa</span>
             </div>
-            <span className="font-headline-sm text-headline-sm text-primary tracking-tight font-serif">
-              Garden Coffee &amp; Eatery
-            </span>
+            <div className="flex flex-col">
+              <span className="font-serif font-bold text-[20px] text-primary tracking-tight leading-none group-hover:text-primary-container transition-colors">
+                Garden Coffee
+              </span>
+              <span className="text-[10px] font-sans font-bold uppercase tracking-[0.25em] text-secondary mt-0.5">
+                &amp; Eatery
+              </span>
+            </div>
           </button>
 
           <nav className="hidden md:flex items-center gap-8">

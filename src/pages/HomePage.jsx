@@ -21,17 +21,23 @@ export const HomePage = ({ setActivePage }) => {
           <div className="lg:col-span-7 space-y-8">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-fixed font-label-md text-label-md">
               <span className="material-symbols-outlined text-sm">spa</span>
-              <span>The Botanical Roastery &amp; Culinary House</span>
+              <span>Ruang Santap &amp; Kopi Rumah Kaca</span>
             </div>
 
-            <h1 className="font-display text-display text-primary leading-tight font-serif">
-              Menghubungkan <br />
-              <span className="italic text-secondary">Manusia, Kopi, &amp; Alam.</span>
-            </h1>
+            <div className="space-y-4">
+              <h1 className="font-display text-display text-primary leading-tight font-serif">
+                Menikmati Kopi di Tengah Ketenangan Alam.
+              </h1>
 
-            <p className="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
-              Garden Coffee &amp; Eatery menginisiasi harmoni baru antara ritual kopi spesialti nusantara, kehangatan hidangan artisan dapur kayu, dan ketenangan arsitektur konservatori kaca tropis yang ramah lingkungan.
-            </p>
+              <div className="max-w-xl pt-1">
+                <span className="block font-label-sm text-[11px] uppercase tracking-widest text-secondary font-bold mb-1.5">
+                  Filosofi Kami
+                </span>
+                <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                  Garden Coffee &amp; Eatery hadir sebagai suaka hijau di tengah padatnya kota—menyajikan kopi pilihan petani lokal dan hidangan hangat dapur segar, dalam ketenangan rumah kaca botani yang dirancang untuk menemani waktu rehat Anda.
+                </p>
+              </div>
+            </div>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <button
@@ -47,20 +53,20 @@ export const HomePage = ({ setActivePage }) => {
             <div className="pt-8 grid grid-cols-3 gap-6 max-w-lg border-t border-surface-container-high/60">
               <div>
                 <p className="font-headline-sm text-headline-sm font-serif text-primary font-bold">14</p>
-                <p className="font-body-sm text-[12px] text-on-surface-variant uppercase tracking-wider mt-0.5">
-                  Glasshouse Havens
+                <p className="font-body-sm text-[12px] text-on-surface-variant uppercase tracking-wider mt-0.5 font-semibold">
+                  Cabang Rumah Kaca
                 </p>
               </div>
               <div>
                 <p className="font-headline-sm text-headline-sm font-serif text-primary font-bold">100%</p>
-                <p className="font-body-sm text-[12px] text-on-surface-variant uppercase tracking-wider mt-0.5">
-                  Direct Trade Volcanic
+                <p className="font-body-sm text-[12px] text-on-surface-variant uppercase tracking-wider mt-0.5 font-semibold">
+                  Kopi Petani Lokal
                 </p>
               </div>
               <div>
-                <p className="font-headline-sm text-headline-sm font-serif text-primary font-bold">Zero</p>
-                <p className="font-body-sm text-[12px] text-on-surface-variant uppercase tracking-wider mt-0.5">
-                  Net Roastery Carbon
+                <p className="font-headline-sm text-headline-sm font-serif text-primary font-bold">Harian</p>
+                <p className="font-body-sm text-[12px] text-on-surface-variant uppercase tracking-wider mt-0.5 font-semibold">
+                  Dipanggang Segar
                 </p>
               </div>
             </div>
