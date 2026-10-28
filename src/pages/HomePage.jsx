@@ -71,24 +71,29 @@ export const HomePage = ({ setActivePage }) => {
       {/* Brand Essence / Tiga Pilar Kami */}
       <section id="our-story" className="w-full bg-surface-container-low py-16 lg:py-24 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="max-w-2xl mb-16">
-            <span className="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-semibold">
-              Motto &amp; Visi Misi
-            </span>
-            <h2 className="font-headline-lg text-headline-lg text-primary font-serif tracking-tight mt-1">
-              Motto kami
-            </h2>
-            <p className="font-body-lg text-body-lg text-on-surface-variant mt-3">
-              Setiap cangkir dan sajian diracik dengan standar kualitas tertinggi, menjunjung kenyamanan dan pengalaman bagi setiap pelanggan.
-            </p>
+          {/* Highlighted Motto Header */}
+          <div className="max-w-3xl mb-14">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/70 text-on-secondary-fixed text-[11px] font-bold uppercase tracking-widest mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+              <span>Motto &amp; Visi Misi</span>
+            </div>
+
+            <div className="p-6 sm:p-7 rounded-2xl bg-white border border-surface-container-high border-l-4 border-l-primary shadow-xs space-y-2">
+              <span className="block font-label-sm text-xs uppercase tracking-widest text-secondary font-bold">
+                Motto Kami
+              </span>
+              <p className="font-serif italic text-lg sm:text-xl text-primary font-medium leading-relaxed">
+                "Setiap cangkir dan sajian diracik dengan standar kualitas tertinggi, menjunjung kenyamanan dan pengalaman bagi setiap pelanggan."
+              </p>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Card Visi */}
-            <div className="bg-surface rounded-2xl p-8 lg:p-10 shadow-sm border border-surface-container-high/60 flex flex-col justify-between">
+            {/* Card Visi - Emerald Accent */}
+            <div className="bg-white rounded-2xl p-8 lg:p-10 shadow-xs hover:shadow-md transition-shadow border border-surface-container-high border-t-4 border-t-primary flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <span className="font-label-sm text-label-sm text-secondary font-bold tracking-widest uppercase">
+                  <span className="inline-block px-3 py-1 rounded-full bg-secondary-container/60 text-primary font-label-sm text-[11px] font-bold tracking-widest uppercase">
                     Visi Kami
                   </span>
                   <h3 className="font-headline-sm text-headline-sm text-primary font-serif font-bold">
@@ -101,11 +106,11 @@ export const HomePage = ({ setActivePage }) => {
               </div>
             </div>
 
-            {/* Card Misi */}
-            <div className="bg-surface rounded-2xl p-8 lg:p-10 shadow-sm border border-surface-container-high/60 flex flex-col justify-between">
+            {/* Card Misi - Warm Amber Accent */}
+            <div className="bg-white rounded-2xl p-8 lg:p-10 shadow-xs hover:shadow-md transition-shadow border border-surface-container-high border-t-4 border-t-tertiary flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <span className="font-label-sm text-label-sm text-secondary font-bold tracking-widest uppercase">
+                  <span className="inline-block px-3 py-1 rounded-full bg-tertiary-fixed text-tertiary font-label-sm text-[11px] font-bold tracking-widest uppercase">
                     Misi Kami
                   </span>
                   <h3 className="font-headline-sm text-headline-sm text-primary font-serif font-bold">
@@ -114,19 +119,19 @@ export const HomePage = ({ setActivePage }) => {
                 </div>
                 <ul className="space-y-3.5 font-body-md text-body-md text-on-surface-variant leading-relaxed">
                   <li className="flex items-start gap-3">
-                    <span className="w-2 h-2 rounded-full bg-secondary mt-2 shrink-0" />
+                    <span className="w-2 h-2 rounded-full bg-tertiary mt-2 shrink-0" />
                     <span><strong>Menyeduh kopi berkualitas tinggi:</strong> Menyajikan biji kopi pilihan terbaik dari berbagai pelosok nusantara dengan pengolahan terbaik untuk menonjolkan keaslian cita rasanya.</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-2 h-2 rounded-full bg-secondary mt-2 shrink-0" />
+                    <span className="w-2 h-2 rounded-full bg-tertiary mt-2 shrink-0" />
                     <span><strong>Menyajikan hidangan terbaik:</strong> Mengolah aneka menu makanan dan pastry lezat setiap hari dari bahan berkualitas tinggi untuk memberikan pengalaman makan terbaik untuk anda.</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-2 h-2 rounded-full bg-secondary mt-2 shrink-0" />
+                    <span className="w-2 h-2 rounded-full bg-tertiary mt-2 shrink-0" />
                     <span><strong>Menghadirkan Nuansa Alam yang Asri:</strong> Menyediakan konsep ruang kaca hijau yang teduh dan menenangkan sebagai pelepas penat dari padatnya aktivitas kota.</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-2 h-2 rounded-full bg-secondary mt-2 shrink-0" />
+                    <span className="w-2 h-2 rounded-full bg-tertiary mt-2 shrink-0" />
                     <span><strong>Memberikan Pelayanan yang Ramah dan Hangat:</strong> Menyambut setiap tamu dengan ketulusan dan senyuman ramah, menghadirkan suasana akrab layaknya di rumah sendiri.</span>
                   </li>
                 </ul>
