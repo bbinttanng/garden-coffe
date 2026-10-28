@@ -50,19 +50,19 @@ export const HomePage = ({ setActivePage }) => {
               <div>
                 <p className="font-headline-sm text-headline-sm font-serif text-primary font-bold">5</p>
                 <p className="font-body-sm text-[12px] text-on-surface-variant uppercase tracking-wider mt-0.5 font-semibold">
-                  Cabang Rumah Kaca
+                  Toko kami
                 </p>
               </div>
               <div>
                 <p className="font-headline-sm text-headline-sm font-serif text-primary font-bold">100%</p>
                 <p className="font-body-sm text-[12px] text-on-surface-variant uppercase tracking-wider mt-0.5 font-semibold">
-                  Kopi Petani Lokal
+                  Biji kopi Petani Lokal
                 </p>
               </div>
               <div>
                 <p className="font-headline-sm text-headline-sm font-serif text-primary font-bold">Setiap hari</p>
                 <p className="font-body-sm text-[12px] text-on-surface-variant uppercase tracking-wider mt-0.5 font-semibold">
-                  Racikan Dapur Segar
+                  Sajian dan seduhan segar
                 </p>
               </div>
             </div>
@@ -86,95 +86,65 @@ export const HomePage = ({ setActivePage }) => {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="max-w-2xl mb-16">
             <span className="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-semibold">
-              Filosofi &amp; Landasan
+              Motto &amp; Visi Misi
             </span>
             <h2 className="font-headline-lg text-headline-lg text-primary font-serif tracking-tight mt-1">
-              Tiga Pilar Keunggulan Kami
+              Motto kami
             </h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant mt-3">
-              Setiap cangkir dan sajian diracik dengan standar kurasi tertinggi, menjunjung integritas alam dan kemahiran tangan pengrajin kuliner.
+              Setiap cangkir dan sajian diracik dengan standar kualitas tertinggi, menjunjung kenyamanan dan pengalaman bagi setiap pelanggan.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-surface rounded-2xl p-8 shadow-sm flex flex-col justify-between space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Card Visi */}
+            <div className="bg-surface rounded-2xl p-8 lg:p-10 shadow-sm border border-surface-container-high/60 flex flex-col justify-between space-y-6">
               <div className="space-y-4">
                 <div className="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center">
-                  <span className="material-symbols-outlined text-2xl">local_cafe</span>
+                  <span className="material-symbols-outlined text-2xl">visibility</span>
                 </div>
                 <div className="space-y-1">
-                  <span className="font-label-sm text-label-sm text-secondary font-bold tracking-widest">
-                    01 • THE ROASTERY
+                  <span className="font-label-sm text-label-sm text-secondary font-bold tracking-widest uppercase">
+                    Visi Kami
                   </span>
-                  <h3 className="font-title-lg text-title-lg text-primary font-serif">Specialty Terroir Beans</h3>
+                  <h3 className="font-title-lg text-title-lg text-primary font-serif font-bold">
+                    Oase Kopi &amp; Ruang Teduh Pilihan di Tengah Kota
+                  </h3>
                 </div>
                 <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                  Biji kopi microlot arabika bersertifikasi biodinamik yang dipetik selektif dari tanah vulkanik Aceh Gayo, Toraja Sapan, hingga Kintamani. Disangrai dengan profil presisi untuk menonjolkan keaslian karakter rasa tanah asal.
+                  Menjadi ruang singgah hijau dan destinasi kopi spesialti terdepan di tengah dinamika perkotaan yang menghubungkan pengunjung dengan ketenangan alam, menghadirkan cita rasa kopi nusantara berkualitas tinggi, serta menginspirasi gaya hidup yang seimbang dan berkelanjutan.
                 </p>
-              </div>
-              <div className="pt-4 border-t border-surface-container">
-                <button
-                  type="button"
-                  onClick={() => setActivePage('coffee')}
-                  className="inline-flex items-center gap-2 font-label-md text-label-md text-primary font-semibold hover:text-secondary transition-colors cursor-pointer"
-                >
-                  <span>Koleksi Coffee</span>
-                  <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </button>
               </div>
             </div>
 
-            <div className="bg-surface rounded-2xl p-8 shadow-sm flex flex-col justify-between space-y-6">
+            {/* Card Misi */}
+            <div className="bg-surface rounded-2xl p-8 lg:p-10 shadow-sm border border-surface-container-high/60 flex flex-col justify-between space-y-6">
               <div className="space-y-4">
                 <div className="w-12 h-12 rounded-xl bg-secondary text-on-secondary flex items-center justify-center">
-                  <span className="material-symbols-outlined text-2xl">bakery_dining</span>
+                  <span className="material-symbols-outlined text-2xl">flag</span>
                 </div>
                 <div className="space-y-1">
-                  <span className="font-label-sm text-label-sm text-secondary font-bold tracking-widest">
-                    02 • THE HEARTH &amp; OVEN
+                  <span className="font-label-sm text-label-sm text-secondary font-bold tracking-widest uppercase">
+                    Misi Kami
                   </span>
-                  <h3 className="font-title-lg text-title-lg text-primary font-serif">Artisan Culinary Craft</h3>
+                  <h3 className="font-title-lg text-title-lg text-primary font-serif font-bold">
+                    Dedikasi Kualitas, Kenyamanan, &amp; Keberlanjutan
+                  </h3>
                 </div>
-                <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                  Ragi liar dengan fermentasi lambat 48 jam, viennoiserie mentega Prancis yang dipanggang segar setiap subuh, serta racikan dapur botani yang memanfaatkan hasil bumi dataran tinggi nusantara.
-                </p>
-              </div>
-              <div className="pt-4 border-t border-surface-container">
-                <button
-                  type="button"
-                  onClick={() => setActivePage('food')}
-                  className="inline-flex items-center gap-2 font-label-md text-label-md text-primary font-semibold hover:text-secondary transition-colors cursor-pointer"
-                >
-                  <span>Dapur &amp; Pastry Kami</span>
-                  <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </button>
-              </div>
-            </div>
-
-            <div className="bg-surface rounded-2xl p-8 shadow-sm flex flex-col justify-between space-y-6">
-              <div className="space-y-4">
-                <div className="w-12 h-12 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center">
-                  <span className="material-symbols-outlined text-2xl">potted_plant</span>
-                </div>
-                <div className="space-y-1">
-                  <span className="font-label-sm text-label-sm text-secondary font-bold tracking-widest">
-                    03 • BIOPHILIC HAVEN
-                  </span>
-                  <h3 className="font-title-lg text-title-lg text-primary font-serif">Living Glasshouse Oasis</h3>
-                </div>
-                <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                  Ruang arsitektural beratapkan kubah kaca dan tanaman pembersih udara. Dirancang sebagai ruang hening di tengah dinamika metropolitan untuk bekerja, berbincang, dan berkontemplasi.
-                </p>
-              </div>
-              <div className="pt-4 border-t border-surface-container">
-                <button
-                  type="button"
-                  onClick={() => setActivePage('lokasi')}
-                  className="inline-flex items-center gap-2 font-label-md text-label-md text-primary font-semibold hover:text-secondary transition-colors cursor-pointer"
-                >
-                  <span>Toko kami</span>
-                  <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </button>
+                <ul className="space-y-3 font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                  <li className="flex items-start gap-3">
+                    <span className="material-symbols-outlined text-secondary text-base mt-1 shrink-0">check_circle</span>
+                    <span>Menyajikan biji kopi spesialti terbaik yang dipetik langsung dari petani lokal nusantara dengan standar sangrai presisi.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="material-symbols-outlined text-secondary text-base mt-1 shrink-0">check_circle</span>
+                    <span>Menghadirkan hidangan dapur dan pastry artisan yang dibuat segar setiap hari menggunakan bahan alami berkualitas.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="material-symbols-outlined text-secondary text-base mt-1 shrink-0">check_circle</span>
+                    <span>Menciptakan atmosfer rumah kaca botani yang asri, sejuk, dan ramah dengan pelayanan yang tulus dan hangat.</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
