@@ -73,9 +73,7 @@ export const HomePage = ({ setActivePage }) => {
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu6yZWEvKUvJ8YRb5CdnMOHRvJ7zaSZlaSkmBplMpA1y6dV4tlbUjvF8jrcAXs-N-GUalL1M74BshEebMS93rwoRMBEyY77F7yh4bvj5rHW5pnoSYE-Lop4zekZONHb_mwms7b1tkfIv2T3K5y7KvnXCfHjwoJSk7X-RdG1grd67ZAA6nOTXEBkDstx1ogrOwm93-mjjsbdg9f-b7vRKf9BMMW1JVntOPFlVQeJCWm-vbQDSdEIG-t"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent flex flex-col justify-end p-8 text-on-primary">
-                <span className="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed mb-1">
-              </div>
+
             </div>
           </div>
         </div>
