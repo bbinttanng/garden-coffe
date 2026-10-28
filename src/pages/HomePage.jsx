@@ -149,8 +149,105 @@ export const HomePage = ({ setActivePage }) => {
         </div>
       </section>
 
+      {/* Curated Experience Gateways (3-Grid Cards: Coffee, Food, Pastry) */}
+      <section className="max-w-7xl mx-auto px-6 lg:px-12 w-full py-16 lg:py-24">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div>
+            <span className="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-semibold">
+              Eksplorasi
+            </span>
+            <h2 className="font-headline-lg text-headline-lg text-primary font-serif tracking-tight mt-1">
+              Temukan pengalaman terbaik anda
+            </h2>
+            <p className="font-body-md text-body-md text-on-surface-variant max-w-xl mt-2">
+              Cari ragam inovasi menu kami, seduhan coffee kami, dan racikan dapur segar dari dekat anda.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            onClick={() => setActivePage('coffee')}
+            className="group bg-surface-container rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between p-4 cursor-pointer"
+          >
+            <div className="relative aspect-[4/3] rounded-xl overflow-hidden mb-4 bg-surface-container-high">
+              <img
+                alt="Artisanal Coffee &amp; Roastery"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxy3vtevWnY_khG4iKiSs_W3FmyZq4d3coXk6wdNn1__gGFiWqejK-T_mZIpWgncGEwntiIOaWZcb26IDNQrN8Z6r9ZJG_x5I8GllzcwY9owrGOqglAkUSQ-i47DNRAvGeQIqGvJn6H9Tfk-Tsz5wKPGhL4_3UHXLNV0thflY9vvSxaTOA8kL0IR13oFQkyC5hHDHsied_FFPCQKNXDB-uxkmwxuYufOO7bw5mqt8Ts6MK40JZIHK2"
+              />
+            </div>
+            <div className="p-2">
+              <span className="font-label-sm text-[11px] uppercase tracking-wider text-secondary font-semibold">
+                Single-Origin &amp; Cold Brew
+              </span>
+              <h3 className="font-title-lg text-title-lg text-primary font-serif mt-1">Specialty Coffee</h3>
+              <p className="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+                Kurasi biji kopi mikro terroir nusantara dan racikan botani dingin inovatif.
+              </p>
+              <div className="pt-4 flex items-center gap-1.5 font-label-md text-label-md text-primary font-bold group-hover:gap-2.5 transition-all">
+                <span>Jelajahi Coffee</span>
+                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            onClick={() => setActivePage('food')}
+            className="group bg-surface-container rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between p-4 cursor-pointer"
+          >
+            <div className="relative aspect-[4/3] rounded-xl overflow-hidden mb-4 bg-surface-container-high">
+              <img
+                alt="Farm-to-Table Kitchen"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfDx20VJDrBbaP0WpG9xSOGcn3ncbg9qw0O1jfFZWRoI3E-jb87OxrM1fiJshCehLEjy2GPslGXJpJVI2RONojNB5FZv9TFe7VrE3O7qjyevpn1gdQ73U3Hiz5Knx64AjhsF6BI75iJbIyd5iI5LBvujJqi80zPaFnkIPaITX-I7TS9WnIj_1dD71xtFhcBBpa5CRRvwIFphePabXdOh9oAE4BYchB0Ztv5SVnC-7u7yZB9BScgIc2"
+              />
+            </div>
+            <div className="p-2">
+              <span className="font-label-sm text-[11px] uppercase tracking-wider text-secondary font-semibold">
+                Kitchen Hearth &amp; Harvest
+              </span>
+              <h3 className="font-title-lg text-title-lg text-primary font-serif mt-1">Botanical Food</h3>
+              <p className="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+                Sajian santap siang hangat, brioche melts leleh, dan pasta buatan tangan.
+              </p>
+              <div className="pt-4 flex items-center gap-1.5 font-label-md text-label-md text-primary font-bold group-hover:gap-2.5 transition-all">
+                <span>Jelajahi Food</span>
+                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            onClick={() => setActivePage('pastry')}
+            className="group bg-surface-container rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between p-4 cursor-pointer"
+          >
+            <div className="relative aspect-[4/3] rounded-xl overflow-hidden mb-4 bg-surface-container-high">
+              <img
+                alt="Botanical Viennoiserie &amp; Bakes"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBUFBsbrDcjNwIPGpSJNB381UIyMV0eyjCEly4XAsmeHu4OcOnImh_t4AfgbUawopIN4sn-VJQyzdGyYYw-1OiaggK2kwSIWnL8B-hX-wx9gENe2Zoe5L_Klu5C5xiFbmc-ToCfyMQ3mupb-WnNNM21bTd7PQm0ys9Wck9B9m9f4iQPG7ELbnDA5h3SVaAqx-YB2NCUi8tP0R9s9JXJDO9my41M1tjnnwkh41L1Nb6O3qhtNNGaqlK"
+              />
+            </div>
+            <div className="p-2">
+              <span className="font-label-sm text-[11px] uppercase tracking-wider text-secondary font-semibold">
+                Handcrafted French Bakehouse
+              </span>
+              <h3 className="font-title-lg text-title-lg text-primary font-serif mt-1">Artisan Pastry</h3>
+              <p className="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+                Croissant mentega berlapis keemasan, sourdough berpori, dan scone bunga liar.
+              </p>
+              <div className="pt-4 flex items-center gap-1.5 font-label-md text-label-md text-primary font-bold group-hover:gap-2.5 transition-all">
+                <span>Jelajahi Pastry</span>
+                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Sustainability & Social Impact */}
-      <section id="social-impact" className="max-w-7xl mx-auto px-6 lg:px-12 w-full py-16 lg:py-24 scroll-mt-24">
+      <section id="social-impact" className="max-w-7xl mx-auto px-6 lg:px-12 w-full pb-16 lg:pb-24 scroll-mt-24">
         <div className="bg-primary text-on-primary rounded-3xl p-8 lg:p-14 shadow-lg relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center relative z-10">
             <div className="lg:col-span-7 space-y-6">
