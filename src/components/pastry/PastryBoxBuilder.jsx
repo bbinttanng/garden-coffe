@@ -1,3 +1,4 @@
+import { Icon } from '../ui/Icon';
 import React, { useState } from 'react';
 import { useCart } from '../../context/CartContext';
 import { useModals } from '../../context/ModalContext';
@@ -48,7 +49,7 @@ export const PastryBoxBuilder = () => {
       price,
       category: 'Pastry Box',
       options: selectedItems.join(', '),
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDBUFBsbrDcjNwIPGpSJNB381UIyMV0eyjCEly4XAsmeHu4OcOnImh_t4AfgbUawopIN4sn-VJQyzdGyYYw-1OiaggK2kwSIWnL8B-hX-wx9gENe2Zoe5L_Klu5C5xiFbmc-ToCfyMQ3mupb-WnNNM21bTd7PQm0ys9Wck9B9m9f4iQPG7ELbnDA5h3SVaAqx-YB2NCUi8tP0R9s9JXJDO9my41M1tjnnwkh41L1Nb6O3qhtNNGaqlK'
+      image: '/images/img_1.jpg'
     });
     showToast('Box Dimasukkan ke Keranjang', `Bespoke ${boxCapacity}-Piece Pastry Box telah masuk ke baki pesanan.`);
     openCart();
@@ -64,7 +65,7 @@ export const PastryBoxBuilder = () => {
           <div className="lg:w-5/12 space-y-6">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-fixed text-xs font-bold uppercase tracking-wider mb-2">
-                <span className="material-symbols-outlined text-sm">featured_seasonal_and_gifts</span>
+                <Icon name="featured_seasonal_and_gifts" className="w-4 h-4" />
                 <span>The Conservatory Gift House</span>
               </div>
               <h2 className="font-headline-lg text-headline-lg font-serif text-primary">
@@ -132,7 +133,7 @@ export const PastryBoxBuilder = () => {
                     onClick={() => handleAddItem(pName)}
                     className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface hover:bg-primary hover:text-on-primary border border-surface-container-high font-label-sm text-[12px] text-on-surface transition-all cursor-pointer group"
                   >
-                    <span className="material-symbols-outlined text-sm text-secondary group-hover:text-on-primary">add</span>
+                    <Icon name="add" className="w-4 h-4" />
                     <span>{pName}</span>
                   </button>
                 ))}
@@ -157,7 +158,7 @@ export const PastryBoxBuilder = () => {
                   onClick={handleClear}
                   className="font-label-sm text-on-surface-variant hover:text-error transition-colors flex items-center gap-1 text-xs cursor-pointer"
                 >
-                  <span className="material-symbols-outlined text-sm">delete_sweep</span>
+                  <Icon name="delete_sweep" className="w-4 h-4" />
                   <span>Kosongkan</span>
                 </button>
               )}
@@ -187,7 +188,7 @@ export const PastryBoxBuilder = () => {
                             onClick={() => handleRemoveItem(i)}
                             className="text-on-surface-variant hover:text-error transition-colors cursor-pointer"
                           >
-                            <span className="material-symbols-outlined text-sm">close</span>
+                            <Icon name="close" className="w-4 h-4" />
                           </button>
                         </div>
                         <p className="font-label-md text-label-md text-on-surface font-semibold line-clamp-2 my-auto">
@@ -197,7 +198,7 @@ export const PastryBoxBuilder = () => {
                       </>
                     ) : (
                       <div className="text-center p-2">
-                        <span className="material-symbols-outlined text-outline text-xl mb-1">add_circle_outline</span>
+                        <Icon name="add_circle_outline" className="w-5 h-5 text-outline" />
                         <p className="font-label-sm text-label-sm text-on-surface-variant">
                           Slot {i + 1} Kosong
                         </p>
@@ -220,7 +221,7 @@ export const PastryBoxBuilder = () => {
                     : 'bg-primary/40 text-on-primary/70 cursor-not-allowed'
                 }`}
               >
-                <span className="material-symbols-outlined text-lg">redeem</span>
+                <Icon name="redeem" className="w-5 h-5" />
                 <span>
                   {isFull
                     ? `Pesan Box Kurasi (Rp ${boxCapacity === 4 ? '175.000' : '250.000'})`

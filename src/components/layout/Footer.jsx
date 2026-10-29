@@ -1,8 +1,9 @@
 import React from 'react';
 import { useModals } from '../../context/ModalContext';
+import { Icon } from '../ui/Icon';
 
 export const Footer = ({ setActivePage }) => {
-  const { openCart, showToast } = useModals();
+  const { openReservationModal, showToast } = useModals();
 
   return (
     <footer className="w-full bg-surface-container-low mt-20 border-t border-surface-container-high/60">
@@ -10,13 +11,20 @@ export const Footer = ({ setActivePage }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex flex-col">
-              <span className="font-serif font-bold text-2xl text-primary tracking-tight leading-none">
-                Garden Coffee
-              </span>
-              <span className="text-[10px] font-sans font-bold uppercase tracking-[0.25em] text-secondary mt-1">
-                &amp; Eatery
-              </span>
+            <div className="flex items-center gap-3.5">
+              <img
+                src="/logo.png"
+                alt="Garden Coffee Brand Mark"
+                className="w-12 h-12 object-contain shrink-0"
+              />
+              <div className="flex flex-col">
+                <span className="font-serif font-bold text-2xl text-primary tracking-tight leading-none">
+                  Garden Coffee
+                </span>
+                <span className="text-[10px] font-sans font-bold uppercase tracking-[0.25em] text-secondary mt-1">
+                  &amp; Eatery
+                </span>
+              </div>
             </div>
             <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-sm">
               Tempat singgah hijau di tengah kota menyajikan kopi terbaik dari petani lokal dan hidangan dapur segar dalam nuansa alam yang asri.
@@ -27,8 +35,17 @@ export const Footer = ({ setActivePage }) => {
                 className="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors cursor-pointer"
                 title="Instagram"
               >
-                <span className="material-symbols-outlined text-lg">photo_camera</span>
+                <Icon name="photo_camera" className="w-4 h-4" />
               </button>
+              <a
+                href="https://wa.me/6281234567890"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-[#25D366] hover:text-white transition-colors"
+                title="Chat WhatsApp"
+              >
+                <Icon name="whatsapp" className="w-4 h-4" />
+              </a>
             </div>
           </div>
 
@@ -60,7 +77,7 @@ export const Footer = ({ setActivePage }) => {
             <ul className="space-y-3 font-body-sm text-body-sm text-on-surface-variant">
               <li>
                 <button onClick={() => setActivePage('lokasi')} className="hover:text-primary transition-colors cursor-pointer text-left">
-                  Lokasi Toko Kami
+                  Lokasi Suaka Kami
                 </button>
               </li>
               <li>
@@ -81,8 +98,8 @@ export const Footer = ({ setActivePage }) => {
             <h4 className="font-title-md text-title-md text-on-surface font-semibold mb-4">Layanan</h4>
             <ul className="space-y-3 font-body-sm text-body-sm text-on-surface-variant">
               <li>
-                <button onClick={openCart} className="hover:text-primary transition-colors cursor-pointer text-left">
-                  Keranjang Pesanan
+                <button onClick={() => openReservationModal()} className="hover:text-primary transition-colors cursor-pointer text-left">
+                  Reservasi Meja
                 </button>
               </li>
               <li>
@@ -95,9 +112,10 @@ export const Footer = ({ setActivePage }) => {
                   href="https://wa.me/6281234567890"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-primary transition-colors text-left inline-block"
+                  className="hover:text-primary transition-colors text-left inline-flex items-center gap-1.5"
                 >
-                  Hubungi Barista Kami
+                  <Icon name="whatsapp" className="w-3.5 h-3.5 text-[#25D366]" />
+                  <span>WhatsApp Barista</span>
                 </a>
               </li>
             </ul>
@@ -122,7 +140,7 @@ export const Footer = ({ setActivePage }) => {
             </button>
           </div>
           <p className="text-on-surface-variant/80 font-body-sm text-xs mt-1">
-            &copy; 2025 Garden Coffee &amp; Eatery. Hak cipta dilindungi.
+            &copy; 2026 Garden Coffee &amp; Eatery. Hak cipta dilindungi.
           </p>
         </div>
       </div>

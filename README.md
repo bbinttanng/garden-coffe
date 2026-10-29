@@ -11,7 +11,7 @@ Proyek frontend modern, modular, dan responsif untuk **Garden Coffee & Eatery** 
    - **Coffee (`#coffee`):** Sorotan roast dial spectrum, panen single-origin Panama Honey Geisha, filter roastery, pencarian live, dan kartu langganan biji kopi dua mingguan.
    - **Food (`#food`):** Kisah dapur kayu & kebun hidroponik, filter kategori (Botanical Plates, Hearth Breads, dll), live search, dan kartu culinary highlights.
    - **Pastry (`#pastry`):** 48-hour slow lamination, status oven timer, katalog viennoiserie mentega Prancis, **Interactive 4 & 6-Piece Pastry Gift Box Builder**, dan paket rekomendasi *Morning Sommelier Pairings*.
-   - **Lokasi Store (`#lokasi`):** Direktori 14 rumah kaca di Jakarta, Tangerang, Bandung, & Bali. Filter distrik, pemilih wilayah, chip fasilitas (Pet-Friendly, Slow Bar, Drive-Thru, dll), tombol **"Terdekat Saya" (GPS mock)**, **Interactive Map Navigator** dengan pin reaktif & kalkulasi jarak rute, serta pemesanan *Private Glasshouse Event*.
+   - **Lokasi Store (`#lokasi`):** Direktori 5 rumah kaca di Jakarta, Tangerang, Bandung, & Bali. Filter distrik, pemilih wilayah, chip fasilitas (Pet-Friendly, Slow Bar, Drive-Thru, dll), tombol **"Terdekat Saya" (GPS mock)**, **Interactive Map Navigator** dengan pin reaktif & kalkulasi jarak rute, serta pemesanan *Private Glasshouse Event*.
 
 2. **Interaktivitas Global & State Management:**
    - **Baki Pesanan / Cart Drawer:** Slider samping keranjang dengan pemilihan mode santap (*Dine-In*, *Takeaway*, *Eco Delivery*), pengatur jumlah (+/-), hapus item, rincian subtotal/pajak/ongkir, dan persistensi otomatis ke `localStorage` (`garden_coffee_cart_v1`).

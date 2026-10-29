@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useCart } from '../../context/CartContext';
 import { useModals } from '../../context/ModalContext';
+import { Icon } from '../ui/Icon';
 
 export const CheckoutModal = () => {
   const { cart, deliveryMode, totals, formatRupiah, clearCart } = useCart();
@@ -8,8 +9,9 @@ export const CheckoutModal = () => {
 
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
+  const [store, setStore] = useState('Senopati Conservatory Sanctuary');
   const [location, setLocation] = useState('');
-  const [paymentMethod, setPaymentMethod] = useState('QRIS');
+  const [paymentMethod, setPaymentMethod] = useState('QRIS Instant');
   const [notes, setNotes] = useState('');
 
   if (!isCheckoutOpen) return null;
@@ -20,10 +22,11 @@ export const CheckoutModal = () => {
 
     const orderData = {
       orderId,
-      name: name || 'Tamu Sanctuary',
+      name: name || 'Tamu Suaka',
       phone,
+      store,
       mode: deliveryMode,
-      location: location || 'Area Konservatori',
+      location: location || (deliveryMode === 'dine-in' ? 'Meja Terbuka' : 'Ambil Langsung'),
       paymentMethod,
       notes,
       items: [...cart],
@@ -39,25 +42,49 @@ export const CheckoutModal = () => {
     <div className="fixed inset-0 z-50 bg-on-surface/50 backdrop-blur-md flex items-center justify-center p-4">
       <div className="bg-surface rounded-3xl max-w-lg w-full max-h-[90vh] overflow-y-auto botanical-modal-shadow border border-surface-container-high p-6 lg:p-8 space-y-6 animate-in zoom-in-95 duration-200">
         <div className="flex items-center justify-between pb-4 border-b border-surface-container-high">
-          <div>
-            <span className="font-label-sm text-secondary uppercase tracking-widest font-bold">
-              Konfirmasi Pemesanan
-            </span>
-            <h3 className="font-headline-sm text-title-lg font-serif text-primary mt-0.5">
-              Selesaikan Pesanan Sanctuary
-            </h3>
+          <div className="flex items-center gap-3">
+            <img
+              src="/logo.png"
+              alt="Garden Coffee Brand Mark"
+              className="w-10 h-10 object-contain shrink-0"
+            />
+            <div>
+              <span className="font-label-sm text-secondary uppercase tracking-widest font-bold">
+                Konfirmasi Pemesanan
+              </span>
+              <h3 className="font-headline-sm text-title-lg font-serif text-primary mt-0.5">
+                Selesaikan Pesanan Suaka
+              </h3>
+            </div>
           </div>
           <button
             onClick={closeCheckout}
-            className="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant hover:text-primary flex items-center justify-center cursor-pointer"
+            className="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant hover:text-primary flex items-center justify-center cursor-pointer transition-colors"
           >
-            <span className="material-symbols-outlined text-base">close</span>
+            <Icon name="close" className="w-4 h-4" />
           </button>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1.5">
+            <label className="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1.5 font-bold">
+              Pilih Cabang Suaka Terdekat
+            </label>
+            <select
+              value={store}
+              onChange={(e) => setStore(e.target.value)}
+              className="w-full px-4 py-3 rounded-xl bg-surface-container text-on-surface font-body-md border border-transparent focus:border-primary/30 focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer"
+            >
+              <option value="Senopati Conservatory Sanctuary">Senopati Conservatory Sanctuary (Jakarta Selatan)</option>
+              <option value="Menteng Heritage Glasshouse">Menteng Heritage Glasshouse (Jakarta Pusat)</option>
+              <option value="BSD Green Terrace & Drive-Thru">BSD Green Terrace &amp; Drive-Thru (Tangerang)</option>
+              <option value="Bandung Pine Hills Sanctuary">Bandung Pine Hills Sanctuary (Dago Atas)</option>
+              <option value="Canggu Eco-Pavilion Bali">Canggu Eco-Pavilion Bali (Canggu)</option>
+            </select>
+          </div>
+
+          <div>
+            <label className="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1.5 font-bold">
               Nama Pemesan
             </label>
             <input
@@ -65,14 +92,14 @@ export const CheckoutModal = () => {
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Nama lengkap Anda"
+              placeholder="Nama Anda"
               className="w-full px-4 py-3 rounded-xl bg-surface-container text-on-surface font-body-md border border-transparent focus:border-primary/30 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
             />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1.5">
+              <label className="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1.5 font-bold">
                 No. WhatsApp
               </label>
               <input
@@ -85,7 +112,7 @@ export const CheckoutModal = () => {
               />
             </div>
             <div>
-              <label className="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1.5">
+              <label className="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1.5 font-bold">
                 {deliveryMode === 'delivery'
                   ? 'Alamat Pengantaran'
                   : deliveryMode === 'takeaway'
@@ -99,10 +126,10 @@ export const CheckoutModal = () => {
                 onChange={(e) => setLocation(e.target.value)}
                 placeholder={
                   deliveryMode === 'delivery'
-                    ? 'Alamat lengkap & detail area'
+                    ? 'Alamat lengkap & detail'
                     : deliveryMode === 'takeaway'
                     ? 'Cth. Pukul 15:00 WIB'
-                    : 'Cth. Meja 07 / Bar Konservatori'
+                    : 'Cth. Meja 07 / Bar'
                 }
                 className="w-full px-4 py-3 rounded-xl bg-surface-container text-on-surface font-body-md border border-transparent focus:border-primary/30 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
               />
@@ -110,14 +137,14 @@ export const CheckoutModal = () => {
           </div>
 
           <div>
-            <label className="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1.5">
-              Metode Pembayaran
+            <label className="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1.5 font-bold">
+              Pilihan Pembayaran
             </label>
             <div className="grid grid-cols-3 gap-2.5">
               {[
-                { id: 'QRIS', label: 'QRIS Instant', icon: 'qr_code_2' },
-                { id: 'Virtual Account', label: 'Virtual Acc.', icon: 'account_balance' },
-                { id: 'Kartu Kredit', label: 'Kartu / CC', icon: 'credit_card' }
+                { id: 'QRIS Instant', label: 'QRIS Barista' },
+                { id: 'Transfer VA', label: 'Virtual Account' },
+                { id: 'Bayar di Kasir', label: 'Kasir / Tunai' }
               ].map((m) => {
                 const isSelected = paymentMethod === m.id;
                 return (
@@ -125,14 +152,14 @@ export const CheckoutModal = () => {
                     key={m.id}
                     type="button"
                     onClick={() => setPaymentMethod(m.id)}
-                    className={`p-3 rounded-xl text-center flex flex-col items-center gap-1 transition-all cursor-pointer ${
+                    className={`p-3 rounded-xl text-center flex flex-col items-center justify-center gap-1 transition-all cursor-pointer ${
                       isSelected
-                        ? 'border border-primary bg-primary/5 text-primary'
+                        ? 'border-2 border-primary bg-primary/10 text-primary font-bold'
                         : 'border border-surface-container-high bg-surface-container hover:bg-surface-container-highest text-on-surface-variant'
                     }`}
                   >
-                    <span className="material-symbols-outlined text-xl">{m.icon}</span>
-                    <span className="font-label-sm text-[12px] font-bold">{m.label}</span>
+                    <Icon name={isSelected ? "check_circle" : "radio_button_unchecked"} className="w-4 h-4 text-primary" />
+                    <span className="font-label-sm text-xs font-semibold">{m.label}</span>
                   </button>
                 );
               })}
@@ -140,42 +167,30 @@ export const CheckoutModal = () => {
           </div>
 
           <div>
-            <label className="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1.5">
-              Catatan Tambahan (Opsional)
+            <label className="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1.5 font-bold">
+              Catatan untuk Barista (Opsional)
             </label>
             <textarea
               rows={2}
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
-              placeholder="Catatan ke barista atau juru masak..."
-              className="w-full px-4 py-2.5 rounded-xl bg-surface-container text-on-surface font-body-sm border border-transparent focus:border-primary/30 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+              placeholder="Cth: Kurangi es batu, pisahkan saus, dll."
+              className="w-full px-4 py-2.5 rounded-xl bg-surface-container text-on-surface font-body-sm border border-transparent focus:border-primary/30 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none"
             />
           </div>
 
-          <div className="p-4 rounded-2xl bg-surface-container-low border border-surface-container-high/60 space-y-2">
-            <div className="flex justify-between font-label-sm text-on-surface-variant">
-              <span>Item dipesan ({totals.count}):</span>
-              <span className="font-bold text-on-surface">{formatRupiah(totals.subtotal)}</span>
-            </div>
-            <div className="flex justify-between font-label-sm text-on-surface-variant">
-              <span>Pajak Restoran &amp; Layanan:</span>
-              <span className="font-bold text-on-surface">{formatRupiah(totals.tax + totals.fee)}</span>
-            </div>
-            <div className="pt-2 border-t border-surface-container-high/80 flex justify-between font-title-md text-primary">
-              <span className="font-serif font-bold">Total Akhir:</span>
-              <span className="font-bold font-mono text-lg">{formatRupiah(totals.grandTotal)}</span>
-            </div>
+          <div className="p-4 rounded-xl bg-surface-container flex items-center justify-between font-bold text-primary border border-surface-container-high/80">
+            <span>Total Pembayaran:</span>
+            <span className="text-lg">{formatRupiah(totals.grandTotal)}</span>
           </div>
 
-          <div className="pt-2">
-            <button
-              type="submit"
-              className="w-full py-4 rounded-xl bg-primary hover:bg-primary-container text-on-primary hover:text-on-primary-container font-label-lg text-label-lg font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
-            >
-              <span>Konfirmasi &amp; Bayar Sekarang</span>
-              <span className="material-symbols-outlined text-lg">arrow_forward</span>
-            </button>
-          </div>
+          <button
+            type="submit"
+            className="w-full py-4 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-lg font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
+          >
+            <span>Kirim &amp; Buat Struk Pesanan</span>
+            <Icon name="arrow_forward" className="w-5 h-5" />
+          </button>
         </form>
       </div>
     </div>

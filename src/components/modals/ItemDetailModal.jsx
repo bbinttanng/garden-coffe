@@ -1,36 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Icon } from '../ui/Icon';
 import { useModals } from '../../context/ModalContext';
-import { useCart } from '../../context/CartContext';
 
 export const ItemDetailModal = () => {
-  const { isDetailOpen, selectedItem, closeItemModal, showToast } = useModals();
-  const { addToCart, formatRupiah } = useCart();
-
-  const [quantity, setQuantity] = useState(1);
-  const [selectedTemp, setSelectedTemp] = useState('Iced');
-  const [selectedSweetness, setSelectedSweetness] = useState('Normal Sweet');
+  const { isDetailOpen, selectedItem, closeItemModal, openReservationModal } = useModals();
 
   if (!isDetailOpen || !selectedItem) return null;
 
-  const handleAddToCart = () => {
-    let options = [];
+  const formatRupiah = (val) => 'Rp ' + Number(val).toLocaleString('id-ID');
+
+  const getPreparationNote = () => {
     if (selectedItem.category === 'Coffee') {
-      options.push(selectedTemp);
-      options.push(selectedSweetness);
+      return 'Diseduh segar dari biji pilihan sangrai terkontrol. Anda dapat menyesuaikan preferensi suhu (dingin/hangat) dan level kemanisan saat dilayani di meja suaka.';
     }
-
-    addToCart({
-      id: selectedItem.id,
-      name: selectedItem.name,
-      price: selectedItem.price,
-      image: selectedItem.image,
-      category: selectedItem.category,
-      options: options.length ? options.join(' • ') : null,
-      quantity
-    });
-
-    showToast('Pesanan Ditambahkan', `${selectedItem.name} (${quantity}x) berhasil masuk ke baki.`);
-    closeItemModal();
+    if (selectedItem.category === 'Food') {
+      return 'Diracik dari hasil panen bumi segar petani binaan lokal Jawa Barat & Bali, dimasak menggunakan tungku api alami saat Anda memesan di lokasi.';
+    }
+    return 'Dipanggang segar setiap fajar dengan teknik fermentasi lambat 48 jam dan mentega murni Prancis 84% fat demi kerenyahan lapisan sempurna.';
   };
 
   return (
@@ -64,120 +50,66 @@ export const ItemDetailModal = () => {
             <div>
               <div className="flex items-center justify-between">
                 <span className="font-label-sm text-secondary uppercase tracking-widest font-bold text-xs">
-                  {selectedItem.subcategory || selectedItem.origin}
+                  {selectedItem.subcategory || selectedItem.origin || selectedItem.category}
                 </span>
                 <button
+                  type="button"
                   onClick={closeItemModal}
                   className="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-primary flex items-center justify-center cursor-pointer"
+                  title="Tutup Modal"
                 >
-                  <span className="material-symbols-outlined text-base">close</span>
+                  <Icon name="close" className="w-4 h-4" />
                 </button>
               </div>
+
               <h3 className="font-headline-sm text-headline-sm font-serif text-primary mt-1">
                 {selectedItem.name}
               </h3>
-              <p className="font-title-lg text-title-lg font-bold text-primary mt-1">
+
+              <p className="font-title-lg text-2xl font-serif font-bold text-primary mt-1">
                 {formatRupiah(selectedItem.price)}
               </p>
-              <p className="font-body-sm text-body-sm text-on-surface-variant mt-2.5 leading-relaxed">
+
+              <p className="font-body-sm text-body-sm text-on-surface-variant mt-3 leading-relaxed">
                 {selectedItem.description}
               </p>
 
               {selectedItem.notes && (
-                <div className="mt-3 p-3 rounded-xl bg-surface-container/60 border border-surface-container-high flex items-center gap-2">
-                  <span className="material-symbols-outlined text-secondary text-lg">spa</span>
+                <div className="mt-3.5 p-3 rounded-xl bg-surface-container/70 border border-surface-container-high flex items-start gap-2.5">
+                  <Icon name="spa" className="w-4 h-4 text-secondary mt-0.5 shrink-0" />
                   <span className="font-body-sm text-[12px] text-on-surface-variant">
-                    <strong className="text-on-surface">Sensory Notes:</strong> {selectedItem.notes}
+                    <strong className="text-on-surface">Karakter Rasa / Pairing:</strong> {selectedItem.notes}
                   </span>
                 </div>
               )}
+
+              <div className="mt-3 p-3 rounded-xl bg-surface-container-low border border-surface-container-high/60 flex items-start gap-2.5">
+                <Icon name="info" className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                <p className="text-[11.5px] text-on-surface-variant/90 leading-relaxed">
+                  {getPreparationNote()}
+                </p>
+              </div>
             </div>
 
-            {/* Options if Coffee */}
-            {selectedItem.category === 'Coffee' && (
-              <div className="space-y-3 pt-2 border-t border-surface-container-high">
-                <div>
-                  <label className="block font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider mb-1.5">
-                    Suhu Seduhan
-                  </label>
-                  <div className="grid grid-cols-2 gap-2 text-center font-label-sm font-semibold">
-                    {[
-                      { id: 'Iced', label: 'Dingin (Iced & Refreshing)' },
-                      { id: 'Hot', label: 'Hangat (Hot & Fragrant)' }
-                    ].map((t) => (
-                      <button
-                        key={t.id}
-                        type="button"
-                        onClick={() => setSelectedTemp(t.id)}
-                        className={`py-2 rounded-lg transition-all cursor-pointer ${
-                          selectedTemp === t.id
-                            ? 'bg-primary text-on-primary shadow-xs font-bold'
-                            : 'bg-surface-container text-on-surface-variant hover:text-primary'
-                        }`}
-                      >
-                        {t.label}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider mb-1.5">
-                    Tingkat Kemanisan
-                  </label>
-                  <div className="grid grid-cols-3 gap-2 text-center font-label-sm text-[12px]">
-                    {[
-                      { id: 'Normal Sweet', label: 'Normal' },
-                      { id: 'Less Sweet (50%)', label: 'Less (50%)' },
-                      { id: 'No Sugar (0%)', label: 'Tanpa Gula' }
-                    ].map((s) => (
-                      <button
-                        key={s.id}
-                        type="button"
-                        onClick={() => setSelectedSweetness(s.id)}
-                        className={`py-1.5 rounded-lg transition-all cursor-pointer ${
-                          selectedSweetness === s.id
-                            ? 'bg-primary text-on-primary font-bold'
-                            : 'bg-surface-container text-on-surface-variant hover:text-primary font-medium'
-                        }`}
-                      >
-                        {s.label}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* Quantity Stepper & Add Button */}
-            <div className="pt-3 border-t border-surface-container-high flex items-center gap-4">
-              <div className="flex items-center gap-3 bg-surface-container rounded-xl p-1.5 border border-surface-container-high">
-                <button
-                  type="button"
-                  onClick={() => setQuantity(q => Math.max(1, q - 1))}
-                  className="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface hover:bg-surface transition-colors cursor-pointer"
-                >
-                  <span className="material-symbols-outlined text-sm">remove</span>
-                </button>
-                <span className="font-label-md font-bold w-6 text-center text-primary">
-                  {quantity}
-                </span>
-                <button
-                  type="button"
-                  onClick={() => setQuantity(q => q + 1)}
-                  className="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface hover:bg-surface transition-colors cursor-pointer"
-                >
-                  <span className="material-symbols-outlined text-sm">add</span>
-                </button>
-              </div>
-
+            {/* Bottom Modal Actions */}
+            <div className="pt-4 border-t border-surface-container-high flex items-center gap-3">
               <button
                 type="button"
-                onClick={handleAddToCart}
-                className="flex-1 py-3.5 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-lg font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
+                onClick={closeItemModal}
+                className="px-5 py-3 rounded-xl bg-surface-container hover:bg-surface-container-highest text-on-surface font-label-md font-bold text-xs transition-all cursor-pointer"
               >
-                <span className="material-symbols-outlined text-lg">local_mall</span>
-                <span>Tambah ke Baki Pesanan</span>
+                Tutup Menu
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  closeItemModal();
+                  openReservationModal();
+                }}
+                className="flex-1 py-3 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-md font-bold text-xs shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <Icon name="event" className="w-4 h-4 text-primary-fixed" />
+                <span>Reservasi Meja Suaka</span>
               </button>
             </div>
           </div>

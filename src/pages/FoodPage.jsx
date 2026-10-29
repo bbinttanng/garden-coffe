@@ -1,11 +1,11 @@
+import { Icon } from '../components/ui/Icon';
 import React, { useState } from 'react';
-import { useCart } from '../context/CartContext';
 import { useModals } from '../context/ModalContext';
 import { GARDEN_CATALOG } from '../data/catalog';
 
 export const FoodPage = () => {
-  const { addToCart, formatRupiah } = useCart();
   const { openItemModal, openReservationModal } = useModals();
+  const formatRupiah = (val) => 'Rp ' + Number(val).toLocaleString('id-ID');
 
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -38,31 +38,103 @@ export const FoodPage = () => {
   return (
     <div className="flex flex-col w-full">
       {/* Storytelling Hero Banner */}
-      <section className="relative w-full bg-surface-container-low pt-12 pb-16 px-6 lg:px-12 border-b border-surface-container-high/60">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <div className="space-y-4 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-md text-label-md">
-              <span className="material-symbols-outlined text-sm">restaurant</span>
+      <section className="relative w-full bg-surface-container-low pt-12 pb-16 lg:py-20 px-6 lg:px-12 overflow-hidden border-b border-surface-container-high/60">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          <div className="lg:col-span-7 space-y-6">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-fixed text-xs font-semibold tracking-wide">
+              <Icon name="restaurant" className="w-4 h-4 text-primary" />
               <span>Dapur Botani &amp; Hasil Bumi Dataran Tinggi</span>
             </div>
-            <h1 className="font-display text-headline-lg lg:text-display font-serif text-on-surface leading-tight tracking-tight">
+
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-on-surface leading-[1.18] tracking-tight">
               Fresh From Farm &amp; Hearth. <br />
-              <span className="italic text-primary font-normal">Sustainably Harvested Plates.</span>
+              <span className="italic font-normal text-primary">Sustainably Harvested Plates.</span>
             </h1>
-            <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+
+            <p className="font-sans text-base sm:text-lg text-on-surface-variant max-w-xl leading-relaxed">
               Setiap menu diracik dari bahan pangan organik segar yang dipanen langsung dari jaringan petani binaan Jawa Barat dan Bali. Dimasak menggunakan tungku kayu bakar api alami untuk menghasilkan cita rasa bumi yang otentik.
             </p>
+
+            {/* Farm-to-Table 3 Specs */}
+            <div className="grid grid-cols-3 gap-6 pt-2 max-w-lg border-t border-surface-container-high/80">
+              <div>
+                <p className="font-serif text-2xl font-bold text-primary">100%</p>
+                <p className="font-sans text-xs text-on-surface-variant mt-0.5">Bahan Panen Lokal</p>
+              </div>
+              <div>
+                <p className="font-serif text-2xl font-bold text-primary">Hearth</p>
+                <p className="font-sans text-xs text-on-surface-variant mt-0.5">Tungku Kayu Bakar</p>
+              </div>
+              <div>
+                <p className="font-serif text-2xl font-bold text-primary">Zero</p>
+                <p className="font-sans text-xs text-on-surface-variant mt-0.5">Pestisida Kimia</p>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3 pt-3">
+              <button
+                type="button"
+                onClick={() => {
+                  const el = document.getElementById('food-menu-grid');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-sans font-bold text-sm shadow-sm transition-all cursor-pointer"
+              >
+                <span>Jelajahi Menu Makanan</span>
+                <Icon name="arrow_downward" className="w-4 h-4" />
+              </button>
+            </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3 shrink-0">
-            <button
-              type="button"
-              onClick={() => openReservationModal()}
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-lg font-bold shadow-sm transition-all cursor-pointer"
-            >
-              <span className="material-symbols-outlined text-base">event_seat</span>
-              <span>Reserve Greenhouse Table</span>
-            </button>
+          {/* Right Spotlight: Featured Food Bento */}
+          <div className="lg:col-span-5 relative">
+            <div className="relative rounded-3xl overflow-hidden shadow-xl bg-surface p-6 lg:p-7 border border-surface-container-high space-y-5">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-surface-container-high">
+                <img
+                  src="/images/img_8.jpg"
+                  alt="Truffle Mushroom Brioche Melt"
+                  className="w-full h-full object-cover"
+                />
+                <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-primary/90 text-on-primary text-[11px] font-bold uppercase tracking-wider backdrop-blur-xs">
+                  Dapur Spesial Tungku
+                </span>
+              </div>
+
+              <div>
+                <span className="text-secondary uppercase tracking-widest font-bold text-xs">
+                  Jamur Dataran Tinggi &amp; Roti Panggang Dapur
+                </span>
+                <h3 className="font-serif text-2xl font-bold text-primary mt-1">
+                  Truffle Mushroom Brioche Melt
+                </h3>
+                <p className="text-sm text-on-surface-variant mt-2 leading-relaxed">
+                  Roti brioche mentega panggang bertabur keju Gruyère leleh, tumisan jamur portobello gurih, dan aroma truffle hitam yang memikat.
+                </p>
+                <div className="flex flex-wrap gap-2 mt-3.5">
+                  <span className="px-2.5 py-1 rounded-lg bg-surface-container text-xs font-semibold text-on-surface">Portobello</span>
+                  <span className="px-2.5 py-1 rounded-lg bg-surface-container text-xs font-semibold text-on-surface">Gruyère Melt</span>
+                  <span className="px-2.5 py-1 rounded-lg bg-surface-container text-xs font-semibold text-on-surface">Black Truffle</span>
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-surface-container flex items-center justify-between">
+                <div>
+                  <span className="text-[11px] uppercase tracking-wider text-on-surface-variant block font-medium">Porsi Santap</span>
+                  <span className="font-serif text-2xl font-bold text-primary">Rp 88.000</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    const item = foodItems.find(item => item.id === 'f1') || foodItems[0];
+                    openItemModal(item);
+                  }}
+                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-surface hover:bg-surface-container text-primary font-bold text-xs border border-surface-container-high transition-all shadow-xs cursor-pointer group-hover:border-primary/40"
+                >
+                  <span>Detail Sajian</span>
+                  <Icon name="arrow_forward" className="w-3.5 h-3.5 text-secondary" />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -98,15 +170,13 @@ export const FoodPage = () => {
               placeholder="Cari hidangan botani..."
               className="bg-surface-container text-on-surface text-label-sm font-label-sm pl-8 pr-3 py-1.5 rounded-full border border-transparent focus:border-primary/30 focus:outline-none w-full md:w-48"
             />
-            <span className="material-symbols-outlined text-sm text-on-surface-variant absolute left-2.5 top-2 pointer-events-none">
-              search
-            </span>
+            <Icon name="search" className="w-4 h-4" />
           </div>
         </div>
       </section>
 
       {/* Culinary Menu Grid */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-12 w-full">
+      <section id="food-menu-grid" className="max-w-7xl mx-auto px-6 lg:px-12 py-12 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredFoods.map((food) => (
             <div
@@ -143,7 +213,7 @@ export const FoodPage = () => {
                   </p>
                   {food.notes && (
                     <div className="p-2.5 rounded-xl bg-surface-container/80 border border-surface-container-high text-xs text-on-surface-variant flex items-center gap-1.5">
-                      <span className="material-symbols-outlined text-secondary text-sm">nature</span>
+                      <Icon name="nature" className="w-4 h-4 text-secondary" />
                       <span className="truncate"><strong>Ingredients:</strong> {food.notes}</span>
                     </div>
                   )}
@@ -151,34 +221,20 @@ export const FoodPage = () => {
               </div>
 
               <div className="p-6 pt-0 border-t border-surface-container flex items-center justify-between mt-4">
-                <span className="font-title-lg font-bold text-primary">
-                  {formatRupiah(food.price)}
-                </span>
-                <div className="flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={() => openItemModal(food)}
-                    className="px-3 py-2 rounded-lg bg-surface hover:bg-surface-container text-primary font-label-sm font-bold border border-surface-container-high text-xs transition-all cursor-pointer"
-                  >
-                    Detail
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      addToCart({
-                        id: food.id,
-                        name: food.name,
-                        price: food.price,
-                        image: food.image,
-                        category: 'Food'
-                      });
-                    }}
-                    className="px-3.5 py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-sm font-bold text-xs transition-all flex items-center gap-1 cursor-pointer"
-                  >
-                    <span className="material-symbols-outlined text-sm">add</span>
-                    <span>Pesan</span>
-                  </button>
+                <div>
+                  <span className="block text-[11px] uppercase tracking-wider text-on-surface-variant font-medium">Porsi Santap</span>
+                  <span className="font-title-lg font-serif font-bold text-primary text-xl">
+                    {formatRupiah(food.price)}
+                  </span>
                 </div>
+                <button
+                  type="button"
+                  onClick={() => openItemModal(food)}
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-surface hover:bg-surface-container text-primary font-label-sm font-bold border border-surface-container-high text-xs transition-all cursor-pointer group-hover:border-primary/40"
+                >
+                  <span>Detail Sajian</span>
+                  <Icon name="arrow_forward" className="w-3.5 h-3.5 text-secondary" />
+                </button>
               </div>
             </div>
           ))}
