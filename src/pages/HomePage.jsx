@@ -12,19 +12,14 @@ export const HomePage = ({ setActivePage }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <div className="lg:col-span-7 space-y-6">
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-secondary-container/80 text-on-secondary-fixed text-xs font-bold uppercase tracking-wider shadow-2xs">
-                <img src="/logo.png" alt="Logo" className="w-4 h-4 object-contain" />
-                <span>Konservatori Kopi &amp; Dapur Botani</span>
-              </div>
-
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-[3.85rem] leading-[1.12] text-primary font-bold tracking-tight">
-                Ruang Teduh di Tengah Kota, <br className="hidden sm:inline" />
-                <span className="italic font-normal text-secondary">dengan Seduhan Alami.</span>
+                Ngopi di Tengah Kota, <br className="hidden sm:inline" />
+                <span className="italic font-normal text-secondary">dengan Nuansa Alam.</span>
               </h1>
 
               <div className="max-w-xl pt-1">
                 <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                  Garden Coffee &amp; Eatery hadir sebagai tempat singgah hijau untuk melepas penat, menikmati kopi terbaik dari petani lokal nusantara, dan menyantap hidangan dapur segar di bawah naungan rumah kaca alami.
+                 Garden Coffee & Eatery hadir sebagai tempat hijau di tengah kota menyajikan kopi terbaik dari petani lokal dan hidangan dari dapur segar, dalam rumah kaca dengan nuansa alam untuk menemani waktu istirahat anda.
                 </p>
               </div>
             </div>
@@ -35,7 +30,7 @@ export const HomePage = ({ setActivePage }) => {
                 onClick={() => setActivePage('lokasi')}
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg shadow-sm hover:shadow-md transition-all cursor-pointer"
               >
-                <span>Kunjungi Suaka Terdekat</span>
+                <span>Kunjungi Cabang Terdekat</span>
                 <Icon name="arrow_forward" className="w-4 h-4" />
               </button>
 
@@ -52,7 +47,7 @@ export const HomePage = ({ setActivePage }) => {
             {/* Grounded Real Metrics */}
             <div className="pt-8 grid grid-cols-3 gap-6 max-w-lg border-t border-surface-container-high/80">
               <div>
-                <p className="font-headline-sm text-headline-sm font-serif text-primary font-bold">5 Suaka</p>
+                <p className="font-headline-sm text-headline-sm font-serif text-primary font-bold">5 Cabang</p>
                 <p className="font-body-sm text-[12px] text-on-surface-variant tracking-wider mt-0.5 font-semibold">
                   Jakarta, Bandung &amp; Bali
                 </p>
@@ -60,13 +55,13 @@ export const HomePage = ({ setActivePage }) => {
               <div>
                 <p className="font-headline-sm text-headline-sm font-serif text-primary font-bold">100%</p>
                 <p className="font-body-sm text-[12px] text-on-surface-variant tracking-wider mt-0.5 font-semibold">
-                  Biji Kopi Petani Nusantara
+                  Biji Kopi berkualitas dan fresh
                 </p>
               </div>
               <div>
-                <p className="font-headline-sm text-headline-sm font-serif text-primary font-bold">06.00</p>
+                <p className="font-headline-sm text-headline-sm font-serif text-primary font-bold">09.00 - 22.00</p>
                 <p className="font-body-sm text-[12px] text-on-surface-variant tracking-wider mt-0.5 font-semibold">
-                  Oven &amp; Seduhan Buka Setiap Pagi
+                  Buka &amp; Selasa sampai Minggu
                 </p>
               </div>
             </div>
@@ -82,7 +77,7 @@ export const HomePage = ({ setActivePage }) => {
               <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-5 left-5 right-5 text-on-primary">
                 <span className="text-[11px] font-bold uppercase tracking-widest text-primary-fixed block mb-1">
-                  Suaka Senopati, Jakarta
+                  Cabang Senopati, Jakarta
                 </span>
                 <p className="text-xs text-on-primary/90 font-medium">
                   Rindang pepohonan tropis dan pencahayaan matahari alami sepanjang hari.
@@ -98,17 +93,12 @@ export const HomePage = ({ setActivePage }) => {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           {/* Highlighted Motto Header */}
           <div className="max-w-3xl mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/70 text-on-secondary-fixed text-xs font-bold uppercase tracking-widest mb-4">
-              <Icon name="eco" className="w-3.5 h-3.5 text-primary" />
-              <span>Prinsip &amp; Nilai Kami</span>
-            </div>
-
             <div className="p-6 sm:p-7 rounded-2xl bg-white border border-surface-container-high border-l-4 border-l-primary shadow-xs space-y-2">
               <span className="block font-label-sm text-xs uppercase tracking-widest text-secondary font-bold">
-                Motto Sederhana Kami
+                Motto & Visi misi
               </span>
               <p className="font-serif italic text-lg sm:text-xl text-primary font-medium leading-relaxed">
-                "Kopi yang jujur dari tangan petani, hidangan yang hangat dari bahan segar, dan ruang hijau yang menenangkan jiwa."
+                "Setiap cangkir dan sajian diracik dengan standar kualitas tertinggi, menjunjung kenyamanan dan pengalaman bagi setiap pelanggan."
               </p>
             </div>
           </div>
@@ -121,10 +111,10 @@ export const HomePage = ({ setActivePage }) => {
                   Visi Kami
                 </span>
                 <h3 className="font-headline-sm text-headline-sm text-primary font-serif font-bold">
-                  Menjadi Oase Hijau Terfavorit di Tengah Padatnya Kota
+                  Menjadi Tempat Singgah Favorit di Tengah Kota dengan Kopi Nusantara, Hidangan Segar, dan Keasrian Alam
                 </h3>
                 <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                  Menghadirkan ruang singgah yang teduh dan bersahabat di mana setiap orang dapat beristirahat sejenak, bekerja dengan nyaman, atau bercengkerama bersama sahabat sambil menikmati seduhan kopi nusantara berkualitas.
+                  Menjadikan Garden Coffee & Eatery sebagai ruang singgah hijau utama di tengah perkotaan tempat setiap orang dapat beristirahat, bekerja, dan berkumpul dengan nyaman sambil menikmati seduhan kopi terbaik dari barista kami serta sajian segar dalam suasana ruang yang asri dan menenangkan.
                 </p>
               </div>
             </div>
@@ -136,20 +126,20 @@ export const HomePage = ({ setActivePage }) => {
                   Misi Kami
                 </span>
                 <h3 className="font-headline-sm text-headline-sm text-primary font-serif font-bold">
-                  Kopi Berkualitas, Pangan Segar, dan Kehangatan Pelayanan
+                  Menyajikan Kopi Lokal Berkualitas, Sajian olahan segar, Tempat yang Teduh
                 </h3>
                 <ul className="space-y-3 font-body-md text-body-md text-on-surface-variant leading-relaxed">
                   <li className="flex items-start gap-3">
                     <span className="w-2 h-2 rounded-full bg-tertiary mt-2 shrink-0" />
-                    <span><strong>Seduhan Biji Nusantara:</strong> Bekerja sama langsung dengan petani lokal di Jawa Barat, Gayo, dan Kintamani untuk cita rasa kopi yang otentik.</span>
+                    <span><strong> Menyediakan Kopi Berkualitas:</strong> Menyajikan biji kopi pilihan terbaik dari berbagai pelosok nusantara dengan pengolahan terbaik untuk menonjolkan keaslian cita rasanya.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="w-2 h-2 rounded-full bg-tertiary mt-2 shrink-0" />
-                    <span><strong>Sajian Dapur Segar:</strong> Mengolah bahan segar setiap pagi dari resep tungku roti dan racikan dapur alami.</span>
+                    <span><strong>Menghadirkan Nuansa Alam Yang Asri:</strong> Menyediakan konsep ruang kaca hijau yang teduh dan menenangkan sebagai pelepas penat dari padatnya aktivitas kota.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="w-2 h-2 rounded-full bg-tertiary mt-2 shrink-0" />
-                    <span><strong>Suasana Suaka Hijau:</strong> Menjaga rumah kaca berkonsep ramah hewan dan terbuka untuk rehat berkualitas.</span>
+                    <span><strong>Memberikan pelayanan yang ramah dan hangat:</strong> Menyambut setiap tamu dengan ketulusan dan senyuman ramah, menghadirkan suasana akrab layaknya di rumah sendiri.</span>
                   </li>
                 </ul>
               </div>
@@ -176,13 +166,13 @@ export const HomePage = ({ setActivePage }) => {
 
         {/* 3-Column Balanced Editorial Triptych Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Card 1: Specialty Coffee & Roastery */}
+          {/* Card 1: Specialty Coffee */}
           <div
             role="button"
             tabIndex={0}
             onClick={() => setActivePage('coffee')}
             onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setActivePage('coffee'); } }}
-            className="group rounded-3xl overflow-hidden bg-surface-container relative p-7 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 border border-surface-container-high/80 cursor-pointer min-h-[480px]"
+            className="group rounded-3xl overflow-hidden bg-surface-container relative p-7 sm:p-8 flex flex-col justify-end shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 border border-surface-container-high/80 cursor-pointer min-h-[380px]"
           >
             {/* Background Image with Cinematic Gradient */}
             <div className="absolute inset-0 overflow-hidden">
@@ -191,47 +181,16 @@ export const HomePage = ({ setActivePage }) => {
                 className="w-full h-full object-cover botanical-img group-hover:scale-108 transition-transform duration-700 ease-out"
                 src="/images/img_2.jpg"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/55 to-primary/20 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/50 to-transparent pointer-events-none" />
             </div>
 
-            {/* Top Pill & Micro Badge */}
-            <div className="relative z-10 flex items-center justify-between">
-              <span className="px-3.5 py-1.5 rounded-full bg-surface/90 text-primary font-label-sm text-xs font-bold uppercase tracking-wider backdrop-blur-md shadow-xs">
-                Single-Origin &amp; Cold Brew
+            {/* Action Link */}
+            <div className="relative z-10 flex items-center justify-between text-on-primary">
+              <span className="font-serif text-2xl font-bold tracking-tight group-hover:text-primary-fixed transition-colors">
+                Jelajahi Pilihan Kopi
               </span>
-              <span className="text-on-primary/85 font-mono text-xs font-medium">
-                Batch #4
-              </span>
-            </div>
-
-            {/* Bottom Content Area */}
-            <div className="relative z-10 space-y-4 pt-16">
-              <div className="space-y-2">
-                <h3 className="font-serif text-2xl sm:text-3xl text-on-primary font-bold tracking-tight">
-                  Specialty Coffee
-                </h3>
-                <p className="text-on-primary/90 text-sm leading-relaxed">
-                  Seduhan pour-over dan cold brew dari biji arabika pegunungan nusantara dengan profil rasa floral, madu hutan, dan buah segar yang bersih.
-                </p>
-              </div>
-
-              {/* Flavor Tag Chips */}
-              <div className="flex flex-wrap items-center gap-1.5 pt-1">
-                <span className="px-2.5 py-1 rounded-full bg-on-primary/15 text-primary-fixed text-xs font-medium">
-                  Honey Geisha
-                </span>
-                <span className="px-2.5 py-1 rounded-full bg-on-primary/15 text-primary-fixed text-xs font-medium">
-                  Aceh Gayo
-                </span>
-                <span className="px-2.5 py-1 rounded-full bg-on-primary/15 text-primary-fixed text-xs font-medium">
-                  Nitro Cascara
-                </span>
-              </div>
-
-              {/* Action Link */}
-              <div className="pt-2 flex items-center gap-2 text-primary-fixed font-bold text-sm group-hover:gap-3 transition-all">
-                <span>Jelajahi Pilihan Kopi</span>
-                <Icon name="arrow_forward" className="w-4 h-4" />
+              <div className="w-10 h-10 rounded-full bg-surface/20 group-hover:bg-primary-fixed group-hover:text-primary flex items-center justify-center transition-all shrink-0">
+                <Icon name="arrow_forward" className="w-5 h-5" />
               </div>
             </div>
           </div>
@@ -242,7 +201,7 @@ export const HomePage = ({ setActivePage }) => {
             tabIndex={0}
             onClick={() => setActivePage('food')}
             onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setActivePage('food'); } }}
-            className="group rounded-3xl overflow-hidden bg-surface-container relative p-7 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 border border-surface-container-high/80 cursor-pointer min-h-[480px]"
+            className="group rounded-3xl overflow-hidden bg-surface-container relative p-7 sm:p-8 flex flex-col justify-end shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 border border-surface-container-high/80 cursor-pointer min-h-[380px]"
           >
             {/* Background Image with Cinematic Gradient */}
             <div className="absolute inset-0 overflow-hidden">
@@ -251,47 +210,16 @@ export const HomePage = ({ setActivePage }) => {
                 className="w-full h-full object-cover botanical-img group-hover:scale-108 transition-transform duration-700 ease-out"
                 src="/images/img_8.jpg"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/55 to-primary/20 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/50 to-transparent pointer-events-none" />
             </div>
 
-            {/* Top Pill & Micro Badge */}
-            <div className="relative z-10 flex items-center justify-between">
-              <span className="px-3.5 py-1.5 rounded-full bg-surface/90 text-primary font-label-sm text-xs font-bold uppercase tracking-wider backdrop-blur-md shadow-xs">
-                Dapur &amp; Hasil Bumi
+            {/* Action Link */}
+            <div className="relative z-10 flex items-center justify-between text-on-primary">
+              <span className="font-serif text-2xl font-bold tracking-tight group-hover:text-primary-fixed transition-colors">
+                Lihat Hidangan Dapur
               </span>
-              <span className="text-on-primary/85 font-mono text-xs font-medium">
-                Segar Tiap Pagi
-              </span>
-            </div>
-
-            {/* Bottom Content Area */}
-            <div className="relative z-10 space-y-4 pt-16">
-              <div className="space-y-2">
-                <h3 className="font-serif text-2xl sm:text-3xl text-on-primary font-bold tracking-tight">
-                  Botanical Food
-                </h3>
-                <p className="text-on-primary/90 text-sm leading-relaxed">
-                  Sandwich brioche leleh, sourdough panggang renyah, dan pasta buatan tangan dari bahan segar petani lokal setiap hari.
-                </p>
-              </div>
-
-              {/* Flavor Tag Chips */}
-              <div className="flex flex-wrap items-center gap-1.5 pt-1">
-                <span className="px-2.5 py-1 rounded-full bg-on-primary/15 text-primary-fixed text-xs font-medium">
-                  Wagyu Sourdough
-                </span>
-                <span className="px-2.5 py-1 rounded-full bg-on-primary/15 text-primary-fixed text-xs font-medium">
-                  Handmade Pesto
-                </span>
-                <span className="px-2.5 py-1 rounded-full bg-on-primary/15 text-primary-fixed text-xs font-medium">
-                  Truffle Mushroom
-                </span>
-              </div>
-
-              {/* Action Link */}
-              <div className="pt-2 flex items-center gap-2 text-primary-fixed font-bold text-sm group-hover:gap-3 transition-all">
-                <span>Lihat Hidangan Dapur</span>
-                <Icon name="arrow_forward" className="w-4 h-4" />
+              <div className="w-10 h-10 rounded-full bg-surface/20 group-hover:bg-primary-fixed group-hover:text-primary flex items-center justify-center transition-all shrink-0">
+                <Icon name="arrow_forward" className="w-5 h-5" />
               </div>
             </div>
           </div>
@@ -302,7 +230,7 @@ export const HomePage = ({ setActivePage }) => {
             tabIndex={0}
             onClick={() => setActivePage('pastry')}
             onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setActivePage('pastry'); } }}
-            className="group rounded-3xl overflow-hidden bg-surface-container relative p-7 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 border border-surface-container-high/80 cursor-pointer min-h-[480px]"
+            className="group rounded-3xl overflow-hidden bg-surface-container relative p-7 sm:p-8 flex flex-col justify-end shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 border border-surface-container-high/80 cursor-pointer min-h-[380px]"
           >
             {/* Background Image with Cinematic Gradient */}
             <div className="absolute inset-0 overflow-hidden">
@@ -311,48 +239,16 @@ export const HomePage = ({ setActivePage }) => {
                 className="w-full h-full object-cover botanical-img group-hover:scale-108 transition-transform duration-700 ease-out"
                 src="/images/img_1.jpg"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/55 to-primary/20 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/50 to-transparent pointer-events-none" />
             </div>
 
-            {/* Top Pill & Micro Badge */}
-            <div className="relative z-10 flex items-center justify-between">
-              <span className="px-3.5 py-1.5 rounded-full bg-surface/90 text-primary font-label-sm text-xs font-bold uppercase tracking-wider backdrop-blur-md shadow-xs">
-                Oven Pagi Fajar
+            {/* Action Link */}
+            <div className="relative z-10 flex items-center justify-between text-on-primary">
+              <span className="font-serif text-2xl font-bold tracking-tight group-hover:text-primary-fixed transition-colors">
+                Pilih Pastry Segar
               </span>
-              <span className="px-2.5 py-1 rounded-full bg-secondary text-on-secondary text-[10px] font-bold flex items-center gap-1 shadow-xs">
-                <Icon name="local_fire_department" className="w-3 h-3" />
-                <span>Hangat 06.00</span>
-              </span>
-            </div>
-
-            {/* Bottom Content Area */}
-            <div className="relative z-10 space-y-4 pt-16">
-              <div className="space-y-2">
-                <h3 className="font-serif text-2xl sm:text-3xl text-on-primary font-bold tracking-tight">
-                  Artisan Pastry
-                </h3>
-                <p className="text-on-primary/90 text-sm leading-relaxed">
-                  Croissant mentega berlapis keemasan, kouign-amann karamel garing, dan cruffin pistachio lembut langsung dari oven fajar.
-                </p>
-              </div>
-
-              {/* Flavor Tag Chips */}
-              <div className="flex flex-wrap items-center gap-1.5 pt-1">
-                <span className="px-2.5 py-1 rounded-full bg-on-primary/15 text-primary-fixed text-xs font-medium">
-                  Kouign-Amann
-                </span>
-                <span className="px-2.5 py-1 rounded-full bg-on-primary/15 text-primary-fixed text-xs font-medium">
-                  Rose Cruffin
-                </span>
-                <span className="px-2.5 py-1 rounded-full bg-on-primary/15 text-primary-fixed text-xs font-medium">
-                  Butter Flaky
-                </span>
-              </div>
-
-              {/* Action Link */}
-              <div className="pt-2 flex items-center gap-2 text-primary-fixed font-bold text-sm group-hover:gap-3 transition-all">
-                <span>Pilih Pastry Segar</span>
-                <Icon name="arrow_forward" className="w-4 h-4" />
+              <div className="w-10 h-10 rounded-full bg-surface/20 group-hover:bg-primary-fixed group-hover:text-primary flex items-center justify-center transition-all shrink-0">
+                <Icon name="arrow_forward" className="w-5 h-5" />
               </div>
             </div>
           </div>
