@@ -97,10 +97,7 @@ export const CoffeePage = () => {
                       {/* Coffee Info & Description */}
                       <div className="lg:col-span-5 flex flex-col justify-between space-y-5">
                         <div>
-                          <span className="text-secondary uppercase tracking-widest font-bold text-xs block">
-                            {item.origin}
-                          </span>
-                          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mt-1.5 leading-snug">
+                          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-primary leading-snug">
                             {item.name}
                           </h2>
                           <p className="font-sans text-sm sm:text-base text-on-surface-variant mt-3 leading-relaxed">
