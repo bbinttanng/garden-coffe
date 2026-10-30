@@ -189,41 +189,6 @@ export const FoodPage = () => {
         </div>
       </section>
 
-      {/* Sticky Category Bar */}
-      <section className="sticky top-20 z-30 bg-surface/95 backdrop-blur-md border-b border-surface-container-high/80 shadow-xs">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2 overflow-x-auto w-full md:w-auto no-scrollbar pb-1 md:pb-0">
-            {categories.map((c) => {
-              const isActive = activeCategory === c.id;
-              return (
-                <button
-                  key={c.id}
-                  type="button"
-                  onClick={() => setActiveCategory(c.id)}
-                  className={`px-5 py-2 rounded-full font-label-md text-label-md transition-all whitespace-nowrap cursor-pointer ${
-                    isActive
-                      ? 'bg-primary text-on-primary shadow-sm'
-                      : 'bg-surface-container text-on-surface-variant hover:bg-surface-container-high'
-                  }`}
-                >
-                  {c.label}
-                </button>
-              );
-            })}
-          </div>
-
-          <div className="relative w-full md:w-auto">
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Cari hidangan botani..."
-              className="bg-surface-container text-on-surface text-label-sm font-label-sm pl-8 pr-3 py-1.5 rounded-full border border-transparent focus:border-primary/30 focus:outline-none w-full md:w-48"
-            />
-            <Icon name="search" className="w-4 h-4" />
-          </div>
-        </div>
-      </section>
 
       {/* Culinary Menu Grid */}
       <section id="food-menu-grid" className="max-w-7xl mx-auto px-6 lg:px-12 py-12 w-full">

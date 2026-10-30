@@ -196,38 +196,6 @@ export const PastryPage = () => {
         </div>
       </section>
 
-      {/* Sticky Category Filter Navigation Bar */}
-      <section className="sticky top-20 z-40 bg-surface/95 backdrop-blur-md px-6 lg:px-12 py-4 shadow-xs border-b border-surface-container">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 overflow-x-auto no-scrollbar">
-          <div className="flex items-center gap-2 min-w-max">
-            {categories.map(cat => (
-              <button
-                key={cat.id}
-                type="button"
-                onClick={() => setActiveCategory(cat.id)}
-                className={`px-4 py-2 rounded-full font-label-md text-label-md transition-all cursor-pointer ${
-                  activeCategory === cat.id
-                    ? 'bg-primary text-on-primary shadow-xs font-semibold'
-                    : 'bg-surface-container text-on-surface-variant hover:bg-surface-container-high'
-                }`}
-              >
-                {cat.label}
-              </button>
-            ))}
-          </div>
-
-          <div className="relative shrink-0 ml-auto">
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Cari viennoiserie..."
-              className="bg-surface-container text-on-surface text-label-sm font-label-sm pl-8 pr-3 py-1.5 rounded-full border border-transparent focus:border-primary/30 focus:outline-none w-36 sm:w-48"
-            />
-            <Icon name="search" className="w-4 h-4" />
-          </div>
-        </div>
-      </section>
 
       {/* Pastry Showcase Grid */}
       <section className="max-w-7xl mx-auto px-6 lg:px-12 py-16 w-full" id="pastry-grid">
