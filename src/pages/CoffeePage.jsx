@@ -87,18 +87,7 @@ export const CoffeePage = () => {
                           alt={item.name}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent pointer-events-none" />
-
-                        {/* Top Badges */}
-                        <div className="absolute top-4 left-4 flex flex-wrap items-center gap-2">
-                          <span className="px-3 py-1.5 rounded-full bg-primary/90 text-on-primary text-[11px] font-bold uppercase tracking-wider backdrop-blur-xs shadow-xs">
-                            {item.tags?.[0] || 'Kopi Spesialti'}
-                          </span>
-                          <div className="px-3 py-1.5 rounded-full bg-white/95 text-primary text-[11px] font-bold backdrop-blur-xs flex items-center gap-1.5 shadow-xs">
-                            <span className="w-2 h-2 rounded-full bg-secondary" />
-                            <span>{item.roast} Roast</span>
-                          </div>
-                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
 
                         <span className="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/60 text-white text-[11px] font-mono font-medium backdrop-blur-xs">
                           {idx + 1} / {coffeeItems.length}
@@ -135,25 +124,14 @@ export const CoffeePage = () => {
                           </div>
                         </div>
 
-                        {/* Price & Action */}
-                        <div className="pt-4 border-t border-surface-container flex items-center justify-between gap-4">
-                          <div>
-                            <span className="text-[11px] uppercase tracking-wider text-on-surface-variant block font-medium">
-                              Harga Seduhan
-                            </span>
-                            <span className="font-serif text-2xl sm:text-3xl font-bold text-primary">
-                              {formatRupiah(item.price)}
-                            </span>
-                          </div>
-
-                          <button
-                            type="button"
-                            onClick={() => openItemModal(item)}
-                            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-bold text-xs sm:text-sm shadow-xs transition-all cursor-pointer"
-                          >
-                            <span>Detail Seduhan</span>
-                            <Icon name="arrow_forward" className="w-4 h-4" />
-                          </button>
+                        {/* Price */}
+                        <div className="pt-4 border-t border-surface-container">
+                          <span className="text-[11px] uppercase tracking-wider text-on-surface-variant block font-medium">
+                            Harga Seduhan
+                          </span>
+                          <span className="font-serif text-2xl sm:text-3xl font-bold text-primary">
+                            {formatRupiah(item.price)}
+                          </span>
                         </div>
                       </div>
                     </div>
