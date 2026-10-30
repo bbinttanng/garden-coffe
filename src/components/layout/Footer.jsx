@@ -51,7 +51,7 @@ export const Footer = ({ setActivePage }) => {
 
           {/* Menu Col */}
           <div>
-            <h4 className="font-title-md text-title-md text-on-surface font-semibold mb-4">Kurasi Menu</h4>
+            <h4 className="font-title-md text-title-md text-on-surface font-semibold mb-4">Koleksi Menu</h4>
             <ul className="space-y-3 font-body-sm text-body-sm text-on-surface-variant">
               <li>
                 <button onClick={() => setActivePage('coffee')} className="hover:text-primary transition-colors cursor-pointer text-left">
@@ -65,7 +65,7 @@ export const Footer = ({ setActivePage }) => {
               </li>
               <li>
                 <button onClick={() => setActivePage('pastry')} className="hover:text-primary transition-colors cursor-pointer text-left">
-                  Aneka Pastry Segar
+                  Aneka Pastry kami
                 </button>
               </li>
             </ul>
@@ -77,7 +77,7 @@ export const Footer = ({ setActivePage }) => {
             <ul className="space-y-3 font-body-sm text-body-sm text-on-surface-variant">
               <li>
                 <button onClick={() => setActivePage('lokasi')} className="hover:text-primary transition-colors cursor-pointer text-left">
-                  Lokasi Suaka Kami
+                  Lokasi Cabang Kami
                 </button>
               </li>
               <li>
@@ -115,7 +115,7 @@ export const Footer = ({ setActivePage }) => {
                   className="hover:text-primary transition-colors text-left inline-flex items-center gap-1.5"
                 >
                   <Icon name="whatsapp" className="w-3.5 h-3.5 text-[#25D366]" />
-                  <span>WhatsApp Barista</span>
+                  <span>WhatsApp Kami</span>
                 </a>
               </li>
             </ul>

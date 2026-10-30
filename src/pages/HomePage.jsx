@@ -153,13 +153,13 @@ export const HomePage = ({ setActivePage }) => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
             <span className="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-semibold">
-              Koleksi Menu
+              Koleksi Menu kami
             </span>
             <h2 className="font-headline-lg text-headline-lg text-primary font-serif tracking-tight mt-1">
-              Eksplorasi Rasa di Rumah Kaca
+              Pilih menu dan sajian terbaik kami
             </h2>
             <p className="font-body-md text-body-md text-on-surface-variant max-w-xl mt-2">
-              Dari sangraian biji kopi arabika pilihan, hidangan hangat oven tungku, hingga pastry berlapis mentega murni.
+              Kopi berkualitas tinggi, makanan terbaik kami, dan pastry bahan berkualitas premium.
             </p>
           </div>
         </div>
@@ -187,7 +187,7 @@ export const HomePage = ({ setActivePage }) => {
             {/* Action Link */}
             <div className="relative z-10 flex items-center justify-between text-on-primary">
               <span className="font-serif text-2xl font-bold tracking-tight group-hover:text-primary-fixed transition-colors">
-                Jelajahi Pilihan Kopi
+                Jelajahi Kopi
               </span>
               <div className="w-10 h-10 rounded-full bg-surface/20 group-hover:bg-primary-fixed group-hover:text-primary flex items-center justify-center transition-all shrink-0">
                 <Icon name="arrow_forward" className="w-5 h-5" />
@@ -216,7 +216,7 @@ export const HomePage = ({ setActivePage }) => {
             {/* Action Link */}
             <div className="relative z-10 flex items-center justify-between text-on-primary">
               <span className="font-serif text-2xl font-bold tracking-tight group-hover:text-primary-fixed transition-colors">
-                Lihat Hidangan Dapur
+                Jelajahi Makanan
               </span>
               <div className="w-10 h-10 rounded-full bg-surface/20 group-hover:bg-primary-fixed group-hover:text-primary flex items-center justify-center transition-all shrink-0">
                 <Icon name="arrow_forward" className="w-5 h-5" />
@@ -245,7 +245,7 @@ export const HomePage = ({ setActivePage }) => {
             {/* Action Link */}
             <div className="relative z-10 flex items-center justify-between text-on-primary">
               <span className="font-serif text-2xl font-bold tracking-tight group-hover:text-primary-fixed transition-colors">
-                Pilih Pastry Segar
+                Jelajahi Pastry   
               </span>
               <div className="w-10 h-10 rounded-full bg-surface/20 group-hover:bg-primary-fixed group-hover:text-primary flex items-center justify-center transition-all shrink-0">
                 <Icon name="arrow_forward" className="w-5 h-5" />
@@ -262,27 +262,27 @@ export const HomePage = ({ setActivePage }) => {
             <div className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container text-on-primary-container font-label-md text-xs font-bold uppercase tracking-wider">
                 <Icon name="eco" className="w-3.5 h-3.5" />
-                <span>Cerita Dari Balik Meja Bar</span>
+                <span>Komitmen kami</span>
               </div>
               <h2 className="font-headline-lg text-headline-lg font-serif leading-tight">
-                Merawat Biji Kopi Lokal, <br />
-                <span className="italic text-primary-fixed">Menghangatkan Setiap Momen Kunjungan.</span>
+                Memberikan pengalaman terbaik, <br />
+                <span className="italic text-primary-fixed">Kepada setiap pe.</span>
               </h2>
               <p className="font-body-lg text-body-lg text-on-primary/80 leading-relaxed">
-                Kami percaya bahwa secangkir kopi terbaik bermula dari kerja keras petani di kebun lereng gunung. Dengan rantai pasok langsung dan pemanggangan mandiri, kami berupaya menghadirkan cita rasa yang jujur serta tempat yang ramah bagi siapapun yang melangkah ke suaka kami.
+                Kami berkomitmen memberikan pengalaman terbaik bagi setiap pelanggan melalui sajian kopi berkualitas, suasana yang nyaman dan asri, serta pelayanan yang ramah. Kami ingin setiap kunjungan menjadi momen yang menyenangkan, tempat Anda bisa bersantai, bekerja, atau menghabiskan waktu bersama orang orang terdekat.
               </p>
               <div className="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-6 border-t border-on-primary/10">
                 <div>
                   <p className="font-headline-sm text-headline-sm font-serif font-bold text-primary-fixed">100%</p>
-                  <p className="font-body-sm text-body-sm text-on-primary/80 mt-1">Biji Kopi Petani Nusantara</p>
+                  <p className="font-body-sm text-body-sm text-on-primary/80 mt-1">Pengalaman kepada pelanggan</p>
                 </div>
                 <div>
-                  <p className="font-headline-sm text-headline-sm font-serif font-bold text-primary-fixed">5 Titik</p>
-                  <p className="font-body-sm text-body-sm text-on-primary/80 mt-1">Suaka Rumah Kaca di 3 Wilayah</p>
+                  <p className="font-headline-sm text-headline-sm font-serif font-bold text-primary-fixed">Suasana</p>
+                  <p className="font-body-sm text-body-sm text-on-primary/80 mt-1">Menghadirkan suasana yang tenang </p>
                 </div>
                 <div>
                   <p className="font-headline-sm text-headline-sm font-serif font-bold text-primary-fixed">Setiap Hari</p>
-                  <p className="font-body-sm text-body-sm text-on-primary/80 mt-1">Seduhan &amp; Olahan Segar Tiap Fajar</p>
+                  <p className="font-body-sm text-body-sm text-on-primary/80 mt-1">Menghadirkan makanan dan sajian berkualitas</p>
                 </div>
               </div>
             </div>
@@ -290,19 +290,19 @@ export const HomePage = ({ setActivePage }) => {
             <div className="lg:col-span-5 bg-primary-container/70 backdrop-blur-md rounded-2xl p-8 border border-on-primary/15 space-y-6">
               <Icon name="format_quote" className="w-8 h-8 text-primary-fixed opacity-70" />
               <p className="font-serif text-title-lg text-title-lg text-on-primary italic leading-relaxed">
-                "Kopi yang enak itu penting, tapi suasana yang bikin hati tenang saat kamu menghabiskannya bareng orang terdekat adalah alasan utama kami membangun Garden Coffee."
+                "Sajian dan cita rasa kopi tidak ada artinya dibanding pengalaman serta ketenangan yang Anda rasakan. Bagi kami, kemewahan sejati adalah kedamaian pikiran saat menikmati momen bersama alam."
               </p>
               <div className="pt-2 border-t border-on-primary/15 flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full overflow-hidden bg-primary-container border-2 border-primary-fixed/40">
                   <img
-                    alt="Tim Barista Garden Coffee"
+                    alt="Manajemen & Staff Garden Coffee"
                     className="w-full h-full object-cover botanical-img"
                     src="/images/img_16.jpg"
                   />
                 </div>
                 <div>
                   <h4 className="font-title-md text-title-md text-on-primary font-serif font-bold">
-                    Tim Barista &amp; Dapur Suaka
+                    Manajemen &amp; Staff
                   </h4>
                   <p className="font-label-sm text-xs text-on-primary-container uppercase tracking-wider">
                     Garden Coffee &amp; Eatery
