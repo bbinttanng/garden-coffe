@@ -78,6 +78,45 @@ export const GARDEN_CATALOG = [
     image: '/images/coffee_nitro.jpg',
     description: 'Seduhan kulit ceri kopi (cascara) organik dengan infusi nitrogen dingin menghasilkan tekstur busa selembut sutra dengan rasa asam manis alami seperti teh buah.'
   },
+  {
+    id: 'c7',
+    category: 'Coffee',
+    subcategory: 'Single-Origin & Pour-Over',
+    name: 'Flores Bajawa Honey Anaerobic',
+    price: 58000,
+    origin: 'Ngada, Flores • 1.550 mdpl',
+    notes: 'Cokelat Susu, Karamel Jahe, Aprikot, Gula Aren',
+    roast: 'Medium',
+    tags: ['Single-Origin', 'Anaerobic Honey', 'Direct Trade'],
+    image: '/images/coffee_pourover.jpg',
+    description: 'Biji kopi arabika varietas Kartika dari lereng vulkanik Inerie, Bajawa. Fermentasi anaerobik 72 jam menghasilkan rasa manis karamel gurih dengan sentuhan asam aprikot yang seimbang.'
+  },
+  {
+    id: 'c8',
+    category: 'Coffee',
+    subcategory: 'Botanical Cold Brew',
+    name: 'Iced Pandan Coconut Cold Foam',
+    price: 49000,
+    origin: 'Konsentrat Kintamani & Sari Pandan Suji',
+    notes: 'Daun Pandan Segar, Kelapa Muda, Brown Sugar, Espresso Lembut',
+    roast: 'Light',
+    tags: ['Botanical Signature', 'Cold Brew', 'Artisan Foam'],
+    image: '/images/coffee_coldbrew.jpg',
+    description: 'Paduan konsentrat seduh dingin dengan ekstrak daun pandan wangi alami kebun suaka, ditutup dengan lapisan busa krim kelapa gurih lembut yang menyegarkan.'
+  },
+  {
+    id: 'c9',
+    category: 'Coffee',
+    subcategory: 'Espresso Specialties',
+    name: 'Toraja Sapan Double Ristretto',
+    price: 44000,
+    origin: 'Sapan, Toraja Utara • 1.700 mdpl',
+    notes: 'Cokelat Hitam 80%, Herbal Rempah, Kayu Manis, Body Penuh',
+    roast: 'Dark',
+    tags: ['Single-Origin', 'High Altitude', 'Bold Body'],
+    image: '/images/coffee_cortado.jpg',
+    description: 'Ekstraksi ganda ristretto dari biji legendaris Sapan Toraja Utara. Menghadirkan body yang pekat, crema keemasan tebal, dan aroma cokelat hitam pekat dengan rempah alami.'
+  },
 
   // FOOD
   {

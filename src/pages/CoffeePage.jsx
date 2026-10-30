@@ -4,7 +4,7 @@ import { useModals } from '../context/ModalContext';
 import { GARDEN_CATALOG } from '../data/catalog';
 
 export const CoffeePage = () => {
-  const { openItemModal, openReservationModal } = useModals();
+  const { openItemModal } = useModals();
   const formatRupiah = (val) => 'Rp ' + Number(val).toLocaleString('id-ID');
 
   const [activeCategory, setActiveCategory] = useState('all');
@@ -194,7 +194,7 @@ export const CoffeePage = () => {
 
 
       {/* Main Catalog Grid */}
-      <section id="coffee-menu-grid" className="max-w-7xl mx-auto px-6 lg:px-12 py-12 w-full">
+      <section id="coffee-menu-grid" className="max-w-7xl mx-auto px-6 lg:px-12 pt-12 pb-24 w-full">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
           <div>
             <div className="flex items-center gap-2 mb-2">
@@ -281,31 +281,6 @@ export const CoffeePage = () => {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* Menu Notes & Reservation Banner */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 w-full pb-20">
-        <div className="rounded-3xl bg-surface-container-low border border-surface-container-high/80 p-8 lg:p-12 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
-          <div className="space-y-2 max-w-xl">
-            <span className="text-xs uppercase font-bold tracking-widest text-secondary block">
-              Catatan Layanan Seduh
-            </span>
-            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-primary">
-              Nikmati Seduhan Segar Langsung di Suaka Kami
-            </h3>
-            <p className="text-sm text-on-surface-variant leading-relaxed">
-              Harga tertera dalam Rupiah (IDR) dan belum termasuk pajak restoran 10% &amp; biaya servis. Ketersediaan varietas biji kopi dapat berganti mengikuti rotasi sangrai harian barista di setiap cabang.
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={() => openReservationModal()}
-            className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg shadow-sm hover:shadow-md transition-all cursor-pointer shrink-0"
-          >
-            <Icon name="event" className="w-4 h-4 text-primary-fixed" />
-            <span>Reservasi Meja Suaka</span>
-          </button>
         </div>
       </section>
     </div>
