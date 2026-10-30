@@ -4,7 +4,7 @@ import { useModals } from '../context/ModalContext';
 import { GARDEN_CATALOG } from '../data/catalog';
 
 export const PastryPage = () => {
-  const { openItemModal, openReservationModal } = useModals();
+  const { openItemModal } = useModals();
   const formatRupiah = (val) => 'Rp ' + Number(val).toLocaleString('id-ID');
 
   const [activeCategory, setActiveCategory] = useState('all');
@@ -195,7 +195,7 @@ export const PastryPage = () => {
 
 
       {/* Pastry Showcase Grid */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-16 w-full" id="pastry-grid">
+      <section className="max-w-7xl mx-auto px-6 lg:px-12 pt-12 pb-24 w-full" id="pastry-grid">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
           <div>
             <span className="font-label-md text-label-md uppercase tracking-wider text-secondary">Kreasi Dapur Pastry</span>
@@ -294,144 +294,6 @@ export const PastryPage = () => {
             ))}
           </div>
         )}
-      </section>
-
-
-      {/* Morning Coffee & Pastry Botanical Pairing Recommendation */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-16 w-full">
-        <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-          <span className="font-label-md text-label-md text-secondary uppercase tracking-widest font-semibold">Botanical Sommelier Pairings</span>
-          <h2 className="font-headline-lg text-headline-lg text-primary font-serif">Harmonious Morning Rhythms</h2>
-          <p className="font-body-md text-body-md text-on-surface-variant">
-            Head Roaster dan Pâtissier kami meracik harmoni rasa antara acidity kopi single-origin dan kelembutan butter fat Prancis.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Pairing 1 */}
-          <div className="rounded-2xl bg-surface-container p-6 flex flex-col justify-between shadow-xs hover:shadow-md transition-all border border-surface-container-high/60">
-            <div>
-              <div className="flex items-center justify-between text-secondary mb-4">
-                <span className="font-label-sm text-label-sm uppercase tracking-wider font-bold">Pairing #01 • Floral Awakening</span>
-                <Icon name="filter_vintage" className="w-4 h-4" />
-              </div>
-              <h3 className="font-headline-sm text-headline-sm text-primary font-serif mb-2">Pistachio Cruffin + Honey Geisha Pour Over</h3>
-              <p className="font-body-sm text-body-sm text-on-surface-variant mb-6">
-                Nuansa melati dan aprikot dari Panama Honey Geisha berpadu lembut dengan krim mawar diplomatik di dalam gulungan cruffin renyah.
-              </p>
-              <div className="space-y-3 bg-surface p-4 rounded-xl mb-4 border border-surface-container-high/60">
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-on-surface-variant font-medium">Coffee Body</span>
-                  <span className="text-primary font-semibold">Silky Light (Score 91)</span>
-                </div>
-                <div className="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
-                  <div className="bg-secondary h-full w-2/5"></div>
-                </div>
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-on-surface-variant font-medium">Sweetness Balance</span>
-                  <span className="text-primary font-semibold">Wildflower Honey &amp; Bergamot</span>
-                </div>
-              </div>
-            </div>
-            <div className="pt-4 flex items-center justify-between border-t border-surface-container-high/60">
-              <span className="font-title-md text-title-md text-primary font-bold">Rp 88.000</span>
-              <span className="text-xs font-semibold text-secondary uppercase tracking-wider">
-                Tersedia Dine-In
-              </span>
-            </div>
-          </div>
-
-          {/* Pairing 2 */}
-          <div className="rounded-2xl bg-surface-container p-6 flex flex-col justify-between shadow-xs hover:shadow-md transition-all border border-surface-container-high/60">
-            <div>
-              <div className="flex items-center justify-between text-secondary mb-4">
-                <span className="font-label-sm text-label-sm uppercase tracking-wider font-bold">Pairing #02 • Salted Earth &amp; Velvet</span>
-                <Icon name="coffee" className="w-4 h-4" />
-              </div>
-              <h3 className="font-headline-sm text-headline-sm text-primary font-serif mb-2">Kouign-Amann + Oat Cortado</h3>
-              <p className="font-body-sm text-body-sm text-on-surface-variant mb-6">
-                Rasio 1:1 ristretto ganda dipadu susu oat Swedia yang lembut melengkapi kerak karamel manis-asin Kouign-Amann.
-              </p>
-              <div className="space-y-3 bg-surface p-4 rounded-xl mb-4 border border-surface-container-high/60">
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-on-surface-variant font-medium">Coffee Body</span>
-                  <span className="text-primary font-semibold">Velvety Medium</span>
-                </div>
-                <div className="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
-                  <div className="bg-secondary h-full w-4/5"></div>
-                </div>
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-on-surface-variant font-medium">Tasting Harmony</span>
-                  <span className="text-primary font-semibold">Brown Butter &amp; Lavender Salt</span>
-                </div>
-              </div>
-            </div>
-            <div className="pt-4 flex items-center justify-between border-t border-surface-container-high/60">
-              <span className="font-title-md text-title-md text-primary font-bold">Rp 74.000</span>
-              <span className="text-xs font-semibold text-secondary uppercase tracking-wider">
-                Tersedia Dine-In
-              </span>
-            </div>
-          </div>
-
-          {/* Pairing 3 */}
-          <div className="rounded-2xl bg-surface-container p-6 flex flex-col justify-between shadow-xs hover:shadow-md transition-all border border-surface-container-high/60">
-            <div>
-              <div className="flex items-center justify-between text-secondary mb-4">
-                <span className="font-label-sm text-label-sm uppercase tracking-wider font-bold">Pairing #03 • Dark Cocoa Symphony</span>
-                <Icon name="bakery_dining" className="w-4 h-4" />
-              </div>
-              <h3 className="font-headline-sm text-headline-sm text-primary font-serif mb-2">Valrhona Babka + Kyoto Cold Brew</h3>
-              <p className="font-body-sm text-body-sm text-on-surface-variant mb-6">
-                Tetesan dingin 12 jam Kyoto cold brew menyeimbangkan kekayaan rasa cokelat hitam Guanaja 70% dengan kesegaran cherry yang bersih.
-              </p>
-              <div className="space-y-3 bg-surface p-4 rounded-xl mb-4 border border-surface-container-high/60">
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-on-surface-variant font-medium">Coffee Body</span>
-                  <span className="text-primary font-semibold">Crisp &amp; Winey</span>
-                </div>
-                <div className="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
-                  <div className="bg-secondary h-full w-3/5"></div>
-                </div>
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-on-surface-variant font-medium">Tasting Harmony</span>
-                  <span className="text-primary font-semibold">70% Guanaja &amp; Black Cherry</span>
-                </div>
-              </div>
-            </div>
-            <div className="pt-4 flex items-center justify-between border-t border-surface-container-high/60">
-              <span className="font-title-md text-title-md text-primary font-bold">Rp 78.000</span>
-              <span className="text-xs font-semibold text-secondary uppercase tracking-wider">
-                Tersedia Dine-In
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Menu Notes & Reservation Banner */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 w-full pb-20">
-        <div className="rounded-3xl bg-surface-container-low border border-surface-container-high/80 p-8 lg:p-12 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
-          <div className="space-y-2 max-w-xl">
-            <span className="text-xs uppercase font-bold tracking-widest text-secondary block">
-              Catatan Dapur Pâtisserie
-            </span>
-            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-primary">
-              Pastry Hangat Keluar Oven Tiap Pukul 06.00
-            </h3>
-            <p className="text-sm text-on-surface-variant leading-relaxed">
-              Dibuat dengan mentega Prancis murni 84% fat dan fermentasi ragi alami 48 jam. Ketersediaan varian dapat bervariasi setiap hari karena dipanggang dalam jumlah terbatas demi menjaga kerenyahan maksimal.
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={() => openReservationModal()}
-            className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg shadow-sm hover:shadow-md transition-all cursor-pointer shrink-0"
-          >
-            <Icon name="event" className="w-4 h-4 text-primary-fixed" />
-            <span>Reservasi Meja Suaka</span>
-          </button>
-        </div>
       </section>
     </div>
   );

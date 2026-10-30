@@ -191,6 +191,42 @@ export const GARDEN_CATALOG = [
     image: '/images/food_pappardelle.jpg',
     description: 'Pita pasta telur pappardelle segar yang digilas setiap pagi, dimasak bersama ragu daging sapi empuk yang dimasak lambat 12 jam hingga bumbu meresap sempurna.'
   },
+  {
+    id: 'f7',
+    category: 'Food',
+    subcategory: 'Hearth Sandwiches & Melts',
+    name: 'Smoked Brisket Ciabatta',
+    price: 105000,
+    origin: 'Daging Sapi Asap Kayu Kopi 14 Jam',
+    notes: 'Brisket Sapi Asap, Keju Cheddar Tua, Acar Mentimun, Aioli Bawang Putih',
+    tags: ['Asap Kayu Kopi', 'Roti Ciabatta', 'Dapur Spesial'],
+    image: '/images/food_wagyu_toast.jpg',
+    description: 'Irisan brisket sapi yang diasap perlahan selama 14 jam dengan kayu pohon kopi, dipadukan keju cheddar leleh, acar buatan rumah, dan aioli bawang putih panggang dalam roti ciabatta renyah.'
+  },
+  {
+    id: 'f8',
+    category: 'Food',
+    subcategory: 'Pastas & Mains',
+    name: 'Truffle Herb Butter Fettuccine',
+    price: 95000,
+    origin: 'Pasta Bayam Segar & Mentega Truffle',
+    notes: 'Fettuccine Bayam, Mentega Truffle Hitam, Jamur Shiitake, Keju Grana Padano',
+    tags: ['Pasta Segar', 'Aroma Truffle', 'Vegetarian Pilihan'],
+    image: '/images/food_pappardelle.jpg',
+    description: 'Fettuccine bayam segar bertekstur kenyal lembut yang ditumis bersama mentega truffle hitam pekat, irisan jamur tumis gurih, dan taburan keju Grana Padano Italia.'
+  },
+  {
+    id: 'f9',
+    category: 'Food',
+    subcategory: 'Botanical Bowls',
+    name: 'Roasted Beet & Goat Cheese Bowl',
+    price: 85000,
+    origin: 'Bit Organik Lembang & Keju Kambing Artisan',
+    notes: 'Bit Merah Panggang Tungku, Keju Kambing Lembut, Quinoa, Saus Jeruk Madu',
+    tags: ['Organik Lokal', 'Sehat Kaya Antioksidan', 'Bebas Gluten'],
+    image: '/images/food_pesto_bowl.jpg',
+    description: 'Bit merah manis yang dipanggang dalam tungku bara, dipadukan dengan gumpalan keju kambing lembut yang gurih, quinoa hangat, dan dressing madu jeruk segar.'
+  },
 
   // PASTRY
   {
@@ -264,5 +300,41 @@ export const GARDEN_CATALOG = [
     tags: ['Cokelat Pekat', 'Brioche Lembut', 'Teman Kopi Sore'],
     image: '/images/img_1.jpg',
     description: 'Roti brioche kepang lembut berpadu dengan pusaran cokelat hitam Valrhona 70%, rempah kayu manis harum, dan taburan hazelnut panggang renyah.'
+  },
+  {
+    id: 'p7',
+    category: 'Pastry',
+    subcategory: 'Laminated Viennoiserie',
+    name: 'Pain au Chocolat Artisan',
+    price: 42000,
+    origin: 'Mentega Normandia & Cokelat Hitam 60%',
+    notes: 'Dua Batang Cokelat Belgia, Lapisan Keemasan, Mentega Renyah',
+    tags: ['Klasik Prancis', 'Baru Keluar Oven', 'Favorit Pagi'],
+    image: '/images/img_20.jpg',
+    description: 'Viennoiserie klasik Prancis dengan adonan berlapis mentega Prancis keemasan yang membungkus dua batang cokelat hitam Belgia meleleh di dalamnya.'
+  },
+  {
+    id: 'p8',
+    category: 'Pastry',
+    subcategory: 'Sourdough Patisserie',
+    name: 'Cardamom Orange Morning Bun',
+    price: 45000,
+    origin: 'Ragi Alami Sourdough & Kapulaga Hijau',
+    notes: 'Kapulaga Sangrai, Parutan Kulit Jeruk Manis, Kerak Gula Karamel',
+    tags: ['Ragi Alami', 'Aroma Rempah', 'Tekstur Empuk'],
+    image: '/images/img_15.jpg',
+    description: 'Roti gulung sourdough fermentasi lambat yang dipanggang dengan mentega beraroma kapulaga hijau sangrai dan sentuhan zest jeruk segar dengan lapisan gula kristal renyah.'
+  },
+  {
+    id: 'p9',
+    category: 'Pastry',
+    subcategory: 'Confection & Tarts',
+    name: 'Pistachio Raspberry Tartlet',
+    price: 54000,
+    origin: 'Pâte Sablée Almond & Raspberry Liar',
+    notes: 'Krim Frangipane Pistachio, Kolak Raspberry Asam, Pistachio Panggang',
+    tags: ['Tartlet Manis', 'Buah Beri Segar', 'Kacang Gurih'],
+    image: '/images/img_16.jpg',
+    description: 'Kulit tart almond renyah yang diisi krim frangipane pistachio lembut, selai buah raspberry liar yang segar, dan taburan kacang pistachio cincang renyah.'
   }
 ];

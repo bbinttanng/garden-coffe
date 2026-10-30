@@ -4,7 +4,7 @@ import { useModals } from '../context/ModalContext';
 import { GARDEN_CATALOG } from '../data/catalog';
 
 export const FoodPage = () => {
-  const { openItemModal, openReservationModal } = useModals();
+  const { openItemModal } = useModals();
   const formatRupiah = (val) => 'Rp ' + Number(val).toLocaleString('id-ID');
 
   const [activeCategory, setActiveCategory] = useState('all');
@@ -188,7 +188,7 @@ export const FoodPage = () => {
 
 
       {/* Culinary Menu Grid */}
-      <section id="food-menu-grid" className="max-w-7xl mx-auto px-6 lg:px-12 py-12 w-full">
+      <section id="food-menu-grid" className="max-w-7xl mx-auto px-6 lg:px-12 pt-12 pb-24 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredFoods.map((food) => (
             <div
@@ -250,49 +250,6 @@ export const FoodPage = () => {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* Farm-to-Table Partners */}
-      <section className="w-full bg-surface-container-low py-16 lg:py-24 border-t border-surface-container-high/60">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-12">
-          <div className="max-w-2xl">
-            <span className="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-semibold">
-              Integritas Pasokan
-            </span>
-            <h2 className="font-headline-lg text-headline-lg text-primary font-serif tracking-tight mt-1">
-              Our Farm-to-Table Partners
-            </h2>
-            <p className="font-body-md text-on-surface-variant mt-2 leading-relaxed">
-              Kami bermitra erat dengan komunitas pertanian regeneratif lokal yang mendedikasikan tanah mereka tanpa pestisida kimia sintetis.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-surface rounded-2xl p-8 shadow-sm space-y-4">
-              <span className="font-label-sm text-secondary font-bold tracking-widest text-xs">01 • JAMUR ORGANIK</span>
-              <h3 className="font-title-lg text-title-lg text-primary font-serif">Bandung Highland Fungi Guild</h3>
-              <p className="font-body-sm text-on-surface-variant leading-relaxed">
-                Kolektif petani jamur di dataran tinggi Lembang yang membudidayakan portobello liar, tiram cokelat, dan chanterelle di substrat batang kayu alami.
-              </p>
-            </div>
-
-            <div className="bg-surface rounded-2xl p-8 shadow-sm space-y-4">
-              <span className="font-label-sm text-secondary font-bold tracking-widest text-xs">02 • TERNAK UMBARAN</span>
-              <h3 className="font-title-lg text-title-lg text-primary font-serif">Bumi Lestari Free-Range Pastures</h3>
-              <p className="font-body-sm text-on-surface-variant leading-relaxed">
-                Peternakan ayam padang rumput bebas kandang di kaki Gunung Salak dengan pakan biji-bijian organik dan rempah herbal kekebalan alami.
-              </p>
-            </div>
-
-            <div className="bg-surface rounded-2xl p-8 shadow-sm space-y-4">
-              <span className="font-label-sm text-secondary font-bold tracking-widest text-xs">03 • FERMENTASI RAGI</span>
-              <h3 className="font-title-lg text-title-lg text-primary font-serif">Wild Starter &amp; Hearth Ferment</h3>
-              <p className="font-body-sm text-on-surface-variant leading-relaxed">
-                Biang ragi liar berumur 6 tahun yang dipelihara di dapur kami dengan tepung gandum utuh organik dan air mata air pegunungan alami.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
     </div>
