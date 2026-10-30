@@ -1,17 +1,15 @@
+import { Icon } from '../components/ui/Icon';
 import React, { useState } from 'react';
-import { useCart } from '../context/CartContext';
 import { useModals } from '../context/ModalContext';
 import { GARDEN_CATALOG } from '../data/catalog';
 
 export const CoffeePage = () => {
-  const { addToCart, formatRupiah, totals } = useCart();
-  const { openCart, openItemModal, showToast } = useModals();
+  const { openItemModal, openReservationModal } = useModals();
+  const formatRupiah = (val) => 'Rp ' + Number(val).toLocaleString('id-ID');
 
   const [activeCategory, setActiveCategory] = useState('all');
   const [activeRoast, setActiveRoast] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedGrind, setSelectedGrind] = useState('Whole Bean');
-
   const coffeeItems = GARDEN_CATALOG.filter(item => item.category === 'Coffee');
 
   const categories = [
@@ -41,77 +39,82 @@ export const CoffeePage = () => {
     return matchCat && matchRoast && matchQuery;
   });
 
-  const handleSubscribe = () => {
-    addToCart({
-      name: 'Whole Bean Coffee Subscription',
-      price: 115000,
-      category: 'Coffee Subscription',
-      options: `Pengiriman dua mingguan • Gilingan: ${selectedGrind}`,
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCxy3vtevWnY_khG4iKiSs_W3FmyZq4d3coXk6wdNn1__gGFiWqejK-T_mZIpWgncGEwntiIOaWZcb26IDNQrN8Z6r9ZJG_x5I8GllzcwY9owrGOqglAkUSQ-i47DNRAvGeQIqGvJn6H9Tfk-Tsz5wKPGhL4_3UHXLNV0thflY9vvSxaTOA8kL0IR13oFQkyC5hHDHsied_FFPCQKNXDB-uxkmwxuYufOO7bw5mqt8Ts6MK40JZIHK2'
-    });
-    showToast('Langganan Ditambahkan', 'Whole Bean Coffee Subscription berhasil masuk ke baki.');
-    openCart();
-  };
+
 
   return (
     <div className="flex flex-col w-full">
       {/* Immersive Editorial Top Banner */}
-      <section className="relative w-full bg-surface-container-low pt-12 pb-20 px-6 lg:px-12 overflow-hidden border-b border-surface-container-high/60">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Story & Editorial Header */}
+      <section className="relative w-full bg-surface-container-low pt-12 pb-16 lg:py-20 px-6 lg:px-12 overflow-hidden border-b border-surface-container-high/60">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-md text-label-md">
-              <span className="material-symbols-outlined text-sm">local_cafe</span>
-              <span>Terroir Sangrai Botani • Panen Musim Semi 2025</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-fixed text-xs font-semibold tracking-wide">
+              <Icon name="local_cafe" className="w-4 h-4 text-primary" />
+              <span>Terroir Sangrai Botani • Panen Terpilih Nusantara</span>
             </div>
-            <h1 className="font-display text-headline-lg lg:text-display font-serif text-on-surface leading-tight tracking-tight">
+
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-on-surface leading-[1.18] tracking-tight">
               Artisanal Coffee &amp; <br />
-              <span className="italic text-primary font-normal">Single-Origin Roastery</span>
+              <span className="italic font-normal text-primary">Single-Origin Roastery</span>
             </h1>
-            <p className="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
+
+            <p className="font-sans text-base sm:text-lg text-on-surface-variant max-w-xl leading-relaxed">
               Diseduh dari biji arabika pegunungan vulkanik nusantara yang ditanam di ketinggian 1.400–1.700 mdpl. Melalui proses fermentasi lambat terkontrol dan sangraian drum batch 5kg untuk menonjolkan spektrum rasa floral dan buah segar.
             </p>
 
             {/* Roast Dial Spectrum */}
-            <div className="pt-4 max-w-md space-y-3">
-              <div className="flex justify-between font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">
+            <div className="pt-2 max-w-md space-y-2.5">
+              <div className="flex justify-between text-xs text-on-surface-variant uppercase tracking-wider font-semibold">
                 <span>Light (Floral)</span>
                 <span>Medium (Caramelized)</span>
                 <span>Dark (Smoked Wood)</span>
               </div>
-              <div className="w-full h-3 rounded-full bg-surface-container-high relative overflow-hidden flex">
+              <div className="w-full h-2.5 rounded-full bg-surface-container-high relative overflow-hidden flex">
                 <div className="w-1/3 h-full bg-[#E8C288]"></div>
                 <div className="w-1/3 h-full bg-[#B26A37]"></div>
                 <div className="w-1/3 h-full bg-[#4A2E18]"></div>
               </div>
             </div>
+
+            <div className="flex flex-wrap items-center gap-3 pt-3">
+              <button
+                type="button"
+                onClick={() => {
+                  const el = document.getElementById('coffee-menu-grid');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-sans font-bold text-sm shadow-sm transition-all cursor-pointer"
+              >
+                <span>Jelajahi Katalog Kopi</span>
+                <Icon name="arrow_downward" className="w-4 h-4" />
+              </button>
+            </div>
           </div>
 
           {/* Right Spotlight: Java Preanger Honey Geisha Bento */}
           <div className="lg:col-span-5 relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-surface p-6 lg:p-8 border border-surface-container-high space-y-6">
+            <div className="relative rounded-3xl overflow-hidden shadow-xl bg-surface p-6 lg:p-7 border border-surface-container-high space-y-5">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-surface-container-high">
                 <img
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxy3vtevWnY_khG4iKiSs_W3FmyZq4d3coXk6wdNn1__gGFiWqejK-T_mZIpWgncGEwntiIOaWZcb26IDNQrN8Z6r9ZJG_x5I8GllzcwY9owrGOqglAkUSQ-i47DNRAvGeQIqGvJn6H9Tfk-Tsz5wKPGhL4_3UHXLNV0thflY9vvSxaTOA8kL0IR13oFQkyC5hHDHsied_FFPCQKNXDB-uxkmwxuYufOO7bw5mqt8Ts6MK40JZIHK2"
+                  src="/images/img_2.jpg"
                   alt="Java Preanger Honey Geisha Pour Over"
                   className="w-full h-full object-cover"
                 />
-                <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-primary/90 text-on-primary font-label-sm text-[11px] font-bold uppercase tracking-wider">
+                <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-primary/90 text-on-primary text-[11px] font-bold uppercase tracking-wider backdrop-blur-xs">
                   Featured Roaster Reserve
                 </span>
               </div>
 
               <div>
-                <span className="font-label-sm text-secondary uppercase tracking-widest font-bold text-xs">
+                <span className="text-secondary uppercase tracking-widest font-bold text-xs">
                   Pangalengan, West Java • 1.650 mdpl
                 </span>
-                <h3 className="font-headline-sm text-headline-sm font-serif text-primary mt-1">
+                <h3 className="font-serif text-2xl font-bold text-primary mt-1">
                   Java Preanger Honey Geisha
                 </h3>
-                <p className="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">
+                <p className="text-sm text-on-surface-variant mt-2 leading-relaxed">
                   Seduhan v60 lambat dengan profil aroma melati liar, madu hutan, jeruk bergamot segar, dan akhir rasa buah persik matang yang lembut di lidah.
                 </p>
-                <div className="flex flex-wrap gap-2 mt-4">
+                <div className="flex flex-wrap gap-2 mt-3.5">
                   <span className="px-2.5 py-1 rounded-lg bg-surface-container text-xs font-semibold text-on-surface">Jasmine</span>
                   <span className="px-2.5 py-1 rounded-lg bg-surface-container text-xs font-semibold text-on-surface">Bergamot</span>
                   <span className="px-2.5 py-1 rounded-lg bg-surface-container text-xs font-semibold text-on-surface">Wild Honey</span>
@@ -120,23 +123,19 @@ export const CoffeePage = () => {
 
               <div className="pt-4 border-t border-surface-container flex items-center justify-between">
                 <div>
-                  <span className="text-[11px] uppercase tracking-wider text-on-surface-variant block">Harga Per Cangkir</span>
-                  <span className="font-title-lg font-bold text-primary">Rp 65.000</span>
+                  <span className="text-[11px] uppercase tracking-wider text-on-surface-variant block font-medium">Harga Seduhan</span>
+                  <span className="font-serif text-2xl font-bold text-primary">Rp 65.000</span>
                 </div>
                 <button
                   type="button"
                   onClick={() => {
-                    addToCart({
-                      name: 'Java Preanger Honey Geisha',
-                      price: 65000,
-                      category: 'Coffee',
-                      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCxy3vtevWnY_khG4iKiSs_W3FmyZq4d3coXk6wdNn1__gGFiWqejK-T_mZIpWgncGEwntiIOaWZcb26IDNQrN8Z6r9ZJG_x5I8GllzcwY9owrGOqglAkUSQ-i47DNRAvGeQIqGvJn6H9Tfk-Tsz5wKPGhL4_3UHXLNV0thflY9vvSxaTOA8kL0IR13oFQkyC5hHDHsied_FFPCQKNXDB-uxkmwxuYufOO7bw5mqt8Ts6MK40JZIHK2'
-                    });
+                    const item = coffeeItems.find(item => item.name.includes('Geisha')) || coffeeItems[0];
+                    openItemModal(item);
                   }}
-                  className="px-5 py-2.5 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-md font-bold transition-all shadow-sm cursor-pointer flex items-center gap-1.5"
+                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-surface hover:bg-surface-container text-primary font-bold text-xs border border-surface-container-high transition-all shadow-xs cursor-pointer group-hover:border-primary/40"
                 >
-                  <span className="material-symbols-outlined text-sm">local_mall</span>
-                  <span>Pesan Sekarang</span>
+                  <span>Detail Seduhan</span>
+                  <Icon name="arrow_forward" className="w-3.5 h-3.5 text-secondary" />
                 </button>
               </div>
             </div>
@@ -178,9 +177,7 @@ export const CoffeePage = () => {
                 placeholder="Cari kopi..."
                 className="bg-surface-container text-on-surface text-label-sm font-label-sm pl-8 pr-3 py-1.5 rounded-lg border border-transparent focus:border-primary/30 focus:outline-none w-36 sm:w-48"
               />
-              <span className="material-symbols-outlined text-sm text-on-surface-variant absolute left-2.5 top-2 pointer-events-none">
-                search
-              </span>
+              <Icon name="search" className="w-4 h-4" />
             </div>
 
             <div className="flex items-center gap-2 text-on-surface-variant font-label-sm text-xs">
@@ -201,7 +198,7 @@ export const CoffeePage = () => {
       </section>
 
       {/* Main Catalog Grid */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-12 w-full">
+      <section id="coffee-menu-grid" className="max-w-7xl mx-auto px-6 lg:px-12 py-12 w-full">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
           <div>
             <div className="flex items-center gap-2 mb-2">
@@ -263,7 +260,7 @@ export const CoffeePage = () => {
                   </p>
                   {coffee.notes && (
                     <div className="p-2.5 rounded-xl bg-surface-container/80 border border-surface-container-high text-xs text-on-surface-variant flex items-center gap-1.5">
-                      <span className="material-symbols-outlined text-secondary text-sm">spa</span>
+                      <Icon name="spa" className="w-4 h-4 text-secondary" />
                       <span className="truncate"><strong>Notes:</strong> {coffee.notes}</span>
                     </div>
                   )}
@@ -271,103 +268,48 @@ export const CoffeePage = () => {
               </div>
 
               <div className="p-6 pt-0 border-t border-surface-container flex items-center justify-between mt-4">
-                <span className="font-title-lg font-bold text-primary">
-                  {formatRupiah(coffee.price)}
-                </span>
-                <div className="flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={() => openItemModal(coffee)}
-                    className="px-3 py-2 rounded-lg bg-surface hover:bg-surface-container text-primary font-label-sm font-bold border border-surface-container-high text-xs transition-all cursor-pointer"
-                  >
-                    Detail
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      addToCart({
-                        id: coffee.id,
-                        name: coffee.name,
-                        price: coffee.price,
-                        image: coffee.image,
-                        category: 'Coffee'
-                      });
-                    }}
-                    className="px-3.5 py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-sm font-bold text-xs transition-all flex items-center gap-1 cursor-pointer"
-                  >
-                    <span className="material-symbols-outlined text-sm">add</span>
-                    <span>Pesan</span>
-                  </button>
+                <div>
+                  <span className="block text-[11px] uppercase tracking-wider text-on-surface-variant font-medium">Harga Seduhan</span>
+                  <span className="font-title-lg font-serif font-bold text-primary text-xl">
+                    {formatRupiah(coffee.price)}
+                  </span>
                 </div>
+                <button
+                  type="button"
+                  onClick={() => openItemModal(coffee)}
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-surface hover:bg-surface-container text-primary font-label-sm font-bold border border-surface-container-high text-xs transition-all cursor-pointer group-hover:border-primary/40"
+                >
+                  <span>Detail Seduhan</span>
+                  <Icon name="arrow_forward" className="w-3.5 h-3.5 text-secondary" />
+                </button>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Fortnightly Roastery Subscription Card */}
-      <section id="subscription" className="max-w-7xl mx-auto px-6 lg:px-12 w-full py-16 scroll-mt-24">
-        <div className="bg-primary text-on-primary rounded-3xl p-8 lg:p-12 shadow-xl relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-10">
-          <div className="space-y-4 max-w-xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-xs font-bold uppercase tracking-wider">
-              <span className="material-symbols-outlined text-sm">cycle</span>
-              <span>Roastery Subscription Club</span>
-            </div>
-            <h2 className="font-headline-lg text-headline-lg font-serif">
-              Biji Kopi Segar Diantar ke Pintu Rumah Anda Tiap Dua Minggu
-            </h2>
-            <p className="font-body-md text-on-primary/80 leading-relaxed">
-              Nikmati rotasi biji kopi arabika pilihan dari perkebunan organik terbaik Indonesia. Disangrai khusus sesuai tanggal pesanan Anda dengan opsi gilingan yang dapat disesuaikan.
-            </p>
-            <div className="flex flex-wrap gap-2 pt-2">
-              {['Whole Bean', 'Filter (Medium)', 'Espresso (Fine)'].map((g) => (
-                <button
-                  key={g}
-                  type="button"
-                  onClick={() => setSelectedGrind(g)}
-                  className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
-                    selectedGrind === g
-                      ? 'bg-primary-fixed text-on-primary-fixed font-bold'
-                      : 'bg-primary-container/60 text-on-primary hover:bg-primary-container'
-                  }`}
-                >
-                  {g}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="bg-surface text-on-surface rounded-2xl p-6 lg:p-8 w-full max-w-sm space-y-4 shadow-lg shrink-0">
-            <span className="font-label-sm text-secondary uppercase tracking-widest font-bold text-xs">
-              Keanggotaan Terpilih
+      {/* Menu Notes & Reservation Banner */}
+      <section className="max-w-7xl mx-auto px-6 lg:px-12 w-full pb-20">
+        <div className="rounded-3xl bg-surface-container-low border border-surface-container-high/80 p-8 lg:p-12 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+          <div className="space-y-2 max-w-xl">
+            <span className="text-xs uppercase font-bold tracking-widest text-secondary block">
+              Catatan Layanan Seduh
             </span>
-            <div className="flex items-baseline gap-1">
-              <span className="font-headline-md font-serif text-primary font-bold">Rp 115.000</span>
-              <span className="font-body-sm text-on-surface-variant">/ dua minggu (250g)</span>
-            </div>
-            <ul className="space-y-2 font-body-sm text-xs text-on-surface-variant">
-              <li className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-secondary text-base">check</span>
-                <span>Gratis ongkir Jabodetabek &amp; Bandung</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-secondary text-base">check</span>
-                <span>Kartu catatan sensori &amp; panduan seduh eksklusif</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-secondary text-base">check</span>
-                <span>Dapat dijeda atau dibatalkan kapan saja</span>
-              </li>
-            </ul>
-            <button
-              type="button"
-              onClick={handleSubscribe}
-              className="w-full py-3.5 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-md font-bold transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
-            >
-              <span>Mulai Berlangganan</span>
-              <span className="material-symbols-outlined text-base">arrow_forward</span>
-            </button>
+            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-primary">
+              Nikmati Seduhan Segar Langsung di Suaka Kami
+            </h3>
+            <p className="text-sm text-on-surface-variant leading-relaxed">
+              Harga tertera dalam Rupiah (IDR) dan belum termasuk pajak restoran 10% &amp; biaya servis. Ketersediaan varietas biji kopi dapat berganti mengikuti rotasi sangrai harian barista di setiap cabang.
+            </p>
           </div>
+          <button
+            type="button"
+            onClick={() => openReservationModal()}
+            className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg shadow-sm hover:shadow-md transition-all cursor-pointer shrink-0"
+          >
+            <Icon name="event" className="w-4 h-4 text-primary-fixed" />
+            <span>Reservasi Meja Suaka</span>
+          </button>
         </div>
       </section>
     </div>

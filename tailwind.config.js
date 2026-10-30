@@ -62,6 +62,20 @@ export default {
         "error-container": "#ffdad6",
         "on-error-container": "#93000a"
       },
+      fontSize: {
+        "display": ["3rem", { lineHeight: "1.15" }],
+        "headline-lg": ["2.25rem", { lineHeight: "1.2" }],
+        "headline-md": ["1.75rem", { lineHeight: "1.25" }],
+        "headline-sm": ["1.35rem", { lineHeight: "1.3" }],
+        "title-lg": ["1.25rem", { lineHeight: "1.35" }],
+        "title-md": ["1.125rem", { lineHeight: "1.4" }],
+        "body-lg": ["1.0625rem", { lineHeight: "1.6" }],
+        "body-md": ["0.9375rem", { lineHeight: "1.5" }],
+        "body-sm": ["0.8125rem", { lineHeight: "1.5" }],
+        "label-lg": ["0.875rem", { lineHeight: "1.4" }],
+        "label-md": ["0.75rem", { lineHeight: "1.4" }],
+        "label-sm": ["0.6875rem", { lineHeight: "1.4" }],
+      },
       borderRadius: {
         "DEFAULT": "0.25rem",
         "lg": "0.5rem",

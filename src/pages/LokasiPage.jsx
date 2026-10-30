@@ -1,3 +1,4 @@
+import { Icon } from '../components/ui/Icon';
 import React, { useState } from 'react';
 import { useModals } from '../context/ModalContext';
 import { SANCTUARIES } from '../data/stores';
@@ -54,11 +55,11 @@ export const LokasiPage = () => {
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-10">
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md mb-4 shadow-xs">
-                <span className="material-symbols-outlined text-sm">eco</span>
-                <span>Sanctuary Directory • Indonesia</span>
+                <Icon name="eco" className="w-4 h-4" />
+                <span>Direktori Suaka Kaca • Indonesia</span>
               </div>
               <h1 className="font-headline-lg text-headline-lg text-primary tracking-tight font-serif mb-4">
-                Find Your Nearest Botanical Sanctuary
+                Temukan Suaka Rumah Kaca Terdekat Anda
               </h1>
               <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
                 Kunjungi ruang suaka rumah kaca kami di Jakarta, Tangerang, Bandung, dan Bali. Tempat bertemunya racikan seduh kopi micro-lot dengan rimbunnya flora tropis hidup.
@@ -68,18 +69,18 @@ export const LokasiPage = () => {
             {/* Quick Summary Stats Widget */}
             <div className="flex items-center gap-6 p-4 rounded-xl bg-surface-container shadow-xs self-start lg:self-auto border border-surface-container-high/80">
               <div className="text-left pr-4">
-                <div className="font-headline-md text-headline-md text-primary font-serif">14</div>
-                <div className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Sanctuaries</div>
+                <div className="font-headline-md text-headline-md text-primary font-serif">{SANCTUARIES.length}</div>
+                <div className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Suaka Aktif</div>
               </div>
               <div className="w-px h-10 bg-outline-variant/60"></div>
               <div className="text-left pr-4">
                 <div className="font-headline-md text-headline-md text-primary font-serif">3</div>
-                <div className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Provinces</div>
+                <div className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Wilayah Utama</div>
               </div>
               <div className="w-px h-10 bg-outline-variant/60"></div>
               <div className="text-left">
                 <div className="font-headline-md text-headline-md text-secondary font-serif">100%</div>
-                <div className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Pet Friendly</div>
+                <div className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Ramah Hewan</div>
               </div>
             </div>
           </div>
@@ -90,7 +91,7 @@ export const LokasiPage = () => {
               {/* District Search Field */}
               <div className="lg:col-span-6 relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-on-surface-variant">
-                  <span className="material-symbols-outlined text-xl">location_on</span>
+                  <Icon name="location_on" className="w-5 h-5" />
                 </div>
                 <input
                   type="text"
@@ -105,7 +106,7 @@ export const LokasiPage = () => {
                     onClick={() => setSearchQuery('')}
                     className="absolute inset-y-0 right-0 pr-4 flex items-center text-on-surface-variant hover:text-primary transition-colors cursor-pointer"
                   >
-                    <span className="material-symbols-outlined text-lg">close</span>
+                    <Icon name="close" className="w-5 h-5" />
                   </button>
                 )}
               </div>
@@ -125,7 +126,7 @@ export const LokasiPage = () => {
                     <option value="bali">Bali</option>
                   </select>
                   <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-on-surface-variant">
-                    <span className="material-symbols-outlined text-lg">expand_more</span>
+                    <Icon name="expand_more" className="w-5 h-5" />
                   </div>
                 </div>
               </div>
@@ -137,7 +138,7 @@ export const LokasiPage = () => {
                   onClick={handleGpsLocate}
                   className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-primary hover:bg-primary-container text-on-primary hover:text-on-primary-container font-label-lg text-label-lg shadow-xs transition-all cursor-pointer"
                 >
-                  <span className="material-symbols-outlined text-lg">near_me</span>
+                  <Icon name="near_me" className="w-5 h-5" />
                   <span>Terdekat Saya</span>
                 </button>
               </div>
@@ -186,7 +187,7 @@ export const LokasiPage = () => {
           <div className="lg:col-span-7 space-y-6">
             {filteredStores.length === 0 ? (
               <div className="text-center py-16 bg-surface-container-lowest rounded-2xl border border-dashed border-outline-variant p-8">
-                <span className="material-symbols-outlined text-4xl text-on-surface-variant mb-2">storefront</span>
+                <Icon name="storefront" className="w-8 h-8" />
                 <h3 className="font-title-md font-bold text-primary">Tidak Ada Sanctuary yang Cocok</h3>
                 <p className="font-body-sm text-on-surface-variant mt-1">Coba sesuaikan kata kunci pencarian atau ganti filter wilayah.</p>
                 <button
@@ -233,7 +234,7 @@ export const LokasiPage = () => {
                               {store.subcategory}
                             </span>
                             <div className="flex items-center gap-1 text-tertiary font-label-sm text-label-sm font-semibold">
-                              <span className="material-symbols-outlined text-sm text-amber-500">star</span>
+                              <Icon name="star" className="w-4 h-4" />
                               <span>{store.rating}</span>
                             </div>
                           </div>
@@ -243,7 +244,7 @@ export const LokasiPage = () => {
                           </h2>
 
                           <p className="font-body-sm text-body-sm text-on-surface-variant flex items-start gap-1.5 mb-3">
-                            <span className="material-symbols-outlined text-base shrink-0 mt-0.5 text-primary">pin_drop</span>
+                            <Icon name="pin_drop" className="w-4 h-4" />
                             <span>{store.address}</span>
                           </p>
 
@@ -267,7 +268,7 @@ export const LokasiPage = () => {
                             }}
                             className="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md transition-all text-center cursor-pointer"
                           >
-                            <span className="material-symbols-outlined text-base">directions</span>
+                            <Icon name="directions" className="w-4 h-4" />
                             <span>Petunjuk Arah</span>
                           </button>
                           <button
@@ -278,7 +279,7 @@ export const LokasiPage = () => {
                             }}
                             className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg bg-secondary-container hover:bg-secondary-fixed text-on-secondary-container font-label-md text-label-md transition-all cursor-pointer"
                           >
-                            <span className="material-symbols-outlined text-base">table_bar</span>
+                            <Icon name="table_bar" className="w-4 h-4" />
                             <span>Reservasi Meja</span>
                           </button>
                           <a
@@ -287,7 +288,7 @@ export const LokasiPage = () => {
                             className="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all"
                             title="Hubungi Barista Sanctuary"
                           >
-                            <span className="material-symbols-outlined text-lg">call</span>
+                            <Icon name="call" className="w-5 h-5" />
                           </a>
                         </div>
                       </div>
@@ -303,7 +304,7 @@ export const LokasiPage = () => {
             <div className="rounded-2xl bg-surface-container-lowest p-4 shadow-sm overflow-hidden border border-surface-container-high/80">
               <div className="flex items-center justify-between mb-3 px-2">
                 <div className="flex items-center gap-2">
-                  <span className="material-symbols-outlined text-primary text-xl">map</span>
+                  <Icon name="map" className="w-5 h-5 text-primary" />
                   <span className="font-title-md text-title-md text-primary font-bold">Sanctuary Map Navigator</span>
                 </div>
                 <span className="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2.5 py-1 rounded-full truncate max-w-[200px]">
@@ -311,159 +312,57 @@ export const LokasiPage = () => {
                 </span>
               </div>
 
-              {/* Simulated Interactive Map Component with Dynamic Overlaid Custom Pins */}
-              <div className="relative w-full h-[520px] rounded-xl overflow-hidden bg-surface-container">
-                <div
-                  className="w-full h-full bg-cover bg-center transition-all duration-700"
-                  style={{
-                    backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCxyO6hx_HlwOkoEhgpQHVQrc-4psepu5wePIl0-jzYNCBSW4rvZSmaOIguvZlFScwxhTEo2CkSX8A8ByN2PYQz2d848NjHKD2-Ho0bqWjvjgPvE7ZJzHonOknh_TnCM4U8CFafkF06ZvqQrTUz1H1s-O1L-t9jx5MH2hhKIsRmc-Kvv9GpWdL6-HQuKEMDyc8QyRnqLz2mP3wgmWxPPKssGGljWD-OuP23ZDDGnPe8LgiH61DhnaLa')",
-                    transform: `scale(${mapZoom / 14})`
-                  }}
-                ></div>
-
-                {/* Ambient Botanical Gradient Overlay */}
-                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-primary/30 via-transparent to-transparent"></div>
-
-                {/* Active Pin 1: Senopati */}
-                <div
-                  onClick={() => handleFocusMarker(SANCTUARIES[0])}
-                  className="absolute top-[42%] left-[48%] pointer-events-auto transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group z-20"
-                >
-                  <div className="relative flex flex-col items-center">
-                    <div className={`px-2.5 py-1 rounded-md text-[10px] shadow-lg whitespace-nowrap mb-1 flex items-center gap-1 transition-all ${
-                      activeStore?.id === 's1' ? 'bg-primary text-on-primary ring-2 ring-primary-fixed' : 'bg-surface text-primary opacity-90'
-                    }`}>
-                      <span className="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>
-                      <span className="font-bold">Senopati • 1.2km</span>
-                    </div>
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center shadow-lg transition-all ${
-                      activeStore?.id === 's1' ? 'bg-primary text-on-primary ring-4 ring-primary/30 scale-110' : 'bg-surface-container-highest text-primary'
-                    }`}>
-                      <span className="material-symbols-outlined text-base">eco</span>
-                    </div>
+              {/* Authentic Interactive Map Embed with OSM and Directions Action */}
+              <div className="relative w-full h-[520px] rounded-xl overflow-hidden bg-surface-container border border-surface-container-high shadow-inner">
+                {activeStore ? (
+                  <iframe
+                    title={`Peta Lokasi ${activeStore.name}`}
+                    className="w-full h-full border-0 rounded-xl"
+                    loading="lazy"
+                    src={`https://www.openstreetmap.org/export/embed.html?bbox=${activeStore.lng - 0.015}%2C${activeStore.lat - 0.012}%2C${activeStore.lng + 0.015}%2C${activeStore.lat + 0.012}&layer=mapnik&marker=${activeStore.lat}%2C${activeStore.lng}`}
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-on-surface-variant font-label-md">
+                    Memuat peta suaka...
                   </div>
-                </div>
+                )}
 
-                {/* Pin 2: Menteng */}
-                <div
-                  onClick={() => handleFocusMarker(SANCTUARIES[1])}
-                  className="absolute top-[30%] left-[54%] pointer-events-auto transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group z-20"
-                >
-                  <div className="relative flex flex-col items-center">
-                    <div className={`px-2 py-0.5 rounded-md text-[10px] shadow-md whitespace-nowrap mb-1 transition-all ${
-                      activeStore?.id === 's2' ? 'bg-primary text-on-primary font-bold' : 'bg-surface text-primary opacity-90'
-                    }`}>
-                      Menteng Heritage
-                    </div>
-                    <div className={`w-7 h-7 rounded-full flex items-center justify-center shadow-md transition-all ${
-                      activeStore?.id === 's2' ? 'bg-primary text-on-primary ring-4 ring-primary/30 scale-110' : 'bg-secondary text-on-secondary'
-                    }`}>
-                      <span className="material-symbols-outlined text-sm">local_cafe</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Pin 3: BSD */}
-                <div
-                  onClick={() => handleFocusMarker(SANCTUARIES[2])}
-                  className="absolute top-[68%] left-[26%] pointer-events-auto transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group z-20"
-                >
-                  <div className="relative flex flex-col items-center">
-                    <div className={`px-2 py-0.5 rounded-md text-[10px] shadow-md whitespace-nowrap mb-1 transition-all ${
-                      activeStore?.id === 's3' ? 'bg-primary text-on-primary font-bold' : 'bg-surface text-primary opacity-90'
-                    }`}>
-                      BSD Green Terrace
-                    </div>
-                    <div className={`w-7 h-7 rounded-full flex items-center justify-center shadow-md transition-all ${
-                      activeStore?.id === 's3' ? 'bg-primary text-on-primary ring-4 ring-primary/30 scale-110' : 'bg-surface-container-highest text-primary'
-                    }`}>
-                      <span className="material-symbols-outlined text-sm">yard</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Pin 4: Bandung */}
-                <div
-                  onClick={() => handleFocusMarker(SANCTUARIES[3])}
-                  className="absolute top-[52%] left-[78%] pointer-events-auto transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group z-20"
-                >
-                  <div className="relative flex flex-col items-center">
-                    <div className={`px-2 py-0.5 rounded-md text-[10px] shadow-md whitespace-nowrap mb-1 transition-all ${
-                      activeStore?.id === 's4' ? 'bg-primary text-on-primary font-bold' : 'bg-surface text-primary opacity-90'
-                    }`}>
-                      Bandung Pine Hills
-                    </div>
-                    <div className={`w-7 h-7 rounded-full flex items-center justify-center shadow-md transition-all ${
-                      activeStore?.id === 's4' ? 'bg-primary text-on-primary ring-4 ring-primary/30 scale-110' : 'bg-secondary text-on-secondary'
-                    }`}>
-                      <span className="material-symbols-outlined text-sm">forest</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Pin 5: Bali */}
-                <div
-                  onClick={() => handleFocusMarker(SANCTUARIES[4])}
-                  className="absolute top-[82%] left-[84%] pointer-events-auto transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group z-20"
-                >
-                  <div className="relative flex flex-col items-center">
-                    <div className={`px-2 py-0.5 rounded-md text-[10px] shadow-md whitespace-nowrap mb-1 transition-all ${
-                      activeStore?.id === 's5' ? 'bg-primary text-on-primary font-bold' : 'bg-surface text-primary opacity-90'
-                    }`}>
-                      Canggu Eco-Pavilion
-                    </div>
-                    <div className={`w-7 h-7 rounded-full flex items-center justify-center shadow-md transition-all ${
-                      activeStore?.id === 's5' ? 'bg-primary text-on-primary ring-4 ring-primary/30 scale-110' : 'bg-secondary-container text-on-secondary-container'
-                    }`}>
-                      <span className="material-symbols-outlined text-sm">spa</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Map Floating Zoom Controls */}
-                <div className="absolute bottom-4 right-4 flex flex-col gap-2 pointer-events-auto z-30">
-                  <button
-                    type="button"
-                    onClick={() => setMapZoom(prev => Math.min(prev + 1, 18))}
-                    className="w-9 h-9 rounded-lg bg-surface/90 backdrop-blur text-primary flex items-center justify-center shadow-md hover:bg-surface transition-all cursor-pointer"
-                    title="Zoom In"
-                  >
-                    <span className="material-symbols-outlined text-base">add</span>
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setMapZoom(prev => Math.max(prev - 1, 10))}
-                    className="w-9 h-9 rounded-lg bg-surface/90 backdrop-blur text-primary flex items-center justify-center shadow-md hover:bg-surface transition-all cursor-pointer"
-                    title="Zoom Out"
-                  >
-                    <span className="material-symbols-outlined text-base">remove</span>
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => { setMapZoom(14); setActiveStore(SANCTUARIES[0]); }}
-                    className="w-9 h-9 rounded-lg bg-surface/90 backdrop-blur text-primary flex items-center justify-center shadow-md hover:bg-surface transition-all cursor-pointer"
-                    title="Reset Center"
-                  >
-                    <span className="material-symbols-outlined text-base">my_location</span>
-                  </button>
-                </div>
-
-                {/* Route ETA Mini Badge */}
+                {/* Floating Active Sanctuary Overlay Card */}
                 {activeStore && (
-                  <div className="absolute top-4 left-4 p-3 rounded-xl bg-surface/95 backdrop-blur shadow-md flex items-center gap-3 z-30 border border-surface-container-high/80">
-                    <div className="w-9 h-9 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
-                      <span className="material-symbols-outlined text-lg">navigation</span>
+                  <div className="absolute top-4 left-4 right-4 p-4 rounded-xl bg-surface/95 backdrop-blur-md shadow-md flex items-center justify-between gap-3 z-30 border border-surface-container-high/80">
+                    <div className="flex items-center gap-3 min-w-0">
+                      <div className="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-xs">
+                        <Icon name="location_on" className="w-5 h-5" />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="font-label-sm text-[11px] text-secondary font-bold uppercase tracking-wider">Sanctuary Aktif</p>
+                        <p className="font-label-md text-label-md font-semibold text-primary truncate">{activeStore.name}</p>
+                        <p className="text-[11px] text-on-surface-variant truncate">{activeStore.address}</p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider">Sanctuary Aktif</p>
-                      <p className="font-label-md text-label-md font-semibold text-primary truncate max-w-[180px]">{activeStore.name}</p>
-                      <p className="text-[11px] text-secondary font-medium">Jarak: {activeStore.distance}</p>
-                    </div>
+                    <button
+                      type="button"
+                      onClick={() => handleOpenDirections(activeStore)}
+                      className="px-3.5 py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-sm text-xs font-bold transition-all shrink-0 flex items-center gap-1.5 cursor-pointer shadow-xs"
+                    >
+                      <Icon name="directions" className="w-4 h-4" />
+                      <span>Buka Maps</span>
+                    </button>
                   </div>
                 )}
               </div>
 
-              {/* Bottom Micro Map Legend */}
+              {/* Bottom Real Map Legend & Info */}
+              <div className="mt-3 pt-3 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm border-t border-surface-container">
+                <span className="flex items-center gap-1.5">
+                  <span className="w-2.5 h-2.5 rounded-full bg-primary inline-block"></span>
+                  <span>Fokus GPS Aktif ({activeStore?.name?.split(' ')[0]})</span>
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Icon name="verified" className="w-4 h-4" />
+                  <span>OpenStreetMap Live Data</span>
+                </span>
+              </div>
               <div className="mt-3 pt-3 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm border-t border-surface-container">
                 <span className="flex items-center gap-1.5">
                   <span className="w-2.5 h-2.5 rounded-full bg-primary inline-block"></span>
@@ -482,7 +381,7 @@ export const LokasiPage = () => {
 
             {/* Glasshouse Operating Protocols Note */}
             <div className="p-5 rounded-2xl bg-surface-container-high/60 flex items-start gap-3 border border-surface-container-high">
-              <span className="material-symbols-outlined text-secondary text-2xl shrink-0 mt-0.5">info</span>
+              <Icon name="info" className="w-6 h-6 text-secondary" />
               <div>
                 <h4 className="font-label-lg text-label-lg text-on-surface font-semibold mb-1">Kunjungan Ramah Hewan &amp; Workspace</h4>
                 <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
@@ -501,7 +400,7 @@ export const LokasiPage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
               <div className="lg:col-span-7 p-8 md:p-14 z-10">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm mb-6">
-                  <span className="material-symbols-outlined text-sm">celebration</span>
+                  <Icon name="celebration" className="w-4 h-4" />
                   <span>Intimate Celebrations &amp; Work Retreats</span>
                 </div>
                 <h2 className="font-headline-lg text-headline-lg text-on-primary font-serif tracking-tight mb-4">
@@ -531,7 +430,7 @@ export const LokasiPage = () => {
                     className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-surface text-primary hover:bg-surface-container font-label-lg text-label-lg shadow-sm transition-all cursor-pointer font-bold"
                   >
                     <span>Inquire Private Space</span>
-                    <span className="material-symbols-outlined text-lg">arrow_forward</span>
+                    <Icon name="arrow_forward" className="w-5 h-5" />
                   </button>
                   <a
                     href="https://wa.me/6281234567890?text=Halo%20Garden%20Coffee,%20saya%20ingin%20info%20paket%20Private%20Glasshouse%20Gathering."
@@ -539,7 +438,7 @@ export const LokasiPage = () => {
                     rel="noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-primary-container hover:bg-primary-container/80 text-on-primary font-label-lg text-label-lg transition-all"
                   >
-                    <span className="material-symbols-outlined text-lg">chat</span>
+                    <Icon name="chat" className="w-5 h-5" />
                     <span>Chat Concierge WhatsApp</span>
                   </a>
                 </div>
@@ -548,7 +447,7 @@ export const LokasiPage = () => {
               <div className="lg:col-span-5 relative h-72 lg:h-full min-h-[380px]">
                 <img
                   className="w-full h-full object-cover"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPo76waY10o3MKuBzo_wE_4_SptbjqAtYrXpf42Tub4yz5ZW6otYI9iFYEDbpvhssdz1PA0SPBTrSUox0yWqebataFTTjdhY7LWNtQNh8eBuZwNRKmM159nVfHnbRAOr8o6sorFYjYma7gvWM9-mtZ4NdGwWxz46XmETf1YdkkJWWaKZJgzlfw8p6Ell89rmdSkGQEGfLWyOBjua9aJjEfMy0B8OrMvkjDXCAudnmYMWD87JaCFPv3"
+                  src="/images/img_19.jpg"
                   alt="Glasshouse private dining event"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-primary via-transparent to-transparent"></div>

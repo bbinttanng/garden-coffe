@@ -1,10 +1,9 @@
+import { Icon } from '../ui/Icon';
 import React from 'react';
 import { useModals } from '../../context/ModalContext';
-import { useCart } from '../../context/CartContext';
 
 export const MobileNavDrawer = ({ activePage, setActivePage }) => {
-  const { isMobileNavOpen, closeMobileNav, openSearch, openReservationModal, openCart } = useModals();
-  const { totals } = useCart();
+  const { isMobileNavOpen, closeMobileNav, openSearch, openReservationModal } = useModals();
 
   if (!isMobileNavOpen) return null;
 
@@ -13,7 +12,7 @@ export const MobileNavDrawer = ({ activePage, setActivePage }) => {
     { id: 'coffee', label: 'Specialty Coffee', icon: 'local_cafe' },
     { id: 'food', label: 'Botanical Food', icon: 'restaurant' },
     { id: 'pastry', label: 'Artisan Pastry', icon: 'bakery_dining' },
-    { id: 'lokasi', label: 'Lokasi Store (14 Glasshouses)', icon: 'explore' },
+    { id: 'lokasi', label: 'Lokasi Suaka (5 Cabang)', icon: 'explore' },
   ];
 
   return (
@@ -27,19 +26,26 @@ export const MobileNavDrawer = ({ activePage, setActivePage }) => {
       {/* Drawer */}
       <nav className="relative w-[82%] max-w-sm bg-surface shadow-2xl flex flex-col z-10 border-r border-surface-container-high animate-in slide-in-from-left duration-300">
         <div className="p-6 bg-surface-container-low border-b border-surface-container-high/80 flex items-center justify-between">
-          <div className="flex flex-col">
-            <span className="font-serif font-bold text-xl text-primary tracking-tight leading-none">
-              Garden Coffee
-            </span>
-            <span className="text-[10px] font-sans font-bold uppercase tracking-[0.25em] text-secondary mt-1">
-              &amp; Eatery
-            </span>
+          <div className="flex items-center gap-3">
+            <img
+              src="/logo.png"
+              alt="Garden Coffee Brand Mark"
+              className="w-9 h-9 object-contain shrink-0"
+            />
+            <div className="flex flex-col">
+              <span className="font-serif font-bold text-xl text-primary tracking-tight leading-none">
+                Garden Coffee
+              </span>
+              <span className="text-[10px] font-sans font-bold uppercase tracking-[0.25em] text-secondary mt-1">
+                &amp; Eatery
+              </span>
+            </div>
           </div>
           <button
             onClick={closeMobileNav}
             className="w-9 h-9 rounded-full bg-surface-container text-on-surface-variant hover:text-primary flex items-center justify-center cursor-pointer"
           >
-            <span className="material-symbols-outlined text-lg">close</span>
+            <Icon name="close" className="w-5 h-5" />
           </button>
         </div>
 
@@ -63,7 +69,7 @@ export const MobileNavDrawer = ({ activePage, setActivePage }) => {
                   <span className="material-symbols-outlined text-xl">{link.icon}</span>
                   <span>{link.label}</span>
                 </div>
-                <span className="material-symbols-outlined text-sm">chevron_right</span>
+                <Icon name="chevron_right" className="w-4 h-4" />
               </button>
             );
           })}
@@ -76,7 +82,7 @@ export const MobileNavDrawer = ({ activePage, setActivePage }) => {
               }}
               className="w-full flex items-center gap-3 p-3.5 rounded-xl bg-surface-container text-on-surface font-label-md transition-all cursor-pointer"
             >
-              <span className="material-symbols-outlined text-primary text-xl">search</span>
+              <Icon name="search" className="w-5 h-5 text-primary" />
               <span>Cari Menu &amp; Lokasi</span>
             </button>
             <button
@@ -86,7 +92,7 @@ export const MobileNavDrawer = ({ activePage, setActivePage }) => {
               }}
               className="w-full flex items-center gap-3 p-3.5 rounded-xl bg-secondary-container/40 text-on-secondary-fixed font-label-md transition-all cursor-pointer"
             >
-              <span className="material-symbols-outlined text-secondary text-xl">event_seat</span>
+              <Icon name="event_seat" className="w-5 h-5 text-secondary" />
               <span>Reservasi Meja</span>
             </button>
           </div>
@@ -96,20 +102,15 @@ export const MobileNavDrawer = ({ activePage, setActivePage }) => {
           <button
             onClick={() => {
               closeMobileNav();
-              openCart();
+              openReservationModal();
             }}
             className="w-full py-3.5 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-lg font-bold flex items-center justify-center gap-2 shadow-sm cursor-pointer"
           >
-            <span className="material-symbols-outlined text-lg">local_mall</span>
-            <span>Buka Baki Pesanan</span>
-            {totals.count > 0 && (
-              <span className="ml-1 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed text-xs font-bold">
-                {totals.count}
-              </span>
-            )}
+            <Icon name="event" className="w-5 h-5" />
+            <span>Reservasi Meja Suaka</span>
           </button>
           <p className="text-center font-body-sm text-[11px] text-on-surface-variant">
-            Jakarta • Bandung • Bali Sanctuary
+            Jakarta • Tangerang • Bandung • Bali Sanctuary
           </p>
         </div>
       </nav>

@@ -57,7 +57,7 @@ export const CartProvider = ({ children }) => {
             name: item.name,
             price: numPrice,
             category: item.category || 'Menu',
-            image: item.image || 'https://lh3.googleusercontent.com/aida-public/AB6AXuCxy3vtevWnY_khG4iKiSs_W3FmyZq4d3coXk6wdNn1__gGFiWqejK-T_mZIpWgncGEwntiIOaWZcb26IDNQrN8Z6r9ZJG_x5I8GllzcwY9owrGOqglAkUSQ-i47DNRAvGeQIqGvJn6H9Tfk-Tsz5wKPGhL4_3UHXLNV0thflY9vvSxaTOA8kL0IR13oFQkyC5hHDHsied_FFPCQKNXDB-uxkmwxuYufOO7bw5mqt8Ts6MK40JZIHK2',
+            image: item.image || '/images/img_2.jpg',
             options: item.options || null,
             optionsStr: optionsStr,
             quantity: item.quantity || 1

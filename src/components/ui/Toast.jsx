@@ -1,3 +1,4 @@
+import { Icon } from './Icon';
 import React from 'react';
 import { useModals } from '../../context/ModalContext';
 
@@ -11,7 +12,7 @@ export const Toast = () => {
       }`}
     >
       <div className="w-9 h-9 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
-        <span className="material-symbols-outlined text-xl">{toast.icon || 'eco'}</span>
+        <Icon name={toast.icon || 'eco'} className="w-5 h-5" />
       </div>
       <div className="flex-1 min-w-0">
         <h4 className="font-title-md text-[14px] font-bold text-primary-fixed leading-tight">

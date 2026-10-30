@@ -1,12 +1,12 @@
+import { Icon } from '../ui/Icon';
 import React, { useState } from 'react';
 import { useModals } from '../../context/ModalContext';
-import { useCart } from '../../context/CartContext';
 import { GARDEN_CATALOG } from '../../data/catalog';
 import { SANCTUARIES } from '../../data/stores';
 
 export const SearchModal = ({ setActivePage }) => {
   const { isSearchOpen, closeSearch, openItemModal, openReservationModal } = useModals();
-  const { addToCart, formatRupiah } = useCart();
+  const formatRupiah = (val) => 'Rp ' + Number(val).toLocaleString('id-ID');
   const [query, setQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState('all');
 
@@ -39,7 +39,7 @@ export const SearchModal = ({ setActivePage }) => {
       <div className="relative bg-surface rounded-3xl max-w-2xl w-full botanical-modal-shadow border border-surface-container-high overflow-hidden flex flex-col max-h-[80vh] z-10 animate-in zoom-in-95 duration-200">
         {/* Search Input Header */}
         <div className="p-4 sm:p-6 bg-surface-container-low border-b border-surface-container-high flex items-center gap-3">
-          <span className="material-symbols-outlined text-2xl text-primary">search</span>
+          <Icon name="search" className="w-6 h-6" />
           <input
             type="text"
             autoFocus
@@ -52,7 +52,7 @@ export const SearchModal = ({ setActivePage }) => {
             onClick={closeSearch}
             className="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center cursor-pointer"
           >
-            <span className="material-symbols-outlined text-base">close</span>
+            <Icon name="close" className="w-4 h-4" />
           </button>
         </div>
 
@@ -87,7 +87,7 @@ export const SearchModal = ({ setActivePage }) => {
         <div className="p-4 sm:p-6 overflow-y-auto flex-1 space-y-3">
           {filtered.length === 0 ? (
             <div className="py-12 text-center text-on-surface-variant space-y-3">
-              <span className="material-symbols-outlined text-4xl text-outline">search_off</span>
+              <Icon name="search_off" className="w-8 h-8" />
               <p className="font-body-md">
                 Tidak ada menu atau lokasi yang cocok dengan "<strong>{query}</strong>"
               </p>
@@ -105,7 +105,7 @@ export const SearchModal = ({ setActivePage }) => {
                   >
                     <div className="flex items-center gap-3 min-w-0">
                       <div className="w-12 h-12 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
-                        <span className="material-symbols-outlined text-2xl">potted_plant</span>
+                        <Icon name="potted_plant" className="w-6 h-6" />
                       </div>
                       <div className="min-w-0">
                         <span className="font-label-sm text-[11px] text-secondary font-bold uppercase tracking-wider">
@@ -176,7 +176,7 @@ export const SearchModal = ({ setActivePage }) => {
                     </div>
                   </div>
                   <div className="flex items-center gap-3 shrink-0">
-                    <span className="font-label-md text-primary font-bold text-sm hidden sm:inline-block">
+                    <span className="font-label-md font-serif text-primary font-bold text-sm">
                       {formatRupiah(item.price)}
                     </span>
                     <button
@@ -184,24 +184,9 @@ export const SearchModal = ({ setActivePage }) => {
                         closeSearch();
                         openItemModal(item);
                       }}
-                      className="px-3 py-1.5 rounded-lg bg-surface hover:bg-surface-container-highest text-primary font-label-sm font-bold border border-surface-container-high text-xs transition-all cursor-pointer"
+                      className="px-3.5 py-1.5 rounded-lg bg-surface hover:bg-surface-container-highest text-primary font-label-sm font-bold border border-surface-container-high text-xs transition-all cursor-pointer"
                     >
-                      Detail
-                    </button>
-                    <button
-                      onClick={() => {
-                        addToCart({
-                          id: item.id,
-                          name: item.name,
-                          price: item.price,
-                          image: item.image,
-                          category: item.category
-                        });
-                      }}
-                      className="px-3 py-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-sm font-bold text-xs transition-all flex items-center gap-1 cursor-pointer"
-                    >
-                      <span className="material-symbols-outlined text-sm">add</span>
-                      <span className="hidden sm:inline">Pesan</span>
+                      Lihat Menu
                     </button>
                   </div>
                 </div>

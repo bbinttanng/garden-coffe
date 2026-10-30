@@ -1,17 +1,16 @@
 import React from 'react';
-import { useCart } from '../../context/CartContext';
 import { useModals } from '../../context/ModalContext';
+import { Icon } from '../ui/Icon';
 
 export const Header = ({ activePage, setActivePage }) => {
-  const { totals } = useCart();
-  const { openCart, openSearch, openMobileNav } = useModals();
+  const { openSearch, openMobileNav, openReservationModal } = useModals();
 
   const navLinks = [
-    { id: 'home', label: 'Home' },
-    { id: 'coffee', label: 'Coffee' },
-    { id: 'food', label: 'Food' },
+    { id: 'home', label: 'Beranda' },
+    { id: 'coffee', label: 'Kopi' },
+    { id: 'food', label: 'Makanan' },
     { id: 'pastry', label: 'Pastry' },
-    { id: 'lokasi', label: 'Lokasi kami' }
+    { id: 'lokasi', label: 'Lokasi Kami' }
   ];
 
   return (
@@ -20,13 +19,12 @@ export const Header = ({ activePage, setActivePage }) => {
       <div className="bg-primary-container text-on-primary font-label-sm text-label-sm py-2 px-6">
         <div className="max-w-7xl mx-auto flex items-center justify-between text-on-primary/90 font-label-sm tracking-wider uppercase text-[11px]">
           <span className="truncate">
-            Spring Conservatory Harvest: Discover our Single-Origin Honey Geisha &amp; Wild Lavender Scones
+            Panen Pilihan Musim Ini: Nikmati Single-Origin Java Honey Geisha &amp; Aneka Pastry Segar Tiap Pagi
           </span>
           <div className="flex items-center gap-6 hidden sm:flex shrink-0">
             <span className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-primary-fixed"></span> Jakarta • Bandung • Bali
             </span>
-            
           </div>
         </div>
       </div>
@@ -36,14 +34,21 @@ export const Header = ({ activePage, setActivePage }) => {
         <div className="flex items-center gap-10">
           <button
             onClick={() => setActivePage('home')}
-            className="flex flex-col group text-left cursor-pointer"
+            className="flex items-center gap-3 group text-left cursor-pointer"
           >
-            <span className="font-serif font-bold text-[22px] sm:text-[24px] text-primary tracking-tight leading-none group-hover:text-secondary transition-colors">
-              Garden Coffee
-            </span>
-            <span className="text-[10px] font-sans font-bold uppercase tracking-[0.25em] text-secondary mt-1">
-              &amp; Eatery
-            </span>
+            <img
+              src="/logo.png"
+              alt="Garden Coffee Brand Mark"
+              className="w-9 h-9 sm:w-10 sm:h-10 object-contain group-hover:scale-105 transition-transform shrink-0"
+            />
+            <div className="flex flex-col">
+              <span className="font-serif font-bold text-[20px] sm:text-[23px] text-primary tracking-tight leading-none group-hover:text-secondary transition-colors">
+                Garden Coffee
+              </span>
+              <span className="text-[10px] font-sans font-bold uppercase tracking-[0.25em] text-secondary mt-1">
+                &amp; Eatery
+              </span>
+            </div>
           </button>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -75,31 +80,17 @@ export const Header = ({ activePage, setActivePage }) => {
             className="w-10 h-10 rounded-full bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-primary transition-all flex items-center justify-center cursor-pointer"
             title="Cari Menu &amp; Lokasi (Ctrl+K)"
           >
-            <span className="material-symbols-outlined text-xl">search</span>
+            <Icon name="search" className="w-5 h-5" />
           </button>
 
-          {/* Cart Button with Count Badge */}
+          {/* Reservation CTA Button */}
           <button
             type="button"
-            onClick={openCart}
-            className="w-10 h-10 rounded-full bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-primary transition-all flex items-center justify-center relative cursor-pointer"
-            title="Baki Pesanan"
+            onClick={() => openReservationModal()}
+            className="hidden sm:inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg shadow-sm transition-all cursor-pointer group"
           >
-            <span className="material-symbols-outlined text-xl">local_mall</span>
-            {totals.count > 0 && (
-              <span className="absolute -top-1 -right-1 min-w-[20px] h-5 px-1.5 rounded-full bg-primary text-on-primary text-[10px] font-bold flex items-center justify-center shadow-xs">
-                {totals.count}
-              </span>
-            )}
-          </button>
-
-          {/* Order Online Button */}
-          <button
-            type="button"
-            onClick={openCart}
-            className="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary hover:text-on-primary-container font-label-lg text-label-lg shadow-sm transition-all cursor-pointer"
-          >
-            Pesan Online
+            <Icon name="event" className="w-4 h-4 text-primary-fixed group-hover:scale-110 transition-transform" />
+            <span>Reservasi Meja</span>
           </button>
 
           {/* Mobile Hamburger */}
@@ -109,7 +100,7 @@ export const Header = ({ activePage, setActivePage }) => {
             className="md:hidden w-10 h-10 rounded-xl bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-primary transition-all flex items-center justify-center cursor-pointer"
             aria-label="Buka Menu Navigasi"
           >
-            <span className="material-symbols-outlined text-2xl">menu</span>
+            <Icon name="menu" className="w-5 h-5" />
           </button>
         </div>
       </div>

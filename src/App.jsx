@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import { MobileNavDrawer } from './components/layout/MobileNavDrawer';
-import { CartDrawer } from './components/cart/CartDrawer';
-import { CheckoutModal } from './components/cart/CheckoutModal';
-import { ReceiptModal } from './components/cart/ReceiptModal';
 import { SearchModal } from './components/modals/SearchModal';
 import { ItemDetailModal } from './components/modals/ItemDetailModal';
 import { TableReservationModal } from './components/modals/TableReservationModal';
@@ -61,10 +58,6 @@ export function App() {
       {/* Global Sanctuary Footer */}
       <Footer setActivePage={setActivePage} />
 
-      {/* Global Cart & Order Drawers/Modals */}
-      <CartDrawer />
-      <CheckoutModal />
-      <ReceiptModal />
 
       {/* Global Utility Modals */}
       <SearchModal setActivePage={setActivePage} />

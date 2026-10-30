@@ -14,7 +14,7 @@ export const SANCTUARIES = [
     lng: 106.8115,
     tags: ['open-now', 'glasshouse', 'pet-friendly', 'slow-bar', 'meeting-room'],
     features: ['Glasshouse Seating', 'Pet-Friendly Courtyard', 'Slow Bar Geisha', 'WiFi 150 Mbps', 'Valet Parking'],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB6E84WOItVv21gRg8KicC6xhcEwzpS43-XT1EHqneR67fFUzICrygLwdzfQy1qBsq7DYh3dg9AqJPYk8ZTJQp8YcwdXrsKtxoA4n5MiGMkyJjVAn2N6yM9ipcQrYFCUn8vGV_7ThuMxjM9GcqsBckLQz3fb-iFIHFoleFXHdoGqZvEBjQ7RDS5Ei7hQwrD-AJ1l9hKJy0hw8aC2_F8Qc4LCj-29XWe2wsrYmKAVhuXaUnEu1aRcoEh',
+    image: '/images/img_17.jpg',
     description: 'Flagship sanctuary kami dengan kubah kaca dua lantai, taman tropis indoor 300 varietas monstera & pakis, dan slow coffee bar khusus biji microlot.'
   },
   {
@@ -31,9 +31,9 @@ export const SANCTUARIES = [
     lat: -6.1963,
     lng: 106.8327,
     tags: ['open-now', 'glasshouse', 'slow-bar', 'meeting-room'],
-    features: ['Colonial Architecture', 'Botanical High-Tea Room', 'Private Meeting Suite', 'Art Gallery'],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC-E3vawMIG7HpP37_DioFg7-30VUo0n8h4gMk3X848kw5x7uHH_iIwK5pmCukUGD4j7M7iWkC-1LTQagZmmCMpKOsyIcCeMtZDZv9OuWFlaYMMpfZg_8uKTdpVtQvYDwno1XgeM3bE-Zt_GSTISknvFjE70kheXQbrrsYUmM4wgINJd6iqtpHGYpQuHBJj2geHWlL91rZUGkgSgl5mzu3eh8RF2ZQDVB_RnH7ouZ4kBz_JIEI1ptvm',
-    description: 'Perpaduan arsitektur kolonial cagar budaya dengan dinding kaca konservatori yang elegan. Sangat cocok untuk afternoon tea dan pertemuan bisnis yang tenang.'
+    features: ['Rooftop Sunset Deck', 'City Skyline View', 'Private Meeting Suite', 'Slow Bar Geisha'],
+    image: '/images/branch_menteng.jpg',
+    description: 'Perpaduan rooftop pergola kayu asri dan konservatori kaca yang elegan dengan panorama matahari terbenam di atas siluet kota Jakarta.'
   },
   {
     id: 's3',
@@ -49,9 +49,9 @@ export const SANCTUARIES = [
     lat: -6.3039,
     lng: 106.6521,
     tags: ['open-now', 'pet-friendly', 'drive-thru', 'glasshouse'],
-    features: ['Solar-Powered Drive Thru', 'Outdoor Lawn', 'Dog Park', 'Community Coworking Space'],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAGwy3lzO7pUPWVLDcDvKPi0D292kQtKa2bcx3NWodkDyxZTgFwvoNoMLoXMgedmtGmR676j2Bmk7RZN_3Cmz0QtZwHLD__PRNYZOOvyh5TnwiNKconcevYjc_ozIJfm8PqoJfKSAJ2D-DtcXh08sFI-77g4nbZYMAcW0ybWikhK7qvl04W3XIz2_kJs4GBj1PfsXfQXz6YMMa_WvazRGY49ce9LR_-mgf9aCGtQc0tWsJ4ThYlUX0N',
-    description: 'Suaka kopi hijau seluas 1.200 meter persegi dengan drive-thru tenaga surya pertama di Jabodetabek, halaman rumput luas ramah peliharaan, dan ruang kerja terbuka.'
+    features: ['Living Plant Wall', 'Atrium Wooden Pavilion', 'Specialty Espresso Bar', 'WiFi 150 Mbps'],
+    image: '/images/branch_bsd.jpg',
+    description: 'Paviliun botani kanopi kayu alami di atrium modern dengan living green plant wall, espresso bar lengkap, dan ruang santai ramah laptop.'
   },
   {
     id: 's4',
@@ -67,9 +67,9 @@ export const SANCTUARIES = [
     lat: -6.8582,
     lng: 107.6321,
     tags: ['open-now', 'glasshouse', 'pet-friendly', 'slow-bar', 'meeting-room'],
-    features: ['Mountain Mist View', 'Woodfire Hearth Kitchen', 'Pine Forest Deck', 'Open Fireplace'],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCfDx20VJDrBbaP0WpG9xSOGcn3ncbg9qw0O1jfFZWRoI3E-jb87OxrM1fiJshCehLEjy2GPslGXJpJVI2RONojNB5FZv9TFe7VrE3O7qjyevpn1gdQ73U3Hiz5Knx64AjhsF6BI75iJbIyd5iI5LBvujJqi80zPaFnkIPaITX-I7TS9WnIj_1dD71xtFhcBBpa5CRRvwIFphePabXdOh9oAE4BYchB0Ztv5SVnC-7u7yZB9BScgIc2',
-    description: 'Berlokasi di ketinggian Dago yang sejuk, menyajikan kopi hangat di antara pepohonan pinus rindang dengan hidangan dapur kayu api unggun.'
+    features: ['Cathedral Glasshouse', 'Mountain Pine View', 'Marble Slow Bar', 'Open Hearth Kitchen'],
+    image: '/images/branch_bandung.jpg',
+    description: 'Kubah kaca katedral luas berbingkai baja yang dikelilingi rimbunnya pepohonan pinus pegunungan Dago, dengan bar marmer megah dan hawa sejuk alami.'
   },
   {
     id: 's5',
@@ -85,8 +85,8 @@ export const SANCTUARIES = [
     lat: -8.6500,
     lng: 115.1378,
     tags: ['open-now', 'glasshouse', 'pet-friendly', 'slow-bar'],
-    features: ['Bamboo Architecture', 'Permaculture Garden', 'Cold Brew Bar', 'Sunset Rooftop'],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDBUFBsbrDcjNwIPGpSJNB381UIyMV0eyjCEly4XAsmeHu4OcOnImh_t4AfgbUawopIN4sn-VJQyzdGyYYw-1OiaggK2kwSIWnL8B-hX-wx9gENe2Zoe5L_Klu5C5xiFbmc-ToCfyMQ3mupb-WnNNM21bTd7PQm0ys9Wck9B9m9f4iQPG7ELbnDA5h3SVaAqx-YB2NCUi8tP0R9s9JXJDO9my41M1tjnnwkh41L1Nb6O3qhtNNGaqlK',
-    description: 'Paviliun ramah lingkungan yang dibangun dari bambu lokal dan tanah liat ramah bumi, dikelilingi kebun sayur permakultur di tepi persawahan tenang Canggu.'
+    features: ['Beachfront Ocean View', 'Glasshouse Pavilion', 'Cold Brew Bar', 'Sunset Ocean Deck'],
+    image: '/images/branch_canggu.jpg',
+    description: 'Konservatori kaca tepi pantai yang berhadapan langsung dengan pasir putih dan deburan ombak Canggu, menyajikan seduhan dingin tropis di bawah naungan pakis gantung.'
   }
 ];

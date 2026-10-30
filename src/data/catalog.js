@@ -6,12 +6,12 @@ export const GARDEN_CATALOG = [
     subcategory: 'Single-Origin & Pour-Over',
     name: 'Java Preanger Honey Geisha',
     price: 65000,
-    origin: 'Pangalengan, West Java • 1.650 mdpl',
-    notes: 'Jasmine, Wild Citrus Honey, Bergamot, Nectarine',
+    origin: 'Pangalengan, Jawa Barat • 1.650 mdpl',
+    notes: 'Bunga Melati, Madu Hutan, Bergamot, Nectarine',
     roast: 'Light',
-    tags: ['Single-Origin', 'Microlot', 'Organic', 'Biodynamic'],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCxy3vtevWnY_khG4iKiSs_W3FmyZq4d3coXk6wdNn1__gGFiWqejK-T_mZIpWgncGEwntiIOaWZcb26IDNQrN8Z6r9ZJG_x5I8GllzcwY9owrGOqglAkUSQ-i47DNRAvGeQIqGvJn6H9Tfk-Tsz5wKPGhL4_3UHXLNV0thflY9vvSxaTOA8kL0IR13oFQkyC5hHDHsied_FFPCQKNXDB-uxkmwxuYufOO7bw5mqt8Ts6MK40JZIHK2',
-    description: 'Mahakarya seduhan lambat dari lereng vulkanik Gunung Tilu. Diproses honey anaerobik menghasilkan keharuman melati putih yang mekar dan rasa manis nektar buah persik yang lembut.'
+    tags: ['Single-Origin', 'Microlot', 'Organic'],
+    image: '/images/img_2.jpg',
+    description: 'Biji arabika pilihan dari lereng Gunung Tilu, Pangalengan. Diproses honey anaerobik untuk menghasilkan aroma melati yang lembut dan rasa manis buah persik segar di setiap tegukan.'
   },
   {
     id: 'c2',
@@ -19,12 +19,12 @@ export const GARDEN_CATALOG = [
     subcategory: 'Botanical Cold Brew',
     name: 'Pistachio Cloud Cold Brew',
     price: 48000,
-    origin: 'Aceh Gayo Terroir • Steeping 18 Jam',
-    notes: 'Toasted Pistachio Foam, Dark Cocoa, Sweet Botanical Herb',
+    origin: 'Konsentrat Gayo • Steeping 18 Jam',
+    notes: 'Krim Pistachio Panggang, Dark Cocoa, Rempah Herbal',
     roast: 'Medium',
-    tags: ['House Signature', 'Cold Brew', 'Botanical Cream'],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB6E84WOItVv21gRg8KicC6xhcEwzpS43-XT1EHqneR67fFUz3bKx7q8iS-Q_vW1wK9_E5Y-f6qO7-f8oB7yN6F5yLpL4mP2d_WzH6xK-B7g4xN8dC5lR3m-T9yK0eB-zD5v-U8wY5xK2m-C7o9yA1wT4vJ-nQ8oB7-wA8xY9m-C4wN8eK2xY4pB7eK3w-N8eD-mU',
-    description: 'Seduhan dingin konsentrat Gayo 18 jam berlapis busa krim pistachio buatan tangan dengan rempah herbal botani rahasia dapur conservatory.'
+    tags: ['House Signature', 'Cold Brew', 'Specialty Cream'],
+    image: '/images/coffee_coldbrew.jpg',
+    description: 'Seduhan dingin konsentrat kopi Gayo selama 18 jam dengan lapisan busa krim pistachio lembut buatan tangan yang gurih, manis, dan sejuk menyegarkan.'
   },
   {
     id: 'c3',
@@ -32,12 +32,12 @@ export const GARDEN_CATALOG = [
     subcategory: 'Single-Origin & Pour-Over',
     name: 'Aceh Gayo Washed Reserve',
     price: 45000,
-    origin: 'Takengon, Central Aceh • 1.500 mdpl',
-    notes: 'Green Apple, Lemongrass, Black Tea, Crisp Acidity',
+    origin: 'Takengon, Aceh Tengah • 1.500 mdpl',
+    notes: 'Apel Hijau, Serai, Teh Hitam, Keasaman Segar',
     roast: 'Light',
     tags: ['Single-Origin', 'Washed', 'Direct Trade'],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA0amyR6PHVtspHh8NV3h1HluiG-MFUFbYt67eMmWebtrwLkp5eE1z6cE5F_8lM_fD2mB5-D3yN4xK2m-B7yN9oW3eE-zC4vP7-Y0xR4n-C7xP5eT8vO1-P4dE5-oW9yN7-C4xP2-T8mQ3xK-A8wP5-Z8oB7eK-M9eC6xK3yA',
-    description: 'Biji kopi arabika klasik nusantara yang dipetik tangan di dataran tinggi Gayo, diproses full-washed bersih dengan ketajaman rasa apel hijau dan teh hitam.'
+    image: '/images/coffee_pourover.jpg',
+    description: 'Kopi arabika klasik dataran tinggi Gayo yang diproses full-washed bersih. Menghadirkan karakter seduhan yang ringan, segar seperti apel hijau, dan aroma teh hitam alami.'
   },
   {
     id: 'c4',
@@ -45,12 +45,12 @@ export const GARDEN_CATALOG = [
     subcategory: 'Espresso Specialties',
     name: 'Smoked Cinnamon Cortado',
     price: 42000,
-    origin: 'House Botanical Blend (Toraja & Kintamani)',
-    notes: 'Torched Ceylon Cinnamon, Roasted Walnut, Velvet Crema',
+    origin: 'House Blend (Toraja & Kintamani)',
+    notes: 'Kayu Manis Bakar, Kacang Walnut, Crema Tebal',
     roast: 'Dark',
-    tags: ['Espresso Bar', 'Herbal Smoke', 'Velvety'],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDVYJXxPq7etGB8Dw6w0tzPaONiBLGENqi3gYqnmR7VbW5AAW0eT6-F1yN8dK3eO7-V5pP2mB8-Y4wN1vK6eO9yB5-E7xL2m-P9wN8eT6oB-A1yK4eT8oB-N9eC2xK-P8wM4-Y0xL5eK-B7wO2-T8nQ5-Z7wP1-C4xY9e-L0mK2-A8wP5-Z8oB7eK-M9eC6xK3yA-D5vU8wY5xK',
-    description: 'Double ristretto dengan rasio 1:1 steamed milk, disajikan dengan batang kayu manis Ceylon yang dipanggang langsung di atas cangkir tanah liat.'
+    tags: ['Espresso Bar', 'Rempah Alami', 'Velvety'],
+    image: '/images/coffee_cortado.jpg',
+    description: 'Double ristretto dengan rasio seimbang susu steamed lembut, disajikan dengan batang kayu manis Ceylon yang dipanggang langsung di atas cangkir tanah liat.'
   },
   {
     id: 'c5',
@@ -58,12 +58,12 @@ export const GARDEN_CATALOG = [
     subcategory: 'Espresso Specialties',
     name: 'Lavender Blossom Flat White',
     price: 46000,
-    origin: 'House Botanical Blend & Provençal Wild Herbs',
-    notes: 'French Lavender, Roasted Hazelnut, Silky Oat Foam',
+    origin: 'House Botanical Blend',
+    notes: 'Bunga Lavender, Hazelnut Panggang, Susu Oat Lembut',
     roast: 'Medium',
-    tags: ['Floral', 'Specialty Milk', 'Botanical Favorite'],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBYVapSgNXwYIEQmYbGswc11bNbWITmpG_zhAvZfiX1nCV1K0eO9yB4-D7xN2m-T8wM4-Y0xL5eK-B7wO2-T8nQ5-Z7wP1-C4xY9e-L0mK2-A8wP5-Z8oB7eK-M9eC6xK3yA-D5vU8wY5xK2m-C7o9yA1wT4vJ-nQ8oB7-wA8xY9m',
-    description: 'Sentuhan infusi bunga lavender liar pada susu mikro-tekstur lembut yang menyatu anggun bersama karakter manis espresso house blend.'
+    tags: ['Floral', 'Specialty Milk', 'Favorit Tamu'],
+    image: '/images/coffee_latte.jpg',
+    description: 'Paduan espresso house blend dengan tekstur susu oat lembut yang diberi sentuhan infusi bunga lavender alami untuk rasa manis floral yang menenangkan.'
   },
   {
     id: 'c6',
@@ -71,12 +71,12 @@ export const GARDEN_CATALOG = [
     subcategory: 'Botanical Cold Brew',
     name: 'Cascara Nitro Cold Brew',
     price: 52000,
-    origin: 'Cascara Kulit Kopi Organik Gayo',
-    notes: 'Hibiscus, Dried Cranberry, Wild Forest Honey, Silky Foam',
+    origin: 'Kulit Kopi Organik Gayo',
+    notes: 'Kembang Sepatu, Cranberry Kering, Madu Liar',
     roast: 'Medium',
-    tags: ['Nitro Cold Brew', 'Zero Waste', 'High Antioxidant'],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCARwwAFSPw1gfU8SbR0-AuOORCkhu87gQj4Irbv6mUpeD6Ts4kK2-P9wN8eT6oB-A1yK4eT8oB-N9eC2xK-P8wM4-Y0xL5eK-B7wO2-T8nQ5-Z7wP1-C4xY9e-L0mK2-A8wP5-Z8oB7eK-M9eC6xK3yA-D5vU8wY5xK',
-    description: 'Penyeduhan kulit ceri kopi (cascara) organik yang disuntikkan nitrogen bertekanan tinggi menghasilkan sensasi busa dingin selembut sutra dengan rasa kembang sepatu.'
+    tags: ['Nitro Cold Brew', 'Zero Waste', 'Kaya Antioksidan'],
+    image: '/images/coffee_nitro.jpg',
+    description: 'Seduhan kulit ceri kopi (cascara) organik dengan infusi nitrogen dingin menghasilkan tekstur busa selembut sutra dengan rasa asam manis alami seperti teh buah.'
   },
 
   // FOOD
@@ -86,11 +86,11 @@ export const GARDEN_CATALOG = [
     subcategory: 'Hearth Sandwiches & Melts',
     name: 'Truffle Mushroom Brioche Melt',
     price: 88000,
-    origin: 'Bandung Highland Fungi Guild & Dapur Kayu',
-    notes: 'Wild Portobello, Black Truffle Emulsion, Gruyère, Brioche',
-    tags: ['Artisan Hearth', 'Vegetarian', 'Best Seller'],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCfDx20VJDrBbaP0WpG9xSOGcn3ncbg9qw0O1jfFZWRoI3E-jb87OxrM1fiJshCehLEjy2GPslGXJpJVI2RONojNB5FZv9TFe7VrE3O7qjyevpn1gdQ73U3Hiz5Knx64AjhsF6BI75iJbIyd5iI5LBvujJqi80zPaFnkIPaITX-I7TS9WnIj_1dD71xtFhcBBpa5CRRvwIFphePabXdOh9oAE4BYchB0Ztv5SVnC-7u7yZB9BScgIc2',
-    description: 'Brioche mentega bakar berlapis keju Gruyère leleh, tumisan jamur portobello liar dataran tinggi, dan olesan pasta truffle hitam yang harum semerbak.'
+    origin: 'Jamur Dataran Tinggi & Roti Panggang Dapur',
+    notes: 'Jamur Portobello, Emulsi Truffle Hitam, Keju Gruyère',
+    tags: ['Oven Tungku', 'Vegetarian', 'Best Seller'],
+    image: '/images/img_8.jpg',
+    description: 'Roti brioche mentega panggang bertabur keju Gruyère leleh, tumisan jamur portobello gurih, dan aroma truffle hitam yang memikat.'
   },
   {
     id: 'f2',
@@ -98,11 +98,11 @@ export const GARDEN_CATALOG = [
     subcategory: 'Sourdough Toasts',
     name: 'Smoked Salmon Avocado Sourdough',
     price: 98000,
-    origin: '48-Hour Wild Starter Sourdough',
-    notes: 'Norwegian Cured Salmon, Hass Avocado, Capers, Dill Oil',
-    tags: ['Omega-3 Rich', 'Fermented Hearth', 'Fresh Harvest'],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBxukqnarHuWh9FZvoe4kPhml2C9a9H2MLj-rHgMEGmgQ0ZZT4eK2-P9wN8eT6oB-A1yK4eT8oB-N9eC2xK-P8wM4-Y0xL5eK-B7wO2-T8nQ5-Z7wP1-C4xY9e-L0mK2-A8wP5-Z8oB7eK-M9eC6xK3yA-D5vU8wY5xK',
-    description: 'Sourdough fermentasi 48 jam yang renyah berongga, dilapisi tumbukan alpukat Hass segar, salmon asap norwegia, minyak dill botani, dan pickled radish.'
+    origin: 'Sourdough Ragi Alami 48 Jam',
+    notes: 'Salmon Asap Norwegia, Alpukat Hass, Capers, Minyak Dill',
+    tags: ['Kaya Omega-3', 'Ragi Alami', 'Menu Segar'],
+    image: '/images/food_salmon_toast.jpg',
+    description: 'Roti sourdough fermentasi lambat yang renyah berongga, dilapisi alpukat Hass segar, irisan salmon asap pilihan, dan percikan minyak daun dill botani.'
   },
   {
     id: 'f3',
@@ -110,11 +110,11 @@ export const GARDEN_CATALOG = [
     subcategory: 'Sourdough Toasts',
     name: 'Wagyu Truffle Toast',
     price: 115000,
-    origin: 'Australian Wagyu MB7 & Artisan Sourdough',
-    notes: 'Charred Wagyu Strips, Truffle Butter, Shaved Pecorino',
-    tags: ['Signature Kitchen', 'Premium Cut', 'Charred Hearth'],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAvEDV3LLJOBQBOeMBHJ3sNgoi6AggEWhwVQIpg84gzl4pdiv8eK2-P9wN8eT6oB-A1yK4eT8oB-N9eC2xK-P8wM4-Y0xL5eK-B7wO2-T8nQ5-Z7wP1-C4xY9e-L0mK2-A8wP5-Z8oB7eK-M9eC6xK3yA-D5vU8wY5xK',
-    description: 'Daging wagyu marmer tinggi yang dipanggang singkat di atas bara api, disajikan di atas roti gandum renyah dengan lelehan mentega truffle pecorino.'
+    origin: 'Australian Wagyu MB7 & Sourdough Artisan',
+    notes: 'Irisan Wagyu Panggang, Mentega Truffle, Keju Pecorino',
+    tags: ['Dapur Spesial', 'Daging Pilihan', 'Panggang Bara'],
+    image: '/images/food_wagyu_toast.jpg',
+    description: 'Daging wagyu empuk yang dipanggang singkat di atas bara api, disajikan di atas roti gandum renyah dengan olesan mentega truffle dan parutan keju pecorino.'
   },
   {
     id: 'f4',
@@ -122,11 +122,11 @@ export const GARDEN_CATALOG = [
     subcategory: 'Botanical Bowls',
     name: 'Wild Herb Shakshuka',
     price: 82000,
-    origin: 'Bumi Lestari Free-Range Pastures',
-    notes: 'Organic Slow-Simmered Tomatoes, Poached Eggs, Feta, Herbs',
-    tags: ['All-Day Breakfast', 'High Protein', 'Vegetarian'],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC2X2hfF1iNOerhfiXilNsczbO_KLO0u7LFtS3Rh8nk4880JP2mB8-Y4wN1vK6eO9yB5-E7xL2m-P9wN8eT6oB-A1yK4eT8oB-N9eC2xK-P8wM4-Y0xL5eK-B7wO2-T8nQ5-Z7wP1-C4xY9e-L0mK2-A8wP5-Z8oB7eK-M9eC6xK3yA',
-    description: 'Saus tomat rempah aromatik yang dimasak perlahan dalam wajan besi, telur ayam umbaran organik rebus lembut, taburan keju feta, dan daun ketumbar segar.'
+    origin: 'Telur Ayam Kampung & Tomat Organik',
+    notes: 'Saus Tomat Rempah, Telur Setengah Matang, Keju Feta',
+    tags: ['Sarapan Hangat', 'Tinggi Protein', 'Vegetarian'],
+    image: '/images/food_shakshuka.jpg',
+    description: 'Saus tomat rempah hangat yang dimasak perlahan dalam wajan besi, telur ayam organik rebus lembut, taburan keju feta asin gurih, dan daun herbal segar.'
   },
   {
     id: 'f5',
@@ -134,11 +134,11 @@ export const GARDEN_CATALOG = [
     subcategory: 'Botanical Bowls',
     name: 'Grilled Chicken Pesto Bowl',
     price: 88000,
-    origin: 'Kebun Kemangi Hidroponik Konservatori',
-    notes: 'Charred Chicken Breast, Wild Rice, Edamame, Basil Pesto',
-    tags: ['Clean Eating', 'Macro Balanced', 'Gluten-Free Option'],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA8Bf045tmtYkKomf5lE6wE3pQUhWzFolYeD_LG8kB9F-Y52R4n-C7xP5eT8vO1-P4dE5-oW9yN7-C4xP2-T8mQ3xK-A8wP5-Z8oB7eK-M9eC6xK3yA-D5vU8wY5xK2m-C7o9yA1wT4vJ-nQ8oB7-wA8xY9m-C4wN8eK2xY4pB7',
-    description: 'Dada ayam bakar rempah rosemary, nasi merah organik dataran tinggi, sayuran renyah, alpukat, dan lumuran saus pesto kemangi racikan segar.'
+    origin: 'Kemangi Hidroponik Kebun Suaka',
+    notes: 'Ayam Panggang Rosemary, Beras Merah, Edamame, Saus Pesto',
+    tags: ['Menu Sehat', 'Seimbang Nutrisi', 'Bebas Gluten'],
+    image: '/images/food_pesto_bowl.jpg',
+    description: 'Dada ayam panggang bumbu rosemary gurih, disajikan dengan nasi merah hangat, edamame renyah, alpukat, dan lumuran saus pesto kemangi segar racikan dapur.'
   },
   {
     id: 'f6',
@@ -146,11 +146,11 @@ export const GARDEN_CATALOG = [
     subcategory: 'Pastas & Mains',
     name: 'Beef Ragu Pappardelle',
     price: 108000,
-    origin: 'Handmade Fresh Egg Pasta Daily',
-    notes: '12-Hour Slow Braised Brisket, San Marzano, Fresh Herbs',
-    tags: ['Handmade Pasta', 'Hearty Classic', 'Chef Special'],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCHuUKz3Iws2lNyz4DCgsUDrho5aulDkA-b0eU1Vo-fdF-tEu9yB4-D7xN2m-T8wM4-Y0xL5eK-B7wO2-T8nQ5-Z7wP1-C4xY9e-L0mK2-A8wP5-Z8oB7eK-M9eC6xK3yA-D5vU8wY5xK2m-C7o9yA1wT4vJ-nQ8oB7-wA8xY9m',
-    description: 'Pita pasta telur pappardelle segar buatan tangan setiap pagi, dimasak dengan ragu daging sapi sengkel yang dimasak lambat 12 jam hingga lumer sempurna.'
+    origin: 'Pasta Telur Segar Buatan Tangan',
+    notes: 'Daging Sapi Masak Lambat 12 Jam, Tomat San Marzano, Herbal',
+    tags: ['Pasta Segar', 'Menu Klasik', 'Pilihan Barista'],
+    image: '/images/food_pappardelle.jpg',
+    description: 'Pita pasta telur pappardelle segar yang digilas setiap pagi, dimasak bersama ragu daging sapi empuk yang dimasak lambat 12 jam hingga bumbu meresap sempurna.'
   },
 
   // PASTRY
@@ -160,11 +160,11 @@ export const GARDEN_CATALOG = [
     subcategory: 'Laminated Viennoiserie',
     name: 'Pistachio Rose Cruffin',
     price: 48000,
-    origin: 'French Beurre d’Isigny & Iranian Pistachio',
-    notes: 'Rosewater Cremeux, Roasted Pistachio Praline, Flaky Layers',
-    tags: ['Pastry Highlight', 'Freshly Baked', 'Floral Sweet'],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDBUFBsbrDcjNwIPGpSJNB381UIyMV0eyjCEly4XAsmeHu4OcOnImh_t4AfgbUawopIN4sn-VJQyzdGyYYw-1OiaggK2kwSIWnL8B-hX-wx9gENe2Zoe5L_Klu5C5xiFbmc-ToCfyMQ3mupb-WnNNM21bTd7PQm0ys9Wck9B9m9f4iQPG7ELbnDA5h3SVaAqx-YB2NCUi8tP0R9s9JXJDO9my41M1tjnnwkh41L1Nb6O3qhtNNGaqlK',
-    description: 'Hibrida croissant dan muffin dengan ratusan lapisan mentega Prancis keemasan, diisi krim lembut air mawar dan pasta pistachio panggang murni.'
+    origin: 'Mentega Prancis & Pistachio Pilihan',
+    notes: 'Krim Mawar Lembut, Praline Pistachio, Lapisan Renyah',
+    tags: ['Favorit Pastry', 'Baru Keluar Oven', 'Manis Floral'],
+    image: '/images/img_1.jpg',
+    description: 'Kombinasi croissant dan muffin dengan ratusan lapisan mentega Prancis keemasan, diisi krim mawar lembut dan praline pistachio panggang gurih.'
   },
   {
     id: 'p2',
@@ -172,11 +172,11 @@ export const GARDEN_CATALOG = [
     subcategory: 'Laminated Viennoiserie',
     name: 'Wild Lavender Kouign-Amann',
     price: 42000,
-    origin: 'Breton Butter Cake with Wild Herb Infusion',
-    notes: 'Salted Butter Caramel, Crystallized Sugar Crust, Lavender',
-    tags: ['Caramelized', 'Crunchy Flaky', 'Classic Breton'],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC-E3vawMIG7HpP37_DioFg7-30VUo0n8h4gMk3X848kw5x7uHH_iIwK5pmCukUGD4j7M7iWkC-1LTQagZmmCMpKOsyIcCeMtZDZv9OuWFlaYMMpfZg_8uKTdpVtQvYDwno1XgeM3bE-Zt_GSTISknvFjE70kheXQbrrsYUmM4wgINJd6iqtpHGYpQuHBJj2geHWlL91rZUGkgSgl5mzu3eh8RF2ZQDVB_RnH7ouZ4kBz_JIEI1ptvm',
-    description: 'Kue mentega khas Brittany dengan karamelisasi gula renyah di bagian luar, berpadu dengan aroma floral bunga lavender liar yang memikat.'
+    origin: 'Pastry Karamel Tradisional Brittany',
+    notes: 'Karamel Mentega Asin, Kerak Gula Renyah, Lavender',
+    tags: ['Karamel Renyah', 'Mentega Murni', 'Klasik Prancis'],
+    image: '/images/img_14.jpg',
+    description: 'Pastry mentega khas Brittany dengan karamelisasi gula renyah di bagian luar dan aroma lembut bunga lavender liar di bagian dalam.'
   },
   {
     id: 'p3',
@@ -184,11 +184,11 @@ export const GARDEN_CATALOG = [
     subcategory: 'Sourdough Patisserie',
     name: 'Almond Sourdough Croissant',
     price: 46000,
-    origin: 'Double-Baked Artisanal Croissant',
-    notes: 'Almond Frangipane Cream, Toasted Sliced Almonds, Powdered Sugar',
-    tags: ['Double Baked', 'Rich Nutty', 'Breakfast Favorite'],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCu6yZWEvKUvJ8YRb5CdnMOHRvJ7zaSZlaSkmBplMpA1y6dV4tlbUjvF8jrcAXs-N-GUalL1M74BshEebMS93rwoRMBEyY77F7yh4bvj5rHW5pnoSYE-Lop4zekZONHb_mwms7b1tkfIv2T3K5y7KvnXCfHjwoJSk7X-RdG1grd67ZAA6nOTXEBkDstx1ogrOwm93-mjjsbdg9f-b7vRKf9BMMW1JVntOPFlVQeJCWm-vbQDSdEIG-t',
-    description: 'Croissant ragi liar yang dipanggang dua kali, diresapi sirup vanila madu dan diisi limpahan krim frangipane kacang almond panggang gurih manis.'
+    origin: 'Croissant Panggang Ganda',
+    notes: 'Krim Frangipane Almond, Irisan Almond Sangrai, Gula Halus',
+    tags: ['Panggang Dua Kali', 'Kacang Gurih', 'Menu Sarapan'],
+    image: '/images/img_15.jpg',
+    description: 'Croissant ragi alami yang dipanggang dua kali, diresapi sirup madu dan diisi limpahan krim frangipane almond panggang yang harum dan renyah.'
   },
   {
     id: 'p4',
@@ -196,11 +196,11 @@ export const GARDEN_CATALOG = [
     subcategory: 'Confection & Tarts',
     name: 'Elderflower Lemon Tart',
     price: 52000,
-    origin: 'Pâte Sablée Crust & Botanical Curd',
-    notes: 'Meyer Lemon Curd, Wild Elderflower Jelly, Torched Meringue',
-    tags: ['Zesty Fresh', 'Botanical Curd', 'Afternoon Tea'],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAGwy3lzO7pUPWVLDcDvKPi0D292kQtKa2bcx3NWodkDyxZTgFwvoNoMLoXMgedmtGmR676j2Bmk7RZN_3Cmz0QtZwHLD__PRNYZOOvyh5TnwiNKconcevYjc_ozIJfm8PqoJfKSAJ2D-DtcXh08sFI-77g4nbZYMAcW0ybWikhK7qvl04W3XIz2_kJs4GBj1PfsXfQXz6YMMa_WvazRGY49ce9LR_-mgf9aCGtQc0tWsJ4ThYlUX0N',
-    description: 'Tart renyah bermentega penuh berisi curd lemon meyer yang asam segar, dilapisi jeli bunga elderflower lembut dan puncak meringue manis.'
+    origin: 'Crust Renyah Pâte Sablée',
+    notes: 'Curd Lemon Asam Segar, Jeli Elderflower, Puncak Meringue',
+    tags: ['Asam Segar', 'Krim Buah', 'Teman Minum Kopi'],
+    image: '/images/img_16.jpg',
+    description: 'Tart mentega renyah berisi krim lemon asam segar, dilapisi jeli bunga elderflower lembut dan puncak meringue manis yang dibakar tipis.'
   },
   {
     id: 'p5',
@@ -208,11 +208,11 @@ export const GARDEN_CATALOG = [
     subcategory: 'Savory Bakes',
     name: 'Smoked Beef & Emmental Danish',
     price: 54000,
-    origin: 'Laminated Savory Viennoiserie',
-    notes: 'Smoked Beef Brisket, Aged Emmental Cheese, Wholegrain Mustard',
-    tags: ['Savory Pastry', 'Smoked Meat', 'Warm Bake'],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCfDx20VJDrBbaP0WpG9xSOGcn3ncbg9qw0O1jfFZWRoI3E-jb87OxrM1fiJshCehLEjy2GPslGXJpJVI2RONojNB5FZv9TFe7VrE3O7qjyevpn1gdQ73U3Hiz5Knx64AjhsF6BI75iJbIyd5iI5LBvujJqi80zPaFnkIPaITX-I7TS9WnIj_1dD71xtFhcBBpa5CRRvwIFphePabXdOh9oAE4BYchB0Ztv5SVnC-7u7yZB9BScgIc2',
-    description: 'Pastry lapis renyah dengan isian daging sapi asap lembut, lumuran keju Swiss Emmental gurih, dan sentuhan mustard biji yang berkarakter.'
+    origin: 'Danish Gurih Berlapis',
+    notes: 'Daging Asap Pilihan, Keju Emmental Gurih, Biji Mustard',
+    tags: ['Pastry Gurih', 'Daging Asap', 'Hangat Oven'],
+    image: '/images/img_8.jpg',
+    description: 'Pastry lapis renyah dengan isian daging sapi asap gurih, keju Swiss Emmental leleh, dan sentuhan mustard biji yang kaya rasa.'
   },
   {
     id: 'p6',
@@ -220,10 +220,10 @@ export const GARDEN_CATALOG = [
     subcategory: 'Sweet Bakes',
     name: 'Valrhona Chocolate Babka',
     price: 44000,
-    origin: 'Braided Brioche with Valrhona 70% Dark Chocolate',
-    notes: 'Dark Chocolate Ganache, Cinnamon Twist, Hazelnut Crumbs',
-    tags: ['Decadent Chocolate', 'Soft Brioche', 'Comfort Bake'],
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDBUFBsbrDcjNwIPGpSJNB381UIyMV0eyjCEly4XAsmeHu4OcOnImh_t4AfgbUawopIN4sn-VJQyzdGyYYw-1OiaggK2kwSIWnL8B-hX-wx9gENe2Zoe5L_Klu5C5xiFbmc-ToCfyMQ3mupb-WnNNM21bTd7PQm0ys9Wck9B9m9f4iQPG7ELbnDA5h3SVaAqx-YB2NCUi8tP0R9s9JXJDO9my41M1tjnnwkh41L1Nb6O3qhtNNGaqlK',
-    description: 'Roti brioche kepang lembut yang dipadati pusaran cokelat hitam Valrhona 70%, rempah kayu manis harum, dan remah hazelnut renyah.'
+    origin: 'Brioche Kepang Cokelat Hitam 70%',
+    notes: 'Ganache Cokelat Valrhona, Kayu Manis Harum, Remah Hazelnut',
+    tags: ['Cokelat Pekat', 'Brioche Lembut', 'Teman Kopi Sore'],
+    image: '/images/img_1.jpg',
+    description: 'Roti brioche kepang lembut berpadu dengan pusaran cokelat hitam Valrhona 70%, rempah kayu manis harum, dan taburan hazelnut panggang renyah.'
   }
 ];

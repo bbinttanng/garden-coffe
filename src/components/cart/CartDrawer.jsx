@@ -1,3 +1,4 @@
+import { Icon } from '../ui/Icon';
 import React from 'react';
 import { useCart } from '../../context/CartContext';
 import { useModals } from '../../context/ModalContext';
@@ -22,7 +23,7 @@ export const CartDrawer = ({ setActivePage }) => {
         <div className="p-6 bg-surface-container-low border-b border-surface-container-high/80 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center">
-              <span className="material-symbols-outlined text-xl">local_mall</span>
+              <Icon name="local_mall" className="w-5 h-5" />
             </div>
             <div>
               <h3 className="font-headline-sm text-title-lg font-serif text-primary">Baki Pesanan</h3>
@@ -35,7 +36,7 @@ export const CartDrawer = ({ setActivePage }) => {
             onClick={closeCart}
             className="w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-highest text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center cursor-pointer"
           >
-            <span className="material-symbols-outlined text-lg">close</span>
+            <Icon name="close" className="w-5 h-5" />
           </button>
         </div>
 
@@ -68,7 +69,7 @@ export const CartDrawer = ({ setActivePage }) => {
           {cart.length === 0 ? (
             <div className="h-full flex flex-col items-center justify-center text-center p-8 text-on-surface-variant space-y-4">
               <div className="w-20 h-20 rounded-full bg-surface-container-high flex items-center justify-center text-outline">
-                <span className="material-symbols-outlined text-4xl">nest_heat_link_gen</span>
+                <Icon name="nest_heat_link_gen" className="w-8 h-8" />
               </div>
               <div>
                 <h4 className="font-headline-sm text-title-md font-serif text-primary">
@@ -132,7 +133,7 @@ export const CartDrawer = ({ setActivePage }) => {
                       className="text-on-surface-variant/60 hover:text-error transition-colors p-1 cursor-pointer"
                       title="Hapus"
                     >
-                      <span className="material-symbols-outlined text-sm">delete</span>
+                      <Icon name="delete" className="w-4 h-4" />
                     </button>
                   </div>
 
@@ -146,7 +147,7 @@ export const CartDrawer = ({ setActivePage }) => {
                         onClick={() => updateQuantity(idx, -1)}
                         className="w-6 h-6 rounded flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors cursor-pointer"
                       >
-                        <span className="material-symbols-outlined text-xs">remove</span>
+                        <Icon name="remove" className="w-3.5 h-3.5" />
                       </button>
                       <span className="font-label-sm text-label-sm font-bold w-4 text-center text-on-surface">
                         {item.quantity}
@@ -155,7 +156,7 @@ export const CartDrawer = ({ setActivePage }) => {
                         onClick={() => updateQuantity(idx, 1)}
                         className="w-6 h-6 rounded flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors cursor-pointer"
                       >
-                        <span className="material-symbols-outlined text-xs">add</span>
+                        <Icon name="add" className="w-3.5 h-3.5" />
                       </button>
                     </div>
                   </div>
@@ -201,7 +202,7 @@ export const CartDrawer = ({ setActivePage }) => {
                 className="flex-1 py-3.5 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-lg font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>Lanjut Pesan ({formatRupiah(totals.grandTotal)})</span>
-                <span className="material-symbols-outlined text-base">arrow_forward</span>
+                <Icon name="arrow_forward" className="w-4 h-4" />
               </button>
             </div>
           </div>
