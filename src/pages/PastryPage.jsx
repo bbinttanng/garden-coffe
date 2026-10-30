@@ -1,5 +1,5 @@
 import { Icon } from '../components/ui/Icon';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useModals } from '../context/ModalContext';
 import { GARDEN_CATALOG } from '../data/catalog';
 
@@ -9,8 +9,19 @@ export const PastryPage = () => {
 
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   const pastryItems = GARDEN_CATALOG.filter(item => item.category === 'Pastry');
+
+  // Auto running motion from right to left (slides advance periodically)
+  useEffect(() => {
+    if (isPaused || pastryItems.length <= 1) return;
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % pastryItems.length);
+    }, 3800);
+    return () => clearInterval(interval);
+  }, [isPaused, pastryItems.length]);
 
   const categories = [
     { id: 'all', label: 'All Pastries (24)' },
@@ -44,98 +55,141 @@ export const PastryPage = () => {
 
   return (
     <div className="flex flex-col w-full">
-      {/* Hero Editorial Section */}
-      <section className="relative w-full bg-surface-container-low pt-12 pb-16 lg:py-20 px-6 lg:px-12 overflow-hidden border-b border-surface-container-high/60">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-fixed text-xs font-semibold tracking-wide">
-              <Icon name="local_fire_department" className="w-4 h-4 text-primary" />
-              <span>Fermentasi Lambat • Mentega Murni Pilihan</span>
+      {/* Full-Width Featured Pastry Motion Slider */}
+      <section className="relative w-full bg-surface-container-low py-8 lg:py-12 px-4 sm:px-6 lg:px-12 overflow-hidden border-b border-surface-container-high/60">
+        <div className="max-w-7xl mx-auto">
+          <div
+            className="relative rounded-3xl overflow-hidden shadow-xl bg-surface border border-surface-container-high group"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            {/* Carousel Track (Running motion right to left) */}
+            <div
+              className="flex transition-transform duration-700 ease-out"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
+              {pastryItems.map((item, idx) => {
+                const notesList = (item.notes || '')
+                  .split(',')
+                  .map((n) => n.trim())
+                  .filter(Boolean)
+                  .slice(0, 4);
+
+                return (
+                  <div
+                    key={item.id}
+                    className="w-full shrink-0 p-6 sm:p-8 lg:p-10"
+                  >
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                      {/* Full Pastry Image */}
+                      <div className="lg:col-span-7 relative aspect-[16/10] sm:aspect-[16/10] rounded-2xl overflow-hidden bg-surface-container-high shadow-xs">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+
+                        <span className="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/60 text-white text-[11px] font-mono font-medium backdrop-blur-xs">
+                          {idx + 1} / {pastryItems.length}
+                        </span>
+                      </div>
+
+                      {/* Pastry Info & Description */}
+                      <div className="lg:col-span-5 flex flex-col justify-between space-y-5">
+                        <div>
+                          <span className="text-secondary uppercase tracking-widest font-bold text-xs block">
+                            {item.origin}
+                          </span>
+                          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mt-1.5 leading-snug">
+                            {item.name}
+                          </h2>
+                          <p className="font-sans text-sm sm:text-base text-on-surface-variant mt-3 leading-relaxed">
+                            {item.description}
+                          </p>
+
+                          <div className="mt-4">
+                            <span className="text-[11px] uppercase tracking-wider text-on-surface-variant/80 font-semibold block mb-2">
+                              Profil Rasa &amp; Lapisan Pastry
+                            </span>
+                            <div className="flex flex-wrap gap-2">
+                              {notesList.map((note, nIdx) => (
+                                <span
+                                  key={nIdx}
+                                  className="px-2.5 py-1 rounded-lg bg-surface-container text-xs font-semibold text-on-surface"
+                                >
+                                  {note}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Price */}
+                        <div className="pt-4 border-t border-surface-container">
+                          <span className="text-[11px] uppercase tracking-wider text-on-surface-variant block font-medium">
+                            Harga Oven
+                          </span>
+                          <span className="font-serif text-2xl sm:text-3xl font-bold text-primary">
+                            {formatRupiah(item.price)}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
 
-            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-on-surface leading-[1.18] tracking-tight">
-              Baked Daily at Sunrise.<br />
-              <span className="italic font-normal text-tertiary">The Botanical Viennoiserie.</span>
-            </h1>
-
-            <p className="font-sans text-base sm:text-lg text-on-surface-variant max-w-xl leading-relaxed">
-              Crafted across a 48-hour slow-lamination rhythm. We meld wild lavender honey infusions, botanical extracts, stone-milled sourdough starters, and golden French butter into crisp, honeycomb layers that crackle at first touch.
-            </p>
-
-            <div className="grid grid-cols-3 gap-6 pt-2 max-w-lg border-t border-surface-container-high/80">
-              <div>
-                <p className="font-serif text-2xl font-bold text-primary">48h</p>
-                <p className="font-sans text-xs text-on-surface-variant mt-0.5">Fermentasi Dingin</p>
+            {/* Slider Controls: Running Motion Status, Dots, & Arrows */}
+            <div className="px-6 sm:px-8 py-3.5 flex items-center justify-between border-t border-surface-container/60 bg-surface">
+              {/* Dots with Running Indicator */}
+              <div className="flex items-center gap-1.5">
+                {pastryItems.map((_, i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    onClick={() => setCurrentSlide(i)}
+                    className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                      currentSlide === i
+                        ? 'w-7 bg-primary'
+                        : 'w-2 bg-surface-container-high hover:bg-secondary'
+                    }`}
+                    aria-label={`Ke slide ${i + 1}`}
+                  />
+                ))}
               </div>
-              <div>
-                <p className="font-serif text-2xl font-bold text-primary">84%</p>
-                <p className="font-sans text-xs text-on-surface-variant mt-0.5">Kandungan Lemak Mentega</p>
-              </div>
-              <div>
-                <p className="font-serif text-2xl font-bold text-primary">06:00</p>
-                <p className="font-sans text-xs text-on-surface-variant mt-0.5">Kloter Pertama Keluar Oven</p>
-              </div>
-            </div>
 
-            <div className="flex flex-wrap items-center gap-3 pt-3">
-              <button
-                type="button"
-                onClick={() => scrollToSection('pastry-grid')}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-sans font-bold text-sm shadow-sm transition-all cursor-pointer"
-              >
-                <span>Jelajahi Menu Pastry</span>
-                <Icon name="arrow_downward" className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
-
-          {/* Right Spotlight: Featured Pastry Bento */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-xl bg-surface p-6 lg:p-7 border border-surface-container-high space-y-5">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-surface-container-high">
-                <img
-                  className="w-full h-full object-cover"
-                  src="/images/img_20.jpg"
-                  alt="Wild Lavender Honey Glaze Croissant"
-                />
-                <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-primary/90 text-on-primary text-[11px] font-bold uppercase tracking-wider backdrop-blur-xs">
-                  Kloter Fajar #1
+              {/* Status & Navigation Arrows */}
+              <div className="flex items-center gap-2">
+                <span className="text-[11px] text-on-surface-variant/80 font-mono hidden sm:inline">
+                  {isPaused ? 'Jeda' : 'Otomatis'}
                 </span>
-              </div>
 
-              <div>
-                <span className="text-secondary uppercase tracking-widest font-bold text-xs">
-                  Normandy Butter 84% • Fermentasi 48 Jam
-                </span>
-                <h3 className="font-serif text-2xl font-bold text-primary mt-1">
-                  Wild Lavender Honey Glaze
-                </h3>
-                <p className="text-sm text-on-surface-variant mt-2 leading-relaxed">
-                  Honeycomb lamination yang renyah dengan lelehan madu lavender liar alami dan taburan garam herbal fleur de sel pegunungan.
-                </p>
-                <div className="flex flex-wrap gap-2 mt-3.5">
-                  <span className="px-2.5 py-1 rounded-lg bg-surface-container text-xs font-semibold text-on-surface">French Butter</span>
-                  <span className="px-2.5 py-1 rounded-lg bg-surface-container text-xs font-semibold text-on-surface">Wild Lavender</span>
-                  <span className="px-2.5 py-1 rounded-lg bg-surface-container text-xs font-semibold text-on-surface">Fleur de Sel</span>
+                <div className="flex items-center gap-1">
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setCurrentSlide((prev) =>
+                        prev === 0 ? pastryItems.length - 1 : prev - 1
+                      )
+                    }
+                    className="w-8 h-8 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-primary flex items-center justify-center transition-colors cursor-pointer"
+                    aria-label="Slide sebelumnya"
+                  >
+                    <Icon name="chevron_left" className="w-4 h-4" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setCurrentSlide((prev) => (prev + 1) % pastryItems.length)
+                    }
+                    className="w-8 h-8 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-primary flex items-center justify-center transition-colors cursor-pointer"
+                    aria-label="Slide berikutnya"
+                  >
+                    <Icon name="chevron_right" className="w-4 h-4" />
+                  </button>
                 </div>
-              </div>
-
-              <div className="pt-4 border-t border-surface-container flex items-center justify-between">
-                <div>
-                  <span className="text-[11px] uppercase tracking-wider text-on-surface-variant block font-medium">Harga Oven</span>
-                  <span className="font-serif text-2xl font-bold text-primary">Rp 42.000</span>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => {
-                    const item = pastryItems.find(item => item.id === 'p1') || pastryItems[0];
-                    openItemModal(item);
-                  }}
-                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-surface hover:bg-surface-container text-primary font-bold text-xs border border-surface-container-high transition-all shadow-xs cursor-pointer group-hover:border-primary/40"
-                >
-                  <span>Detail Pastry</span>
-                  <Icon name="arrow_forward" className="w-3.5 h-3.5 text-secondary" />
-                </button>
               </div>
             </div>
           </div>
