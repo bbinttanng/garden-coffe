@@ -54,200 +54,162 @@ export const CoffeePage = () => {
 
   return (
     <div className="flex flex-col w-full">
-      {/* Immersive Editorial Top Banner */}
-      <section className="relative w-full bg-surface-container-low pt-12 pb-16 lg:py-20 px-6 lg:px-12 overflow-hidden border-b border-surface-container-high/60">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-fixed text-xs font-semibold tracking-wide">
-              <Icon name="local_cafe" className="w-4 h-4 text-primary" />
-              <span>Terroir Sangrai Botani • Panen Terpilih Nusantara</span>
-            </div>
-
-            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-on-surface leading-[1.18] tracking-tight">
-              Artisanal Coffee &amp; <br />
-              <span className="italic font-normal text-primary">Single-Origin Roastery</span>
-            </h1>
-
-            <p className="font-sans text-base sm:text-lg text-on-surface-variant max-w-xl leading-relaxed">
-              Diseduh dari biji arabika pegunungan vulkanik nusantara yang ditanam di ketinggian 1.400–1.700 mdpl. Melalui proses fermentasi lambat terkontrol dan sangraian drum batch 5kg untuk menonjolkan spektrum rasa floral dan buah segar.
-            </p>
-
-            {/* Roast Dial Spectrum */}
-            <div className="pt-2 max-w-md space-y-2.5">
-              <div className="flex justify-between text-xs text-on-surface-variant uppercase tracking-wider font-semibold">
-                <span>Light (Floral)</span>
-                <span>Medium (Caramelized)</span>
-                <span>Dark (Smoked Wood)</span>
-              </div>
-              <div className="w-full h-2.5 rounded-full bg-surface-container-high relative overflow-hidden flex">
-                <div className="w-1/3 h-full bg-[#E8C288]"></div>
-                <div className="w-1/3 h-full bg-[#B26A37]"></div>
-                <div className="w-1/3 h-full bg-[#4A2E18]"></div>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-3 pt-3">
-              <button
-                type="button"
-                onClick={() => {
-                  const el = document.getElementById('coffee-menu-grid');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-sans font-bold text-sm shadow-sm transition-all cursor-pointer"
-              >
-                <span>Jelajahi Katalog Kopi</span>
-                <Icon name="arrow_downward" className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
-
-          {/* Right Spotlight: Auto Running Motion Coffee Carousel */}
-          <div className="lg:col-span-5 relative">
+      {/* Full-Width Featured Coffee Motion Slider */}
+      <section className="relative w-full bg-surface-container-low py-8 lg:py-12 px-4 sm:px-6 lg:px-12 overflow-hidden border-b border-surface-container-high/60">
+        <div className="max-w-7xl mx-auto">
+          <div
+            className="relative rounded-3xl overflow-hidden shadow-xl bg-surface border border-surface-container-high group"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            {/* Carousel Track (Running motion right to left) */}
             <div
-              className="relative rounded-3xl overflow-hidden shadow-xl bg-surface border border-surface-container-high group"
-              onMouseEnter={() => setIsPaused(true)}
-              onMouseLeave={() => setIsPaused(false)}
+              className="flex transition-transform duration-700 ease-out"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
-              {/* Carousel Track (Running motion right to left) */}
-              <div
-                className="flex transition-transform duration-700 ease-out"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-              >
-                {coffeeItems.map((item, idx) => {
-                  const notesList = (item.notes || '')
-                    .split(',')
-                    .map((n) => n.trim())
-                    .filter(Boolean)
-                    .slice(0, 3);
+              {coffeeItems.map((item, idx) => {
+                const notesList = (item.notes || '')
+                  .split(',')
+                  .map((n) => n.trim())
+                  .filter(Boolean)
+                  .slice(0, 4);
 
-                  return (
-                    <div
-                      key={item.id}
-                      className="w-full shrink-0 p-6 lg:p-7 flex flex-col justify-between space-y-4"
-                    >
-                      {/* Image Area with Badge & Overlays */}
-                      <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-surface-container-high shadow-xs">
+                return (
+                  <div
+                    key={item.id}
+                    className="w-full shrink-0 p-6 sm:p-8 lg:p-10"
+                  >
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                      {/* Full Coffee Image with Badges */}
+                      <div className="lg:col-span-7 relative aspect-[16/10] sm:aspect-[16/10] rounded-2xl overflow-hidden bg-surface-container-high shadow-xs">
                         <img
                           src={item.image}
                           alt={item.name}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent pointer-events-none" />
 
                         {/* Top Badges */}
-                        <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-primary/90 text-on-primary text-[11px] font-bold uppercase tracking-wider backdrop-blur-xs shadow-xs">
-                          {item.tags?.[0] || 'Kopi Spesialti'}
-                        </span>
+                        <div className="absolute top-4 left-4 flex flex-wrap items-center gap-2">
+                          <span className="px-3 py-1.5 rounded-full bg-primary/90 text-on-primary text-[11px] font-bold uppercase tracking-wider backdrop-blur-xs shadow-xs">
+                            {item.tags?.[0] || 'Kopi Spesialti'}
+                          </span>
+                          <div className="px-3 py-1.5 rounded-full bg-white/95 text-primary text-[11px] font-bold backdrop-blur-xs flex items-center gap-1.5 shadow-xs">
+                            <span className="w-2 h-2 rounded-full bg-secondary" />
+                            <span>{item.roast} Roast</span>
+                          </div>
+                        </div>
 
-                        <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/60 text-white text-[11px] font-mono font-medium backdrop-blur-xs">
+                        <span className="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/60 text-white text-[11px] font-mono font-medium backdrop-blur-xs">
                           {idx + 1} / {coffeeItems.length}
                         </span>
-
-                        {/* Bottom Roast Pill on Image */}
-                        <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-white/90 text-primary text-[11px] font-bold backdrop-blur-xs flex items-center gap-1.5 shadow-xs">
-                          <span className="w-2 h-2 rounded-full bg-secondary" />
-                          <span>{item.roast} Roast</span>
-                        </div>
                       </div>
 
-                      {/* Content Info */}
-                      <div>
-                        <span className="text-secondary uppercase tracking-widest font-bold text-xs block">
-                          {item.origin}
-                        </span>
-                        <h3 className="font-serif text-2xl font-bold text-primary mt-1 truncate">
-                          {item.name}
-                        </h3>
-                        <p className="text-sm text-on-surface-variant mt-1.5 leading-relaxed line-clamp-2">
-                          {item.description}
-                        </p>
-
-                        <div className="flex flex-wrap gap-1.5 mt-3">
-                          {notesList.map((note, nIdx) => (
-                            <span
-                              key={nIdx}
-                              className="px-2.5 py-1 rounded-lg bg-surface-container text-xs font-semibold text-on-surface"
-                            >
-                              {note}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Footer: Price, Action, & Navigation */}
-                      <div className="pt-3.5 border-t border-surface-container flex items-center justify-between gap-4">
+                      {/* Coffee Info & Description */}
+                      <div className="lg:col-span-5 flex flex-col justify-between space-y-5">
                         <div>
-                          <span className="text-[11px] uppercase tracking-wider text-on-surface-variant block font-medium">
-                            Harga Seduhan
+                          <span className="text-secondary uppercase tracking-widest font-bold text-xs block">
+                            {item.origin}
                           </span>
-                          <span className="font-serif text-2xl font-bold text-primary">
-                            {formatRupiah(item.price)}
-                          </span>
+                          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-primary mt-1.5 leading-snug">
+                            {item.name}
+                          </h2>
+                          <p className="font-sans text-sm sm:text-base text-on-surface-variant mt-3 leading-relaxed">
+                            {item.description}
+                          </p>
+
+                          <div className="mt-4">
+                            <span className="text-[11px] uppercase tracking-wider text-on-surface-variant/80 font-semibold block mb-2">
+                              Profil Rasa &amp; Catatan Seduhan
+                            </span>
+                            <div className="flex flex-wrap gap-2">
+                              {notesList.map((note, nIdx) => (
+                                <span
+                                  key={nIdx}
+                                  className="px-2.5 py-1 rounded-lg bg-surface-container text-xs font-semibold text-on-surface"
+                                >
+                                  {note}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
                         </div>
 
-                        <button
-                          type="button"
-                          onClick={() => openItemModal(item)}
-                          className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-bold text-xs shadow-xs transition-all cursor-pointer"
-                        >
-                          <span>Detail Seduhan</span>
-                          <Icon name="arrow_forward" className="w-3.5 h-3.5" />
-                        </button>
+                        {/* Price & Action */}
+                        <div className="pt-4 border-t border-surface-container flex items-center justify-between gap-4">
+                          <div>
+                            <span className="text-[11px] uppercase tracking-wider text-on-surface-variant block font-medium">
+                              Harga Seduhan
+                            </span>
+                            <span className="font-serif text-2xl sm:text-3xl font-bold text-primary">
+                              {formatRupiah(item.price)}
+                            </span>
+                          </div>
+
+                          <button
+                            type="button"
+                            onClick={() => openItemModal(item)}
+                            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-bold text-xs sm:text-sm shadow-xs transition-all cursor-pointer"
+                          >
+                            <span>Detail Seduhan</span>
+                            <Icon name="arrow_forward" className="w-4 h-4" />
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  );
-                })}
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Slider Controls: Running Motion Status, Dots, & Arrows */}
+            <div className="px-6 sm:px-8 py-3.5 flex items-center justify-between border-t border-surface-container/60 bg-surface">
+              {/* Dots with Running Indicator */}
+              <div className="flex items-center gap-1.5">
+                {coffeeItems.map((_, i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    onClick={() => setCurrentSlide(i)}
+                    className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                      currentSlide === i
+                        ? 'w-7 bg-primary'
+                        : 'w-2 bg-surface-container-high hover:bg-secondary'
+                    }`}
+                    aria-label={`Ke slide ${i + 1}`}
+                  />
+                ))}
               </div>
 
-              {/* Slider Controls: Running Motion Status, Dots, & Arrows */}
-              <div className="px-6 pb-4 pt-1 flex items-center justify-between border-t border-surface-container/60 bg-surface">
-                {/* Dots with Running Indicator */}
-                <div className="flex items-center gap-1.5">
-                  {coffeeItems.map((_, i) => (
-                    <button
-                      key={i}
-                      type="button"
-                      onClick={() => setCurrentSlide(i)}
-                      className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                        currentSlide === i
-                          ? 'w-6 bg-primary'
-                          : 'w-2 bg-surface-container-high hover:bg-secondary'
-                      }`}
-                      aria-label={`Ke slide ${i + 1}`}
-                    />
-                  ))}
-                </div>
+              {/* Status & Navigation Arrows */}
+              <div className="flex items-center gap-2">
+                <span className="text-[11px] text-on-surface-variant/80 font-mono hidden sm:inline">
+                  {isPaused ? 'Jeda' : 'Otomatis'}
+                </span>
 
-                {/* Status & Navigation Arrows */}
-                <div className="flex items-center gap-2">
-                  <span className="text-[11px] text-on-surface-variant/80 font-mono hidden sm:inline">
-                    {isPaused ? 'Jeda' : 'Otomatis'}
-                  </span>
-
-                  <div className="flex items-center gap-1">
-                    <button
-                      type="button"
-                      onClick={() =>
-                        setCurrentSlide((prev) =>
-                          prev === 0 ? coffeeItems.length - 1 : prev - 1
-                        )
-                      }
-                      className="w-7 h-7 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-primary flex items-center justify-center transition-colors cursor-pointer"
-                      aria-label="Slide sebelumnya"
-                    >
-                      <Icon name="chevron_left" className="w-4 h-4" />
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() =>
-                        setCurrentSlide((prev) => (prev + 1) % coffeeItems.length)
-                      }
-                      className="w-7 h-7 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-primary flex items-center justify-center transition-colors cursor-pointer"
-                      aria-label="Slide berikutnya"
-                    >
-                      <Icon name="chevron_right" className="w-4 h-4" />
-                    </button>
-                  </div>
+                <div className="flex items-center gap-1">
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setCurrentSlide((prev) =>
+                        prev === 0 ? coffeeItems.length - 1 : prev - 1
+                      )
+                    }
+                    className="w-8 h-8 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-primary flex items-center justify-center transition-colors cursor-pointer"
+                    aria-label="Slide sebelumnya"
+                  >
+                    <Icon name="chevron_left" className="w-4 h-4" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setCurrentSlide((prev) => (prev + 1) % coffeeItems.length)
+                    }
+                    className="w-8 h-8 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-primary flex items-center justify-center transition-colors cursor-pointer"
+                    aria-label="Slide berikutnya"
+                  >
+                    <Icon name="chevron_right" className="w-4 h-4" />
+                  </button>
                 </div>
               </div>
             </div>
