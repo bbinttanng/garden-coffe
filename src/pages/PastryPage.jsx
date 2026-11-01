@@ -125,7 +125,7 @@ export const PastryPage = () => {
                         {/* Price */}
                         <div className="pt-4 border-t border-surface-container">
                           <span className="text-[11px] uppercase tracking-wider text-on-surface-variant block font-medium">
-                            Harga Oven
+                            Harga
                           </span>
                           <span className="font-serif text-2xl sm:text-3xl font-bold text-primary">
                             {formatRupiah(item.price)}
@@ -196,14 +196,16 @@ export const PastryPage = () => {
 
       {/* Pastry Showcase Grid */}
       <section className="max-w-7xl mx-auto px-6 lg:px-12 pt-12 pb-24 w-full" id="pastry-grid">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
-          <div>
-            <span className="font-label-md text-label-md uppercase tracking-wider text-secondary">Kreasi Dapur Pastry</span>
-            <h2 className="font-headline-md text-headline-md text-primary font-serif">Koleksi Croissant &amp; Viennoiserie</h2>
+        <div className="mb-10">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="w-6 h-0.5 bg-primary"></span>
+            <span className="font-label-sm text-label-sm text-primary uppercase tracking-widest font-semibold">
+              Kreasi Dapur Pastry
+            </span>
           </div>
-          <p className="font-body-sm text-body-sm text-on-surface-variant max-w-sm">
-            Dipanggang langsung dari oven batu tiga kali sehari untuk menghasilkan tekstur berlapis yang renyah dan harum mentega murni.
-          </p>
+          <h2 className="font-headline-lg text-headline-lg font-serif text-on-surface">
+            Koleksi Croissant &amp; Viennoiserie
+          </h2>
         </div>
 
         {filteredPastries.length === 0 ? (
@@ -276,7 +278,7 @@ export const PastryPage = () => {
 
                 <div className="pt-4 flex items-center justify-between border-t border-surface-container/60">
                   <div>
-                    <span className="block text-[11px] uppercase tracking-wider text-on-surface-variant font-medium">Harga Oven</span>
+                    <span className="block text-[11px] uppercase tracking-wider text-on-surface-variant font-medium">Harga</span>
                     <span className="font-title-lg font-serif font-bold text-primary text-xl">
                       {formatRupiah(item.price)}
                     </span>

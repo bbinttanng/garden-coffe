@@ -124,7 +124,7 @@ export const CoffeePage = () => {
                         {/* Price */}
                         <div className="pt-4 border-t border-surface-container">
                           <span className="text-[11px] uppercase tracking-wider text-on-surface-variant block font-medium">
-                            Harga Seduhan
+                            Harga
                           </span>
                           <span className="font-serif text-2xl sm:text-3xl font-bold text-primary">
                             {formatRupiah(item.price)}
@@ -195,21 +195,16 @@ export const CoffeePage = () => {
 
       {/* Main Catalog Grid */}
       <section id="coffee-menu-grid" className="max-w-7xl mx-auto px-6 lg:px-12 pt-12 pb-24 w-full">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
-          <div>
-            <div className="flex items-center gap-2 mb-2">
-              <span className="w-6 h-0.5 bg-primary"></span>
-              <span className="font-label-sm text-label-sm text-primary uppercase tracking-widest font-semibold">
-                Tasting &amp; Craft Menu
-              </span>
-            </div>
-            <h2 className="font-headline-lg text-headline-lg font-serif text-on-surface">
-              Curated Conservatory Offerings
-            </h2>
+        <div className="mb-10">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="w-6 h-0.5 bg-primary"></span>
+            <span className="font-label-sm text-label-sm text-primary uppercase tracking-widest font-semibold">
+              Tasting &amp; Craft Menu
+            </span>
           </div>
-          <p className="font-body-sm text-body-sm text-on-surface-variant max-w-md">
-            Seluruh kopi disangrai segar dengan profil pemanggangan presisi batch 5kg di kebun konservatori kami.
-          </p>
+          <h2 className="font-headline-lg text-headline-lg font-serif text-on-surface">
+            Curated Conservatory Offerings
+          </h2>
         </div>
 
         {/* Coffee Grid */}
@@ -265,7 +260,7 @@ export const CoffeePage = () => {
 
               <div className="p-6 pt-0 border-t border-surface-container flex items-center justify-between mt-4">
                 <div>
-                  <span className="block text-[11px] uppercase tracking-wider text-on-surface-variant font-medium">Harga Seduhan</span>
+                  <span className="block text-[11px] uppercase tracking-wider text-on-surface-variant font-medium">Harga</span>
                   <span className="font-title-lg font-serif font-bold text-primary text-xl">
                     {formatRupiah(coffee.price)}
                   </span>

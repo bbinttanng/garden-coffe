@@ -118,7 +118,7 @@ export const FoodPage = () => {
                         {/* Price */}
                         <div className="pt-4 border-t border-surface-container">
                           <span className="text-[11px] uppercase tracking-wider text-on-surface-variant block font-medium">
-                            Harga Sajian
+                            Harga
                           </span>
                           <span className="font-serif text-2xl sm:text-3xl font-bold text-primary">
                             {formatRupiah(item.price)}
@@ -189,6 +189,18 @@ export const FoodPage = () => {
 
       {/* Culinary Menu Grid */}
       <section id="food-menu-grid" className="max-w-7xl mx-auto px-6 lg:px-12 pt-12 pb-24 w-full">
+        <div className="mb-10">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="w-6 h-0.5 bg-primary"></span>
+            <span className="font-label-sm text-label-sm text-primary uppercase tracking-widest font-semibold">
+              Dapur Botani &amp; Hasil Bumi
+            </span>
+          </div>
+          <h2 className="font-headline-lg text-headline-lg font-serif text-on-surface">
+            Sajian Dapur &amp; Panen Segar
+          </h2>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredFoods.map((food) => (
             <div
@@ -234,7 +246,7 @@ export const FoodPage = () => {
 
               <div className="p-6 pt-0 border-t border-surface-container flex items-center justify-between mt-4">
                 <div>
-                  <span className="block text-[11px] uppercase tracking-wider text-on-surface-variant font-medium">Porsi Santap</span>
+                  <span className="block text-[11px] uppercase tracking-wider text-on-surface-variant font-medium">Harga</span>
                   <span className="font-title-lg font-serif font-bold text-primary text-xl">
                     {formatRupiah(food.price)}
                   </span>
