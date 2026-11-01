@@ -8,25 +8,14 @@ export const LokasiPage = () => {
 
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('all');
-  const [activeAmenity, setActiveAmenity] = useState('all');
   const [activeStore, setActiveStore] = useState(SANCTUARIES[0]);
   const [mapZoom, setMapZoom] = useState(14);
-
-  const amenities = [
-    { id: 'all', label: 'Semua Fasilitas', icon: 'apps' },
-    { id: 'glasshouse', label: 'Indoor Conservatory', icon: 'nest_eco_leaf' },
-    { id: 'pet-friendly', label: 'Outdoor Pet-Friendly', icon: 'pets' },
-    { id: 'slow-bar', label: 'Pour-Over Slow Bar', icon: 'coffee_maker' },
-    { id: 'meeting-room', label: 'Private Glass Studio', icon: 'meeting_room' },
-    { id: 'drive-thru', label: 'Garden Drive-Thru', icon: 'directions_car' }
-  ];
 
   const filteredStores = SANCTUARIES.filter(store => {
     const text = (store.name + ' ' + store.address + ' ' + store.subcategory + ' ' + (store.description || '')).toLowerCase();
     const matchQuery = !searchQuery || text.includes(searchQuery.toLowerCase().trim());
     const matchRegion = selectedRegion === 'all' || store.region === selectedRegion;
-    const matchAmenity = activeAmenity === 'all' || (store.tags && store.tags.includes(activeAmenity));
-    return matchQuery && matchRegion && matchAmenity;
+    return matchQuery && matchRegion;
   });
 
   const handleGpsLocate = () => {
@@ -109,26 +98,6 @@ export const LokasiPage = () => {
                   <span>Terdekat Saya</span>
                 </button>
               </div>
-            </div>
-
-            {/* Filter Chips Pills */}
-            <div className="mt-6 pt-5 border-t border-surface-container flex flex-wrap items-center gap-2.5">
-              <span className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mr-2 font-semibold">Fasilitas Khusus:</span>
-              {amenities.map(chip => (
-                <button
-                  key={chip.id}
-                  type="button"
-                  onClick={() => setActiveAmenity(chip.id)}
-                  className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full font-label-md text-label-md transition-all cursor-pointer ${
-                    activeAmenity === chip.id
-                      ? 'bg-primary text-on-primary font-semibold shadow-xs'
-                      : 'bg-surface-container text-on-surface hover:bg-surface-container-high'
-                  }`}
-                >
-                  <span className="material-symbols-outlined text-base">{chip.icon}</span>
-                  <span>{chip.label}</span>
-                </button>
-              ))}
             </div>
           </div>
         </div>
