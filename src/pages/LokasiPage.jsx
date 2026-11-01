@@ -46,45 +46,12 @@ export const LokasiPage = () => {
 
   return (
     <div className="flex flex-col w-full">
-      {/* Top Sanctuary Banner / Atmospheric Header */}
-      <section className="relative w-full bg-surface-container-low px-6 lg:px-12 pt-12 pb-16 overflow-hidden border-b border-surface-container-high/60">
+      {/* Top Sanctuary Search & Filter Bar */}
+      <section className="relative w-full bg-surface-container-low px-6 lg:px-12 py-8 lg:py-10 overflow-hidden border-b border-surface-container-high/60">
         <div className="absolute right-0 top-0 -mr-24 -mt-24 w-96 h-96 rounded-full bg-secondary-fixed/30 blur-3xl pointer-events-none"></div>
         <div className="absolute left-1/3 bottom-0 -mb-20 w-80 h-80 rounded-full bg-primary-fixed/20 blur-2xl pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-10">
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md mb-4 shadow-xs">
-                <Icon name="eco" className="w-4 h-4" />
-                <span>Direktori Suaka Kaca • Indonesia</span>
-              </div>
-              <h1 className="font-headline-lg text-headline-lg text-primary tracking-tight font-serif mb-4">
-                Temukan Suaka Rumah Kaca Terdekat Anda
-              </h1>
-              <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
-                Kunjungi ruang suaka rumah kaca kami di Jakarta, Tangerang, Bandung, dan Bali. Tempat bertemunya racikan seduh kopi micro-lot dengan rimbunnya flora tropis hidup.
-              </p>
-            </div>
-
-            {/* Quick Summary Stats Widget */}
-            <div className="flex items-center gap-6 p-4 rounded-xl bg-surface-container shadow-xs self-start lg:self-auto border border-surface-container-high/80">
-              <div className="text-left pr-4">
-                <div className="font-headline-md text-headline-md text-primary font-serif">{SANCTUARIES.length}</div>
-                <div className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Suaka Aktif</div>
-              </div>
-              <div className="w-px h-10 bg-outline-variant/60"></div>
-              <div className="text-left pr-4">
-                <div className="font-headline-md text-headline-md text-primary font-serif">3</div>
-                <div className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Wilayah Utama</div>
-              </div>
-              <div className="w-px h-10 bg-outline-variant/60"></div>
-              <div className="text-left">
-                <div className="font-headline-md text-headline-md text-secondary font-serif">100%</div>
-                <div className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Ramah Hewan</div>
-              </div>
-            </div>
-          </div>
-
           {/* Live Search & Interactive Filter Controls */}
           <div className="w-full bg-surface-container-lowest rounded-2xl p-6 shadow-sm border border-surface-container-high/80">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
