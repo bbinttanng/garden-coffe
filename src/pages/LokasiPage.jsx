@@ -107,7 +107,7 @@ export const LokasiPage = () => {
       <section className="max-w-7xl mx-auto w-full px-6 lg:px-12 py-12">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
           <div className="flex items-center gap-3">
-            <span className="font-headline-sm text-headline-sm text-primary font-serif">Available Sanctuaries</span>
+            <span className="font-headline-sm text-headline-sm text-primary font-serif">Cabang Kami</span>
             <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
               {filteredStores.length} Lokasi Ditemukan
             </span>
@@ -128,7 +128,7 @@ export const LokasiPage = () => {
                 <p className="font-body-sm text-on-surface-variant mt-1">Coba sesuaikan kata kunci pencarian atau ganti filter wilayah.</p>
                 <button
                   type="button"
-                  onClick={() => { setSearchQuery(''); setSelectedRegion('all'); setActiveAmenity('all'); }}
+                  onClick={() => { setSearchQuery(''); setSelectedRegion('all'); }}
                   className="mt-4 px-4 py-2 bg-primary text-on-primary rounded-lg text-label-md"
                 >
                   Reset Filter Lokasi
@@ -286,43 +286,6 @@ export const LokasiPage = () => {
                     </button>
                   </div>
                 )}
-              </div>
-
-              {/* Bottom Real Map Legend & Info */}
-              <div className="mt-3 pt-3 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm border-t border-surface-container">
-                <span className="flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-primary inline-block"></span>
-                  <span>Fokus GPS Aktif ({activeStore?.name?.split(' ')[0]})</span>
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <Icon name="verified" className="w-4 h-4" />
-                  <span>OpenStreetMap Live Data</span>
-                </span>
-              </div>
-              <div className="mt-3 pt-3 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm border-t border-surface-container">
-                <span className="flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-primary inline-block"></span>
-                  <span>Sanctuary Aktif</span>
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-secondary inline-block"></span>
-                  <span>Heritage &amp; Outdoor</span>
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-secondary-container inline-block"></span>
-                  <span>Drive-Thru</span>
-                </span>
-              </div>
-            </div>
-
-            {/* Glasshouse Operating Protocols Note */}
-            <div className="p-5 rounded-2xl bg-surface-container-high/60 flex items-start gap-3 border border-surface-container-high">
-              <Icon name="info" className="w-6 h-6 text-secondary" />
-              <div>
-                <h4 className="font-label-lg text-label-lg text-on-surface font-semibold mb-1">Kunjungan Ramah Hewan &amp; Workspace</h4>
-                <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-                  Seluruh area outdoor dan glasshouse terrace terbuka untuk hewan peliharaan (leashed). Dilengkapi colokan listrik di setiap meja sudut dan jaringan fiber optik 150 Mbps berkecepatan tinggi.
-                </p>
               </div>
             </div>
           </div>
